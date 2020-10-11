@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -35,7 +36,7 @@ public class AudioManager : Singleton<AudioManager>
         PauseSound();
         if (!IsPlaying())
         {
-            StartCoroutine(LoadAudio(name));
+            StartCoroutine(GetAudioClip(name));
         }
     }
 
@@ -54,38 +55,37 @@ public class AudioManager : Singleton<AudioManager>
     {
         audioSource.UnPause();
     }
-    
-    /// <summary>
-    /// Get audio file from path & filename
-    /// </summary>
-    /// <param name="path"></param>
-    /// <param name="fileName"></param>
-    /// <returns></returns>
-    private WWW GetAudioFromFile(string path, string fileName)
-    {
-        string audioToLoad = path + fileName;
-        WWW request = new WWW(audioToLoad);
-        return request;
-    }
 
-    /// <summary>
-    /// Load audio & play audio from source file
-    /// </summary>
-    /// <param name="name"></param>
-    /// <returns></returns>
-    private IEnumerator LoadAudio(string name)
+    IEnumerator GetAudioClip(string name)
     {
-        audioName = name + ".wav";
         
-        WWW request = GetAudioFromFile(path, audioName);
-        yield return request;
+        audioName = name + ".wav";
 
-        audioClip = request.GetAudioClip();
-        audioClip.name = audioName;
+        using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip("http://a6.radioheart.ru:8012/live", AudioType.WAV))
+        {
+            yield return request.SendWebRequest();
+            Debug.Log("WTF" + request + audioName);
 
-        audioSource.loop = true;
-        audioSource.clip = audioClip;
-        audioSource.Play();
+            Debug.Log(request);
+            Debug.Log("WHATS GOING ON");
+
+            if (request.result == UnityWebRequest.Result.ConnectionError)
+            {
+                Debug.Log(request.error);
+            }
+            else
+            {
+                Debug.Log("COME ON");
+                audioClip = DownloadHandlerAudioClip.GetContent(request);
+                if (audioClip)
+                {
+                    audioClip.name = audioName;
+                    audioSource.loop = true;
+                    audioSource.clip = audioClip;
+                    audioSource.Play();
+                }
+            }
+        }
     }
 
     /// <summary>

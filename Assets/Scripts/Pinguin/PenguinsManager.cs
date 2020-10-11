@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PenguinsManager : Singleton<PenguinsManager>
 {
+    [Tooltip("Penguin prefab to instantiate")]
     public GameObject penguin;
     
     // Start is called before the first frame update
