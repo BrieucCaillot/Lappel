@@ -1,99 +1,44 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.Networking;
+﻿using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    public static AudioManager Instance;
-    private static AudioSource audioSource;
-    private static AudioClip audioClip;
-    private string path;
-    private string audioName;
-
-    /// <summary>
-    /// Create Audio component on Awake
-    /// </summary>
-    private void Awake()
+    public enum Sound
     {
-        if (Instance == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-            path = "file://" + Application.streamingAssetsPath + "/Audio/Sounds/";
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Intro,
+        Outro,
+        Whatever
     }
 
-    /// <summary>
-    /// Play sound with coroutine
-    /// </summary>
-    /// <param name="name"></param>
-    public void PlaySound(string name)
-    {
-        PauseSound();
-        if (!IsPlaying())
-        {
-            StartCoroutine(GetAudioClip(name));
-        }
-    }
-
-    /// <summary>
-    /// Pause sound
-    /// </summary>
-    public static void PauseSound()
-    {
-        audioSource.Pause();
-    }
+    public SoundAudioClip[] soundAudioClips;
     
-    /// <summary>
-    /// Unpause sound
-    /// </summary>
-    public static void UnPauseSound()
+    [System.Serializable] 
+    public class SoundAudioClip
     {
-        audioSource.UnPause();
+        public Sound sound;
+        public AudioClip audioClip;
     }
 
-    IEnumerator GetAudioClip(string name)
+    public void PlaySound(Sound sound)
     {
-        
-        audioName = name + ".wav";
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
 
-        using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip("http://a6.radioheart.ru:8012/live", AudioType.WAV))
+        if (audioSource.isPlaying)
         {
-            yield return request.SendWebRequest();
-            Debug.Log("WTF" + request + audioName);
+            audioSource.Stop();
+        }
+        
+        audioSource.PlayOneShot(GetAudioClip(sound));
+    }
 
-            Debug.Log(request);
-            Debug.Log("WHATS GOING ON");
-
-            if (request.result == UnityWebRequest.Result.ConnectionError)
+    private AudioClip GetAudioClip(Sound sound)
+    {
+        foreach (var soundAudioClip in soundAudioClips)
+        {
+            if (soundAudioClip.sound == sound)
             {
-                Debug.Log(request.error);
-            }
-            else
-            {
-                Debug.Log("COME ON");
-                audioClip = DownloadHandlerAudioClip.GetContent(request);
-                if (audioClip)
-                {
-                    audioClip.name = audioName;
-                    audioSource.loop = true;
-                    audioSource.clip = audioClip;
-                    audioSource.Play();
-                }
+                return soundAudioClip.audioClip;
             }
         }
-    }
-
-    /// <summary>
-    /// Returns if audio is playing
-    /// </summary>
-    /// <returns></returns>
-    public bool IsPlaying()
-    {
-        return audioSource.isPlaying;
+        return null;
     }
 }
