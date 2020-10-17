@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Scene.unity
     guid: afdbb0148494943818849486140082e6
   - enabled: 1
+    path: Assets/Scenes/Banquise Scene.unity
+    guid: c3efaa224d5cc6e4298f4c8d2975770c
+  - enabled: 1
+    path: Assets/Scenes/Montagne Scene.unity
+    guid: 1a36716b3760fdd4ebe16b5cd868e52e
+  - enabled: 1
+    path: Assets/Scenes/Eau Scene.unity
+    guid: f48e81ba2d7293143a67f36c153f47be
+  - enabled: 1
+    path: Assets/Scenes/Dinosaure Scene.unity
+    guid: 7fe7be18392084d458f09053a772d887
+  - enabled: 1
     path: Assets/Scenes/Aurore Scene.unity
     guid: 67b0c32e820e4401faae960d1c77b316
   m_configObjects: {}
