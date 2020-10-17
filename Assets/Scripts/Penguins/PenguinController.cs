@@ -18,6 +18,6 @@ public class PenguinController : MonoBehaviour
 
     private void PenguinAutoMove()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * PlayerManager.Instance.moveSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * PlayerManager.Instance.MoveSpeed);
     }
 }

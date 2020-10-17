@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerManager : Singleton<PlayerManager>
 {
     public GameObject Player;
-    public float moveSpeed = 10f;
-    public float rotationRate = 360;
+    public float MoveSpeed = 10f;
+    public float RotationRate = 360;
 
     private Animator playerAnim;
 
@@ -31,7 +31,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
     private void PlayerAutoMove()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * MoveSpeed);
     }
 
     private void PlayerMovement()
@@ -46,12 +46,12 @@ public class PlayerManager : Singleton<PlayerManager>
     private void Move(float input)
     {
         playerAnim.SetFloat("vertical", input);
-        transform.Translate(Vector3.forward * input * (moveSpeed / 100));
+        transform.Translate(Vector3.forward * input * (MoveSpeed / 100));
     }
     
     private void Turn(float input)
     {
         playerAnim.SetFloat("horizontal", input);
-        transform.Rotate(0, input * rotationRate * Time.deltaTime, 0);
+        transform.Rotate(0, input * RotationRate * Time.deltaTime, 0);
     }
 }

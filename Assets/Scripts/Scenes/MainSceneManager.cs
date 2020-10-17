@@ -17,6 +17,7 @@ public class MainSceneManager : MonoBehaviour
         {
             // Player can now move
             GameManager.Instance.isPlayable = true;
+            GameManager.Instance.SwitchScene();
         }
     }
 }
