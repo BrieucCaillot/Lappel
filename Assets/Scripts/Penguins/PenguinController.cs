@@ -18,6 +18,20 @@ public class PenguinController : MonoBehaviour
 
     private void PenguinAutoMove()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * PlayerManager.Instance.MoveSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * 10f);
+    }
+    
+    // Disable the behaviour when it becomes invisible...
+    void OnBecameInvisible()
+    {
+        print("INVISIBLE");
+        enabled = false;
+    }
+
+    // ...and enable it again when it becomes visible.
+    void OnBecameVisible()
+    {
+        print("VISIBLE");
+        enabled = true;
     }
 }

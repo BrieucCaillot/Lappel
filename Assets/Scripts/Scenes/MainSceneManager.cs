@@ -13,11 +13,11 @@ public class MainSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             // Player can now move
             GameManager.Instance.isPlayable = true;
-            GameManager.Instance.SwitchScene();
+            // GameManager.Instance.SwitchScene();
         }
     }
 }
