@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0077619585, g: 0.0099891955, b: 0.016222449, a: 1}
+  m_IndirectSpecularColor: {r: 0.0077619175, g: 0.009989139, b: 0.016222345, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1365,7 +1365,7 @@ CharacterController:
   m_GameObject: {fileID: 602140010}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5

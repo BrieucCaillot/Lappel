@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Penguin Location
+  - PenguinLocation
   - Bosse
+  - CollideTest
+  - CollideTest2
   layers:
   - Default
   - TransparentFX
