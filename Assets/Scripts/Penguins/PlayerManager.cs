@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundDistance = 0.4f;
-    [SerializeField] private LayerMask groundMask;
-    public float MoveSpeed = 10f;
+    [SerializeField] private GameObject player = null;
+    
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private float jumpForce = 2f;
+    [SerializeField] private float jumpRaycastDistance = 1.1f;
     [SerializeField] private float rotationRate = 360;
-    [SerializeField] private bool isGrounded = false;
-    private bool jumpKeyPress = false;
+
     private Animator playerAnim;
     private Rigidbody rigidBody;
-    [SerializeField] private GameObject toto;
 
     // Start is called before the first frame update
     void Start()
@@ -24,61 +22,62 @@ public class PlayerManager : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    private void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isGrounded())
+            {
+                rigidBody.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            }
+        }
+    }
+    
+    private void Move()
+    {
+        float hAxis = Input.GetAxis("Horizontal");
+        float vAxis = Input.GetAxis("Vertical");
+        
+        playerAnim.SetFloat("horizontal", hAxis);
+        playerAnim.SetFloat("vertical", vAxis);
+
+        Vector3 movement = new Vector3(0,0, vAxis) * speed * Time.fixedDeltaTime;
+        Vector3 newPosition = rigidBody.position + rigidBody.transform.TransformDirection(movement);
+        rigidBody.MovePosition(newPosition);
+        
+        Vector3 eulerAngleVelocity = new Vector3(0, hAxis * rotationRate * Time.deltaTime, 0);
+        Quaternion newRotation = Quaternion.Euler(eulerAngleVelocity);
+        rigidBody.MoveRotation(rigidBody.rotation * newRotation);
+    }
+    
+    private bool isGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down,  jumpRaycastDistance);
+    }
+    
+    private void AutoMove()
+    {
+        Vector3 movement = new Vector3(0,0, 1) * speed * Time.fixedDeltaTime;
+        Vector3 newPosition = rigidBody.position + rigidBody.transform.TransformDirection(movement);
+        rigidBody.MovePosition(newPosition);
+    }
 
     void Update()
     {
-        float moveInput = Input.GetAxis("Vertical");
-        float turnInput = Input.GetAxis("Horizontal");
-
-        if (GameManager.Instance.isPlayable)
-        {
-            PlayerMovement(moveInput, turnInput);
-            if (Input.GetKeyDown("space")) jumpKeyPress = true;
-        }
-        else
-        {
-            PlayerAutoMove();
-        }
+        Jump();
     }
+    
 
     private void FixedUpdate()
     {
-
-        // isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        //
-        // if (isGrounded) return;
-        
-        // if (jumpKeyPress)
-        // {
-        //     rigidBody.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
-        //     jumpKeyPress = false;
-        // }
-    }
-
-    private void PlayerAutoMove()
-    {
-        transform.Translate(Vector3.forward * Time.deltaTime * MoveSpeed);
-    }
-    
-    private void PlayerMovement(float moveInput, float turnInput)
-    {
-        Move(moveInput);
-        Turn(turnInput);
-    }
-
-    private void Move(float input)
-    {
-        playerAnim.SetFloat("vertical", input);
-        rigidBody.MovePosition(new Vector3(input, rigidBody.position.y, rigidBody.position.z) * MoveSpeed * Time.deltaTime);
-        // rigidBody.velocity = new Vector3(input, rigidBody.velocity.y, rigidBody.velocity.z);
-        // transform.Translate(Vector3.forward * input * (MoveSpeed / 100));
-    }
-    
-    private void Turn(float input)
-    {
-        playerAnim.SetFloat("horizontal", input);
-        transform.Rotate(0, input * rotationRate * Time.deltaTime, 0);
+        if (GameManager.Instance.isPlayable)
+        {
+            Move();
+        }
+        else
+        {
+            AutoMove();
+        }
     }
 
     private void OnTriggerEnter(Collider collider)

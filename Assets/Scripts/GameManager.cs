@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -12,6 +13,12 @@ public class GameManager : Singleton<GameManager>
         // UIManager.Instance.HideIntro();
         // StartCoroutine(SwitchScene());
         // AudioManager.Instance.PlaySound(AudioManager.Sound.Whatever);
+    }
+
+    private void Update()
+    {
+        if (isPlayable) return;
+        if (Input.GetKey(KeyCode.Space)) isPlayable = true;
     }
 
     public void SwitchScene()
