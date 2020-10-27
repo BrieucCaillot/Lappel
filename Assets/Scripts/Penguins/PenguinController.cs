@@ -1,9 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PenguinController : MonoBehaviour
 {
+
+    private void Start()
+    {
+        RandomRotation();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -14,18 +21,17 @@ public class PenguinController : MonoBehaviour
     {
         transform.Translate(Vector3.forward * Time.deltaTime * 10f);
     }
-    
-    // Disable the behaviour when it becomes invisible...
-    void OnBecameInvisible()
+
+    private void RandomRotation()
     {
-        print("INVISIBLE");
-        enabled = false;
+        transform.Rotate(transform.rotation.x, UnityEngine.Random.Range(-10, 10), transform.rotation.z);
     }
 
-    // ...and enable it again when it becomes visible.
-    void OnBecameVisible()
+    private void OnCollisionEnter(Collision collision)
     {
-        print("VISIBLE");
-        enabled = true;
+        if (collision.collider.tag == "Penguin")
+        {
+            Debug.Log("Penguin touched another penguin");
+        }
     }
 }

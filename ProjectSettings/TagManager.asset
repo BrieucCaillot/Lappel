@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Penguin Location
   - Bosse
+  - Penguin
   layers:
   - Default
   - TransparentFX

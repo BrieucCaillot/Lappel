@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: b32a83b4de1d7d641ae51abb65d717af, type: 2}
     - target: {fileID: 3159517109938860601, guid: 9d9e6dc25860af8468cda6a0af0f7f3c, type: 3}
       propertyPath: m_Name
-      value: PenguinClone Variant
+      value: Penguin Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2817482894033915759, guid: 9d9e6dc25860af8468cda6a0af0f7f3c, type: 3}
