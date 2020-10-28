@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Aurora1
   m_Shader: {fileID: 4800000, guid: 86f4829d12213e54880ad281220eb019, type: 3}
   m_ShaderKeywords: 
@@ -93,8 +94,8 @@ Material:
     - _CloudHeightAdjust: -0.1
     - _CloudHeightContrast: 0.1
     - _CloudScale: 1
-    - _ColFactor: 13.35
-    - _ColPow: 7.71
+    - _ColFactor: 24.36
+    - _ColPow: 7.1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DistAmount: 1
@@ -130,3 +131,4 @@ Material:
     - _Tiling3: {r: 0.15, g: 0.15, b: 0, a: 3}
     - _TilingColor: {r: 0.05, g: 0.05, b: 0, a: 0}
     - _TilingWave: {r: 0.1, g: 0.1, b: 0, a: 2}
+  m_BuildTextureStacks: []
