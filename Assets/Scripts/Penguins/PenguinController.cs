@@ -7,13 +7,14 @@ public class PenguinController : MonoBehaviour
 {
     [Range(0, 10)]
     [SerializeField] private float speed = 10f;
-
+    [Range(0, 10)]
+    [SerializeField] private float maxYRot = 8f;
     private Rigidbody rigidBody;
 
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        RandomRotation();
+        InvokeRepeating("RandomRotation", 0.01f, 5);
     }
 
     void FixedUpdate()
@@ -31,7 +32,11 @@ public class PenguinController : MonoBehaviour
 
     private void RandomRotation()
     {
-        transform.Rotate(transform.rotation.x, UnityEngine.Random.Range(-10, 10), transform.rotation.z);
+        float rotationY = transform.rotation.y > 0
+            ? UnityEngine.Random.Range(-maxYRot, 0)
+            : UnityEngine.Random.Range(0, maxYRot);
+        
+        transform.Rotate(transform.rotation.x, rotationY, transform.rotation.z);
     }
 
     private void OnCollisionEnter(Collision collision)

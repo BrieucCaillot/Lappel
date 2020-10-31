@@ -6,10 +6,10 @@ public class MovementScript : MonoBehaviour {
 
     public Rigidbody rb;
     public GameObject cameraManager;
-    private CameraManager cameraManagerScript;
+    private CameraManagerTimeline cameraManagerScript;
 
     void Start() {
-        cameraManagerScript = cameraManager.GetComponent<CameraManager>();
+        cameraManagerScript = cameraManager.GetComponent<CameraManagerTimeline>();
     }
 
     private void OnTriggerEnter(Collider collider) {

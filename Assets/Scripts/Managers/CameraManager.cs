@@ -1,41 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.Playables;
+using DG.Tweening;
 
-public class CameraManager : MonoBehaviour {
-    public CinemachineVirtualCamera cam;
-    public PlayableDirector timeline;
-    public PlayableDirector timeline2;
+public class CameraManager : Singleton<CameraManager>
+{
 
-    private void Start() {
-
-        // StartCoroutine("StartTimeline");
+    public CinemachineMixingCamera introCam;
+    public CinemachineMixingCamera closeRightCam;
+    public CinemachineMixingCamera backCam;
+    public const int MaxCameras = 8;
+    
+    public enum CamName
+    {
+        Intro,
+        CloseRight,
+        Behind
     }
 
-    public void StartTimeline(string Movement) {
-        switch (Movement) {
-            case "cam1":
-                Debug.Log("cam1");
-                timeline.Play();
+    public void ChangeCameraView(CamName camName)
+    {
+        switch (camName)
+        {
+            case CamName.Intro:
+                introCam.enabled = true;
+                closeRightCam.enabled = false;
                 break;
-            case "cam2":
-                Debug.Log("cam2");
-                timeline2.Play();
+            case CamName.CloseRight:
+                introCam.enabled = false;
+                closeRightCam.enabled = true;
                 break;
-
+            case CamName.Behind:
+                closeRightCam.enabled = false;
+                backCam.enabled = true;
+                break;
             default:
+                Debug.Log("DEFAULT CAMERA");
                 break;
         }
-    }
-
-    // IEnumerator StartTimeline(){
-    //     yield return new WaitForSeconds(3f);
-    //     timeline.Play();
-    // }
-
-    void Update() {
-
     }
 }
