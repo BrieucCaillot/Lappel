@@ -20,7 +20,24 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         playerAnim = player.GetComponent<Animator>();
-        rigidBody = player.GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
+    }
+    
+    void Update()
+    {
+        Jump();
+    }
+    
+    private void FixedUpdate()
+    {
+        if (GameManager.Instance.isPlayable)
+        {
+            Move();
+        }
+        else
+        {
+            AutoMove();
+        }
     }
 
     private void Jump()
@@ -65,26 +82,13 @@ public class PlayerManager : MonoBehaviour
         rigidBody.MovePosition(newPosition);
     }
 
-    void Update()
-    {
-        Jump();
-    }
-    
-
-    private void FixedUpdate()
-    {
-        if (GameManager.Instance.isPlayable)
-        {
-            Move();
-        }
-        else
-        {
-            AutoMove();
-        }
-    }
-
     private void OnTriggerEnter(Collider collider)
     {
+        Debug.Log(collider.name);
+        if (collider.name == "Path Collider")
+        {
+            Debug.Log("PATH COLLIDER TOUCHED");
+        }
         if (collider.tag == "Bosse")
         {
             print("OKKKKK");

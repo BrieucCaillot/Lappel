@@ -5,21 +5,28 @@ using UnityEngine;
 
 public class PenguinController : MonoBehaviour
 {
+    [Range(0, 10)]
+    [SerializeField] private float speed = 10f;
+
+    private Rigidbody rigidBody;
 
     private void Start()
     {
+        rigidBody = GetComponent<Rigidbody>();
         RandomRotation();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         AutoMove();
     }
 
     private void AutoMove()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * 10f);
+        Vector3 movement = Vector3.forward * speed * Time.fixedDeltaTime;
+        Vector3 newPosition = rigidBody.position + rigidBody.transform.TransformDirection(movement);
+        rigidBody.MovePosition(newPosition);
+        // transform.Translate(Vector3.forward * Time.deltaTime * 10f);
     }
 
     private void RandomRotation()
