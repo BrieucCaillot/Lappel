@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scene.unity
     guid: afdbb0148494943818849486140082e6
+  - enabled: 0
+    path: Assets/Scenes/Main Scene/Main Scene Core.unity
+    guid: 6c626488667854f4aa3551d3db69d92d
+  - enabled: 0
+    path: Assets/Scenes/Main Scene/Main Scene Environment.unity
+    guid: c34cda418544341e3a6683299a7052f6
   - enabled: 1
     path: Assets/Scenes/Banquise Scene.unity
     guid: c3efaa224d5cc6e4298f4c8d2975770c
