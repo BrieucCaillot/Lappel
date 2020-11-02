@@ -18,7 +18,7 @@ public class MainSceneManager : MonoBehaviour
 
     public static void Play()
     {
-        Debug.Log("PLAY");
+        Debug.Log("MAIN SCENE PLAY");
         GameManager.Instance.isPlayable = true;
         UIManager.Instance.HideIntro();
         CameraManager.Instance.ChangeCameraView(CameraManager.CamName.CloseRight);

@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Skydome_Classic_Trees
-  m_Shader: {fileID: -6465566751694194690, guid: df186589414ca14418bc8038a4916f76,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: df186589414ca14418bc8038a4916f76, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -82,7 +81,7 @@ Material:
     - _ZWrite: 0
     - __dirty: 1
     m_Colors:
-    - Color_C387573F: {r: 0.99581814, g: 1, b: 0.7971698, a: 1}
+    - Color_C387573F: {r: 0.79607844, g: 0.81591886, b: 1, a: 1}
     - Color_F09C8EBB: {r: 0.08962262, g: 0.59253925, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 0.353}
     - _Color0: {r: 0.22794122, g: 0.778, b: 0.96593857, a: 0}
@@ -90,3 +89,4 @@ Material:
     - _ColorTop: {r: 0, g: 0.7103448, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
