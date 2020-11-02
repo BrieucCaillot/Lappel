@@ -5,7 +5,9 @@ using System.Collections;
 
 public class GameManager : Singleton<GameManager>
 {
+    public bool pressedSpace = false; 
     public bool isPlayable = false; 
+    public bool introShowed = false; 
 
     void Start()
     {
@@ -15,10 +17,11 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        if (isPlayable) return;
+        if (pressedSpace || !introShowed) return;
         if (Input.GetKey(KeyCode.Space))
         {
-            isPlayable = true;
+            Debug.Log("PRESSED SPACE");
+            pressedSpace = true;
             MainSceneManager.Play();
         }
     }
@@ -27,12 +30,5 @@ public class GameManager : Singleton<GameManager>
     {
         yield return new WaitForSeconds(3f);
         UIManager.Instance.ShowIntro();
-        CameraManager.Instance.ChangeCameraView(CameraManager.CamName.Intro);
-        
-        // yield return new WaitForSeconds(3f);
-        // CameraManager.Instance.ChangeCameraView(CameraManager.CamName.CloseRight);
-        //
-        // yield return new WaitForSeconds(3f);
-        // CameraManager.Instance.ChangeCameraView(CameraManager.CamName.Behind);
     }
 }

@@ -21,6 +21,5 @@ public class MainSceneManager : MonoBehaviour
         Debug.Log("MAIN SCENE PLAY");
         GameManager.Instance.isPlayable = true;
         UIManager.Instance.HideIntro();
-        CameraManager.Instance.ChangeCameraView(CameraManager.CamName.CloseRight);
     }
 }

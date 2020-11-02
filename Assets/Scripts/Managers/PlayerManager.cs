@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     
     void Update()
     {
-        Jump();
+        // Jump();
     }
     
     private void FixedUpdate()
@@ -68,11 +68,6 @@ public class PlayerManager : MonoBehaviour
         rigidBody.MoveRotation(rigidBody.rotation * newRotation);
     }
     
-    private bool isGrounded()
-    {
-        return Physics.Raycast(transform.position, Vector3.down,  jumpRaycastDistance);
-    }
-    
     private void AutoMove()
     {
         playerAnim.SetFloat("vertical", 1);
@@ -80,6 +75,16 @@ public class PlayerManager : MonoBehaviour
         Vector3 movement = Vector3.forward * speed * Time.fixedDeltaTime;
         Vector3 newPosition = rigidBody.position + rigidBody.transform.TransformDirection(movement);
         rigidBody.MovePosition(newPosition);
+    }
+    
+    private bool isGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down,  jumpRaycastDistance);
+    }
+
+    private void Rotate360()
+    {
+        
     }
 
     private void OnTriggerEnter(Collider collider)

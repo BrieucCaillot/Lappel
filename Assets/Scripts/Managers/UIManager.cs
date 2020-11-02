@@ -21,11 +21,12 @@ public class UIManager : Singleton<UIManager>
     public void ShowIntro()
     {
         Logo.DOFade(1, duration);
-        PressSpace.DOFade(1, duration);
+        PressSpace.DOFade(1, duration).OnComplete(() => GameManager.Instance.introShowed = true);
     }
     
     public void HideIntro()
     {
+        if (!GameManager.Instance.introShowed) return;
         Logo.DOFade(0, duration);
         PressSpace.DOFade(0, duration);
     }
