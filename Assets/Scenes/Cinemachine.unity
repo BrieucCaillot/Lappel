@@ -156,7 +156,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 11
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 284248927}
   m_Follow: {fileID: 284248927}
@@ -182,7 +182,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22609114}
-  m_LocalRotation: {x: 0.22975291, y: -0.0000000187227, z: 0.0000000044198294, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: 0.00000001872269, z: -0.000000004419828, w: 0.973249}
   m_LocalPosition: {x: 0, y: 5.5, z: -17.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -335,7 +335,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90778145}
-  m_LocalRotation: {x: 0.22975291, y: -0.0000000187227, z: 0.0000000044198294, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: 0.00000001872269, z: -0.000000004419828, w: 0.973249}
   m_LocalPosition: {x: 0, y: 5.5, z: -17.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -794,9 +794,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92168329eb6d6f846942cc19cff9e795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  timeline: {fileID: 0}
-  timeline2: {fileID: 0}
+  cam: {fileID: 22609115}
+  timeline: {fileID: 2078475594}
+  timeline2: {fileID: 1840442450}
 --- !u!4 &1223762116
 Transform:
   m_ObjectHideFlags: 0
@@ -931,13 +931,15 @@ PlayableDirector:
   m_GameObject: {fileID: 1840442449}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: ba8bb48a3fceab84b87ea594ad416ee2, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 7415e44a23210b645acc6a3f7b1bb452, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 821594369858171266, guid: ba8bb48a3fceab84b87ea594ad416ee2, type: 2}
+    value: {fileID: 90778149}
+  - key: {fileID: 821594369858171266, guid: 7415e44a23210b645acc6a3f7b1bb452, type: 2}
     value: {fileID: 90778149}
   m_ExposedReferences:
     m_References:
