@@ -30,12 +30,12 @@ public class PlayerManager : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (GameManager.Instance.isPlayable)
+        if (GameManager.Instance.pressedSpace)
         {
-            Move();
+            if (GameManager.Instance.canRotateIntro) Rotate180();
+            if (GameManager.Instance.canMove) Move();
         }
-        else
-        {
+        else {
             AutoMove();
         }
     }
@@ -82,9 +82,16 @@ public class PlayerManager : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down,  jumpRaycastDistance);
     }
 
-    private void Rotate360()
+    private void Rotate180()
     {
-        
+        Vector3 eulerAngle180= new Vector3(0, 180, 0);
+        Quaternion newRotation = Quaternion.Euler(eulerAngle180  * Time.deltaTime);
+        rigidBody.MoveRotation(rigidBody.rotation * newRotation);
+        if (rigidBody.rotation.y == 1)
+        {
+            GameManager.Instance.canRotateIntro = false;
+            GameManager.Instance.canMove = true;
+        }
     }
 
     private void OnTriggerEnter(Collider collider)

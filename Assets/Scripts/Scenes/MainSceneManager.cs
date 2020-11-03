@@ -15,8 +15,8 @@ public class MainSceneManager : MonoBehaviour {
     public static void Play()
     {
         Debug.Log("MAIN SCENE PLAY");
-        GameManager.Instance.isPlayable = true;
         UIManager.Instance.HideIntro();
         CameraManagerTimeline.Instance.StartTimeline("introToDefault");
+        GameManager.Instance.canRotateIntro = true;
     }
 }

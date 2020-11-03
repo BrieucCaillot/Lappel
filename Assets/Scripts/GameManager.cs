@@ -6,7 +6,8 @@ using System.Collections;
 public class GameManager : Singleton<GameManager>
 {
     public bool pressedSpace = false; 
-    public bool isPlayable = false; 
+    public bool canMove = false; 
+    public bool canRotateIntro = false; 
     public bool introShowed = false; 
 
     void Start()
@@ -20,7 +21,6 @@ public class GameManager : Singleton<GameManager>
         if (pressedSpace || !introShowed) return;
         if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("PRESSED SPACE");
             pressedSpace = true;
             MainSceneManager.Play();
         }
