@@ -14,7 +14,7 @@ public class PenguinController : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        InvokeRepeating("RandomRotation", 0.01f, 5);
+        InvokeRepeating("RandomRotation", 0.01f, -1);
     }
 
     void FixedUpdate()

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float rotationRate = 360;
 
     private Animator playerAnim;
-    private Rigidbody rigidBody;
+    private static Rigidbody rigidBody;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,12 @@ public class PlayerManager : MonoBehaviour
     
     private void FixedUpdate()
     {
+        if (GameManager.Instance.DebugMode)
+        {
+            Move();
+            return;
+        }
+        
         if (GameManager.Instance.pressedSpace)
         {
             if (GameManager.Instance.canRotateIntro) Rotate180();
@@ -94,16 +101,22 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public static Vector3 GetPosition()
+    {
+        return rigidBody.position;
+    }
+
     private void OnTriggerEnter(Collider collider)
     {
         Debug.Log(collider.name);
-        if (collider.name == "Path Collider")
+        switch (collider.name)
         {
-            Debug.Log("PATH COLLIDER TOUCHED");
-        }
-        if (collider.tag == "Bosse")
-        {
-            print("OKKKKK");
+            case "Path Collider":
+                Debug.Log("PATH COLLIDER TOUCHED");
+                break;
+            case "CREVASSE":
+                Debug.Log("CREVASSE");
+                break;
         }
     }
 }

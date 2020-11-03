@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainSceneManager : MonoBehaviour {
-
-    public GameObject loopObj;
+    
     void Start() {
         //ScenesManager.Instance.LoadScenes("Main Scene Environment", true);
         //ScenesManager.Instance.LoadScenes("Main Scene Core", true);

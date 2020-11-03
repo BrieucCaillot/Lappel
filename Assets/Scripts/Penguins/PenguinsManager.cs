@@ -11,13 +11,8 @@ public class PenguinsManager : Singleton<PenguinsManager>
     // Start is called before the first frame update
     void Start()
     {
+        if (GameManager.Instance.DebugMode) return; 
         InstantiatePenguinsLocations();
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void InstantiatePenguinsLocations()

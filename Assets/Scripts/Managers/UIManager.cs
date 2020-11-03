@@ -14,12 +14,14 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
+        if (GameManager.Instance.DebugMode) return;
         Logo.DOFade(0, 0);
         PressSpace.DOFade(0, 0);
     }
 
     public void ShowIntro()
     {
+        if (GameManager.Instance.DebugMode) return;
         Logo.DOFade(1, duration);
         PressSpace.DOFade(1, duration).OnComplete(() => GameManager.Instance.introShowed = true);
     }

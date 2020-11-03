@@ -5,6 +5,7 @@ using System.Collections;
 
 public class GameManager : Singleton<GameManager>
 {
+    public bool DebugMode = false;
     public bool pressedSpace = false; 
     public bool canMove = false; 
     public bool canRotateIntro = false; 
