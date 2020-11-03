@@ -4,25 +4,28 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class CameraManagerTimeline : MonoBehaviour {
-    public CinemachineVirtualCamera cam;
-    public PlayableDirector timeline;
-    public PlayableDirector timeline2;
+public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
+    public PlayableDirector introToDefaultTimeline;
+    // public PlayableDirector timeline2;
 
-    private void Start() {
+    // private void Start() {
+    //     StartCoroutine("StartTimeline");
+    // }
 
-        // StartCoroutine("StartTimeline");
-    }
+    //     IEnumerator StartTimeline(){
+    //     yield return new WaitForSeconds(3f);
+    //     timeline.Play();
+    // }
 
     public void StartTimeline(string Movement) {
         switch (Movement) {
-            case "cam1":
+            case "introToDefault":
                 Debug.Log("cam1");
-                timeline.Play();
+                introToDefaultTimeline.Play();
                 break;
             case "cam2":
                 Debug.Log("cam2");
-                timeline2.Play();
+                // timeline2.Play();
                 break;
 
             default:
@@ -30,12 +33,6 @@ public class CameraManagerTimeline : MonoBehaviour {
         }
     }
 
-    // IEnumerator StartTimeline(){
-    //     yield return new WaitForSeconds(3f);
-    //     timeline.Play();
-    // }
 
-    void Update() {
 
-    }
 }
