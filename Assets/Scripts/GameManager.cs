@@ -1,50 +1,34 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameManager : Singleton<GameManager>
 {
-    public int sceneIndex = 0;
+    public bool pressedSpace = false; 
     public bool isPlayable = false; 
+    public bool introShowed = false; 
 
     void Start()
     {
-        // UIManager.Instance.HideIntro();
-        // StartCoroutine(SwitchScene());
+        StartCoroutine("LetsGo");
         // AudioManager.Instance.PlaySound(AudioManager.Sound.Whatever);
     }
 
-    public void SwitchScene()
+    private void Update()
     {
-        sceneIndex++;
-        
-        switch (sceneIndex)
+        if (pressedSpace || !introShowed) return;
+        if (Input.GetKey(KeyCode.Space))
         {
-            case 0:
-                SceneManager.LoadScene("Main Scene");
-                break;
-            case 1:
-                SceneManager.LoadScene("Banquise Scene");
-                break;
-            case 2:
-                SceneManager.LoadScene("Montagne Scene");
-                break;
-            case 3:
-                SceneManager.LoadScene("Eau Scene");
-                break;
-            case 4:
-                SceneManager.LoadScene("Dinosaure Scene");
-                break;
-            case 5:
-                SceneManager.LoadScene("Aurore Scene");
-                break;
-            default:
-                SceneManager.LoadScene("Main Scene");
-                break;
+            Debug.Log("PRESSED SPACE");
+            pressedSpace = true;
+            MainSceneManager.Play();
         }
     }
 
-    public void IntroSceneCompleted() {
-        Debug.Log("INTRO SCENE COMPLETED");
+    IEnumerator LetsGo()
+    {
+        yield return new WaitForSeconds(3f);
+        UIManager.Instance.ShowIntro();
     }
 }
