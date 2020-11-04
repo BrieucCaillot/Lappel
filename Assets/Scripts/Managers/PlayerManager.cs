@@ -98,5 +98,8 @@ public class PlayerManager : MonoBehaviour
         {
             print("OKKKKK");
         }
+        if(collider.name == "defaultToOutroCollider"){
+            CameraManagerTimeline.Instance.StartTimeline("defaultToOutro");
+        }
     }
 }
