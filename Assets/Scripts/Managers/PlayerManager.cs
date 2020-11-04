@@ -112,10 +112,9 @@ public class PlayerManager : MonoBehaviour
         switch (collider.name)
         {
             case "Path Collider":
-                Debug.Log("PATH COLLIDER TOUCHED");
                 break;
-            case "CREVASSE":
-                Debug.Log("CREVASSE");
+            case "CREVASSE WALL":
+                GameEvents.current.PlayerCanInteract();
                 break;
         }
     }

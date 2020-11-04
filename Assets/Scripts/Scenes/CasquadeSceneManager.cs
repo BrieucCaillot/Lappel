@@ -9,14 +9,25 @@ public class CasquadeSceneManager : MonoBehaviour
     [SerializeField]
     private GameObject interactionZone;
 
+    private void Start()
+    {
+        GameEvents.current.onPlayerCanInteract += onPlayerCanInteract;
+    }
+
     private void Update()
     {
-        CheckDistancePlayerCrevasse();
+       // CheckDistancePlayerCrevasse();
     }
 
     public static void Play()
     {
         Debug.Log("CASQUADE SCENE PLAY");
+    }
+
+    private void onPlayerCanInteract()
+    {
+        Debug.Log("ON PLAYER CAN INTERACT");
+        interactionZone.transform.position = Vector3.Lerp(interactionZone.transform.position, Vector3.up * 5, 0.5f);
     }
 
     public void CheckDistancePlayerCrevasse()
