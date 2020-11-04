@@ -42,9 +42,6 @@ public class PlayerManager : MonoBehaviour
             if (GameManager.Instance.canRotateIntro) Rotate180();
             if (GameManager.Instance.canMove) Move();
         }
-        else {
-            AutoMove();
-        }
     }
 
     private void Jump()

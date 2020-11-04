@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CasquadeSceneManager : MonoBehaviour
+public class CascadeSceneManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject interactionZone;

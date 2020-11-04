@@ -31,7 +31,7 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
     }
 
     private void Update() {
-        Debug.Log(defaultToOutroTimeline.duration);
+        // Debug.Log(defaultToOutroTimeline.duration);
     }
 
 
