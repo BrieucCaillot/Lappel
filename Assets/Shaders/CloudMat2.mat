@@ -35,7 +35,7 @@ Material:
     - Vector1_E502573B: 150
     - Vector1_F4059B8F: 30
     m_Colors:
-    - Color_58B36FA2: {r: 0.49411765, g: 0.6745098, b: 1, a: 0}
+    - Color_58B36FA2: {r: 0.49411762, g: 0.6745098, b: 1, a: 0}
     - Color_C9E01EB: {r: 0.19607843, g: 0.40784314, b: 0.81960785, a: 0}
     - Vector4_C43B424F: {r: 0, g: 1, b: -0.3, a: 2.7}
     - Vector4_F4396F31: {r: 1, g: 0, b: 0, a: 90}

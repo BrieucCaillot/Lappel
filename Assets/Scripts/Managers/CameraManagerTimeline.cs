@@ -6,31 +6,32 @@ using UnityEngine.Playables;
 
 public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
     public PlayableDirector introToDefaultTimeline;
-    // public PlayableDirector timeline2;
+    public PlayableDirector defaultToOutroTimeline;
 
-    // private void Start() {
-    //     StartCoroutine("StartTimeline");
-    // }
 
-    //     IEnumerator StartTimeline(){
-    //     yield return new WaitForSeconds(3f);
-    //     timeline.Play();
-    // }
 
     public void StartTimeline(string Movement) {
         switch (Movement) {
             case "introToDefault":
-                Debug.Log("cam1");
                 introToDefaultTimeline.Play();
                 break;
-            case "cam2":
-                Debug.Log("cam2");
-                // timeline2.Play();
+            case "defaultToOutro":
+                defaultToOutroTimeline.Play();
+                StartCoroutine("startTransitionToEnv2");
                 break;
 
             default:
                 break;
         }
+    }
+
+    IEnumerator startTransitionToEnv2(){
+        yield return new WaitForSeconds(3f);
+
+    }
+
+    private void Update() {
+        Debug.Log(defaultToOutroTimeline.duration);
     }
 
 

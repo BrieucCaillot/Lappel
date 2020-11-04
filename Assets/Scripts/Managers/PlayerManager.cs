@@ -117,5 +117,8 @@ public class PlayerManager : MonoBehaviour
                 GameEvents.current.PlayerCanInteract();
                 break;
         }
+        if(collider.name == "defaultToOutroCollider"){
+            CameraManagerTimeline.Instance.StartTimeline("defaultToOutro");
+        }
     }
 }
