@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scripts/Scenes/CascadeSceneManager.cs.meta
 guid: b189a8bfa23bcaa4a89cf2429be69a17
+=======
+guid: d52802cc902608e48b95be7bc2d9c514
+>>>>>>> master:Assets/Scripts/Penguins/ManchotAgent.cs.meta
+=======
+guid: b189a8bfa23bcaa4a89cf2429be69a17
+>>>>>>> master
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

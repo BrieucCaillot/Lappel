@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         playerAnim = player.GetComponent<Animator>();
-        rigidBody = GetComponent<Rigidbody>();
+        rigidBody = player.GetComponent<Rigidbody>();
     }
 
     void Update() {
