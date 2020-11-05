@@ -14,12 +14,12 @@ public class PenguinController : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        InvokeRepeating("RandomRotation", 0.01f, -1);
+        InvokeRepeating("RandomRotation", 2f, 10);
     }
 
     void FixedUpdate()
     {
-        AutoMove();
+        // AutoMove();
     }
 
     private void AutoMove()
@@ -27,16 +27,16 @@ public class PenguinController : MonoBehaviour
         Vector3 movement = Vector3.forward * speed * Time.fixedDeltaTime;
         Vector3 newPosition = rigidBody.position + rigidBody.transform.TransformDirection(movement);
         rigidBody.MovePosition(newPosition);
-        // transform.Translate(Vector3.forward * Time.deltaTime * 10f);
     }
 
     private void RandomRotation()
     {
-        float rotationY = transform.rotation.y > 0
+        float rotationY = rigidBody.rotation.y > 0
             ? UnityEngine.Random.Range(-maxYRot, 0)
             : UnityEngine.Random.Range(0, maxYRot);
         
         transform.Rotate(transform.rotation.x, rotationY, transform.rotation.z);
+        Debug.Log("RANDOM ROTATION " + transform.rotation);
     }
 
     private void OnCollisionEnter(Collision collision)

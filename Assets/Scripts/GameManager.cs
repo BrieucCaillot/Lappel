@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
 
     IEnumerator LetsGo()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(7f);
         UIManager.Instance.ShowIntro();
     }
 }

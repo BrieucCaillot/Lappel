@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         playerAnim = player.GetComponent<Animator>();
-        rigidBody = GetComponent<Rigidbody>();
+        rigidBody = player.GetComponent<Rigidbody>();
     }
     
     void Update()
