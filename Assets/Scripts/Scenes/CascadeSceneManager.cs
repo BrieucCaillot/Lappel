@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CascadeSceneManager : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class CascadeSceneManager : MonoBehaviour
 
     private void Start()
     {
-        GameEvents.current.onPlayerCanInteract += onPlayerCanInteract;
+        // GameEvents.current.onPlayerCanInteract += onPlayerCanInteract;
     }
 
     private void Update()
@@ -21,7 +20,8 @@ public class CascadeSceneManager : MonoBehaviour
 
     public static void Play()
     {
-        Debug.Log("CASQUADE SCENE PLAY");
+        Debug.Log("CASCADE SCENE PLAY");
+        PlayerManager.Instance.ResetPosition();
     }
 
     private void onPlayerCanInteract()
@@ -32,6 +32,6 @@ public class CascadeSceneManager : MonoBehaviour
 
     public void CheckDistancePlayerCrevasse()
     {
-        Debug.Log(Vector3.Distance(PlayerManager.GetPosition(), interactionZone.transform.position));
+        Debug.Log(Vector3.Distance(PlayerManager.Instance.GetPosition(), interactionZone.transform.position));
     }
 }

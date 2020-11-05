@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
     public PlayableDirector introToDefaultTimeline;
@@ -19,7 +20,7 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
                 break;
             case "defaultToOutro":
                 defaultToOutroTimeline.Play();
-                StartCoroutine("startTransitionToEnv2");
+                StartCoroutine("StartTransitionToEnv2");
                 break;
 
             default:
@@ -27,11 +28,9 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
         }
     }
 
-    IEnumerator startTransitionToEnv2() {
-        yield return new WaitForSeconds(3f);
-
+    IEnumerator StartTransitionToEnv2() {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadSceneAsync("Cascade Scene");
+        CascadeSceneManager.Play();
     }
-
-    private void Update() { }
-
 }

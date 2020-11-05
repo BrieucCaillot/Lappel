@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerManager : MonoBehaviour {
+public class PlayerManager : Singleton<PlayerManager> {
     [SerializeField] private GameObject player = null;
 
     [Range(0, 50)]
@@ -17,9 +17,10 @@ public class PlayerManager : MonoBehaviour {
     private static Rigidbody rigidBody;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         playerAnim = player.GetComponent<Animator>();
-        rigidBody = player.GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     void Update() {
@@ -84,15 +85,23 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
-    public static Vector3 GetPosition() {
+    public void ResetPosition()
+    {
+        SetPosition(new Vector3(0, 0, 0));
+    }
+
+    public Vector3 GetPosition() {
         return rigidBody.position;
+    }
+
+    public static void SetPosition(Vector3 destination)
+    {
+        rigidBody.position = destination;
     }
 
     private void OnTriggerEnter(Collider collider) {
         Debug.Log(collider.name);
         switch (collider.name) {
-            case "Path Collider":
-                break;
             case "CREVASSE WALL":
                 GameEvents.current.PlayerCanInteract();
                 break;
@@ -108,8 +117,5 @@ public class PlayerManager : MonoBehaviour {
             default:
                 break;
         }
-
-
-
     }
 }
