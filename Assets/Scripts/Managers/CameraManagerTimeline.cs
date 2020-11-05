@@ -7,13 +7,15 @@ using UnityEngine.Playables;
 public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
     public PlayableDirector introToDefaultTimeline;
     public PlayableDirector defaultToOutroTimeline;
-
-
+    public PlayableDirector defaultToSides;
 
     public void StartTimeline(string Movement) {
         switch (Movement) {
             case "introToDefault":
                 introToDefaultTimeline.Play();
+                break;
+            case "defaultToSides":
+                defaultToSides.Play();
                 break;
             case "defaultToOutro":
                 defaultToOutroTimeline.Play();
@@ -25,15 +27,11 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
         }
     }
 
-    IEnumerator startTransitionToEnv2(){
+    IEnumerator startTransitionToEnv2() {
         yield return new WaitForSeconds(3f);
 
     }
 
-    private void Update() {
-        // Debug.Log(defaultToOutroTimeline.duration);
-    }
-
-
+    private void Update() { }
 
 }
