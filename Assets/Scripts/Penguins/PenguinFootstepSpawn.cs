@@ -19,6 +19,7 @@ public class PenguinFootstepSpawn : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(leftFootLocation.position, leftFootLocation.forward, out hit))
         {
+            audioSources[Random.Range(0, audioSources.Length - 1)].Play();
             Instantiate(leftFootprint, hit.point + hit.normal * footPrintOffset, Quaternion.LookRotation(hit.normal, leftFootLocation.up));
         }
     }
