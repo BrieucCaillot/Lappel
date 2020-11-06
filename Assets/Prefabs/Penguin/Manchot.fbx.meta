@@ -9,6 +9,9 @@ ModelImporter:
   - first:
       74: -4943908551574089331
     second: armature_manchot|walk_normal
+  - first:
+      74: 7648830098132709461
+    second: armature_manchot|walk_normal (1)
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -38,11 +41,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: armature_manchot|idle_normal
-      takeName: armature_manchot|idle_normal
+      name: armature_manchot|walk_normal (1)
+      takeName: armature_manchot|walk_normal
       internalID: 0
       firstFrame: 0
-      lastFrame: 1000
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -61,17 +64,31 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.5030913
+        functionName: RightFootstep
+        data: 
+        objectReferenceParameter: {fileID: 5298737118336480038, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9947507
+        functionName: LeftFootstep
+        data: 
+        objectReferenceParameter: {fileID: 5298737118336480038, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: armature_manchot|walk_normal
-      takeName: armature_manchot|walk_normal
+      name: armature_manchot|idle_normal
+      takeName: armature_manchot|idle_normal
       internalID: 0
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 1000
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
