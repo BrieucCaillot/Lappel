@@ -15,22 +15,18 @@ public class PenguinFootsteps : MonoBehaviour
     public AudioSource leftFootAudioSource;
     public AudioSource rightFootAudioSource;
     
-    void LeftFootstep()
+    public void LeftFootstep()
     {
-        leftFootAudioSource.Play();
+        // leftFootAudioSource.Play();
         RaycastHit hit;
-        if (Physics.Raycast(leftFootLocation.position, leftFootLocation.forward, out hit))
-        {
-            Instantiate(leftFootprint, hit.point + hit.normal * footPrintOffset, Quaternion.LookRotation(hit.normal, leftFootLocation.up));
-        }
+        Debug.Log("Left foot " + Physics.Raycast(leftFootLocation.position, leftFootLocation.forward, out hit));
+        Instantiate(leftFootprint, hit.point + hit.normal * footPrintOffset, Quaternion.LookRotation(hit.normal, leftFootLocation.up));
     }
-    void RightFootstep()
+    public void RightFootstep()
     {
-        rightFootAudioSource.Play();
+        // rightFootAudioSource.Play();
         RaycastHit hit;
-        if (Physics.Raycast(rightFootLocation.position, rightFootLocation.forward, out hit))
-        {
-            Instantiate(rightFootprint, hit.point + hit.normal * footPrintOffset, Quaternion.LookRotation(hit.normal, rightFootLocation.up));
-        }
+        Debug.Log("Right foot " + Physics.Raycast(rightFootLocation.position, rightFootLocation.forward, out hit));
+        Instantiate(rightFootprint, hit.point + hit.normal * footPrintOffset, Quaternion.LookRotation(hit.normal, rightFootLocation.up));
     }
 }
