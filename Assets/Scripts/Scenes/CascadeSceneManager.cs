@@ -5,33 +5,33 @@ using UnityEngine;
 
 public class CascadeSceneManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject interactionZone;
+    [SerializeField] 
+    private GameObject interactionJump = null;
+    [SerializeField] 
+    private GameObject colliders = null;
 
-    private void Start()
-    {
-        // GameEvents.current.onPlayerCanInteract += onPlayerCanInteract;
-    }
-
-    private void Update()
-    {
-       // CheckDistancePlayerCrevasse();
-    }
+    private bool canInteract = false;
+    // private bool playedAnim = false;
 
     public static void Play()
     {
         Debug.Log("CASCADE SCENE PLAY");
         PlayerManager.Instance.ResetPosition();
+        PlayerManager.Instance.SetRotation(new Vector3(0, -170, 0));
     }
 
-    private void onPlayerCanInteract()
+    private void Update()
     {
-        Debug.Log("ON PLAYER CAN INTERACT");
-        interactionZone.transform.position = Vector3.Lerp(interactionZone.transform.position, Vector3.up * 5, 0.5f);
-    }
+        // if (playedAnim) return;    
+        if (InteractionManager.inInteractionZone)
+        {
+            if (Input.GetKeyDown(KeyCode.Space)) canInteract = true;
 
-    public void CheckDistancePlayerCrevasse()
-    {
-        Debug.Log(Vector3.Distance(PlayerManager.Instance.GetPosition(), interactionZone.transform.position));
+            if (!canInteract) return;
+            colliders.SetActive(false);
+            
+            // Vector3 playerPos = Vector3.Lerp(PlayerManager.Instance.GetPosition(), interactionJump.transform.position, 0.6f * Time.deltaTime);
+            PlayerManager.Instance.SetPosition(interactionJump.transform.position);
+        }
     }
 }
