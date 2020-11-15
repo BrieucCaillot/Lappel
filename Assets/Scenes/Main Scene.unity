@@ -6086,7 +6086,7 @@ GameObject:
   - component: {fileID: 714438416}
   - component: {fileID: 714438417}
   m_Layer: 0
-  m_Name: defaultToSidesCollider
+  m_Name: defaultToSides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16589,7 +16589,7 @@ GameObject:
   - component: {fileID: 1621029254}
   - component: {fileID: 1621029253}
   m_Layer: 0
-  m_Name: defaultToOutroCollider
+  m_Name: defaultToOutro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

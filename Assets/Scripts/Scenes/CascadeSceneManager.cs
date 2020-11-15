@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class CascadeSceneManager : MonoBehaviour
 {
+    [SerializeField] private InteractionManager interactionManagerCrevasse; 
+    [SerializeField] private InteractionManager interactionManagerCascade; 
+    
     [SerializeField] 
     private GameObject interactionJump = null;
     [SerializeField] 
@@ -13,7 +16,8 @@ public class CascadeSceneManager : MonoBehaviour
 
     private void Start()
     {
-        InteractionManager.onPlayerCanInteract += CanInteract;
+        interactionManagerCrevasse.onPlayerCanInteract += OnInteractCrevasse;
+        interactionManagerCascade.onPlayerCanInteract += OnInteractCascade;
     }
 
     public static void Play()
@@ -24,12 +28,19 @@ public class CascadeSceneManager : MonoBehaviour
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
     }
 
-    private void CanInteract()
+    private void OnInteractCrevasse()
     {
-        Debug.Log("FROM CASCADE SCENE");
-        
         PlayerManager.Instance.GetRigidbody()
             .DOMove(interactionJump.transform.position, 1f)
-            .OnComplete(() => colliders.SetActive(true));
+            .OnComplete(() =>
+            {
+                colliders.SetActive(true);
+                interactionManagerCrevasse.onPlayerCanInteract -= OnInteractCrevasse;
+            });
+    }
+
+    private void OnInteractCascade()
+    {
+        Debug.Log("OnInteractCascade");
     }
 }

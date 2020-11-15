@@ -6,7 +6,7 @@ LightingSettings:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EauSceneLightingSettings
+  m_Name: Underwater Scene Lighting Settings
   serializedVersion: 2
   m_GIWorkflowMode: 0
   m_EnableBakedLightmaps: 1
