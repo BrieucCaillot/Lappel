@@ -21,7 +21,8 @@ public class InteractionManager : MonoBehaviour
     void Start()
     {
         interactionOn.DOFade(0, 0);
-        onPlayerInInteractionZone += BlinkInteraction;
+        onPlayerInInteractionZone += ShowInteractionOn;
+        onPlayerInInteractionZone += HideInteractionOff;
         
         onPlayerOutInteractionZone += HideInteractionOn;
         onPlayerOutInteractionZone += ShowInteractionOff;
@@ -49,15 +50,6 @@ public class InteractionManager : MonoBehaviour
     {
     
         if (onPlayerCanInteract != null) onPlayerCanInteract();
-    }
-
-    public void BlinkInteraction()
-    {
-
-            InvokeRepeating("ShowInteractionOn", 0f, speed);
-            InvokeRepeating("HideInteractionOn", speed / 2, speed);
-            InvokeRepeating("ShowInteractionOff", speed / 2, speed);
-            InvokeRepeating("HideInteractionOff", 0f, speed);
     }
 
     private void ShowInteractionOn()
