@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
-    public static bool inInteractionZone = false;
+    public static event Action onPlayerInInteractionZone;
+    public static event Action onPlayerOutInteractionZone;
+    public static event Action onPlayerCanInteract;
+    
+    private static bool inInteractionZone = false;
     private float speed = 4f;
-
     [SerializeField]
     private SpriteRenderer interactionOn = null;
     [SerializeField]
@@ -17,18 +21,43 @@ public class InteractionManager : MonoBehaviour
     void Start()
     {
         interactionOn.DOFade(0, 0);
-        BlinkInteraction();
+        onPlayerInInteractionZone += BlinkInteraction;
+        
+        onPlayerOutInteractionZone += HideInteractionOn;
+        onPlayerOutInteractionZone += ShowInteractionOff;
+        onPlayerOutInteractionZone += CancelInvoke;
+    }
+
+    private void Update()
+    {
+        if (inInteractionZone && Input.GetKeyDown(KeyCode.Space)) PlayerCanInteract();
+    }
+
+    public static void PlayerInInteractionZone()
+    {
+        inInteractionZone = true;
+        if (onPlayerInInteractionZone != null) onPlayerInInteractionZone();
+    }
+    
+    public static void PlayerOutInteractionZone()
+    {
+        inInteractionZone = false;
+        if (onPlayerOutInteractionZone != null) onPlayerOutInteractionZone();
+    }
+    
+    public static void PlayerCanInteract()
+    {
+    
+        if (onPlayerCanInteract != null) onPlayerCanInteract();
     }
 
     public void BlinkInteraction()
     {
-        if (inInteractionZone)
-        {
+
             InvokeRepeating("ShowInteractionOn", 0f, speed);
             InvokeRepeating("HideInteractionOn", speed / 2, speed);
             InvokeRepeating("ShowInteractionOff", speed / 2, speed);
             InvokeRepeating("HideInteractionOff", 0f, speed);
-        }
     }
 
     private void ShowInteractionOn()

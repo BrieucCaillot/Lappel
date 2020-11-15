@@ -32,6 +32,16 @@ public class PlayerManager : Singleton<PlayerManager> {
             if (GameManager.Instance.canMove) Move();
         }
     }
+    
+    public Animator GetAnim()
+    {
+        return anim;
+    }
+    
+    public Rigidbody GetRigidbody()
+    {
+        return rigidBody;
+    }
 
     private void Move() {
         float hAxis = Input.GetAxis("Horizontal");
@@ -92,17 +102,11 @@ public class PlayerManager : Singleton<PlayerManager> {
         rigidBody.MoveRotation(Quaternion.Euler(rotation));
     }
 
-    public Animator GetAnim()
-    {
-        return anim;
-    }
-
     private void OnTriggerEnter(Collider collider) {
         Debug.Log(collider.name);
         switch (collider.name) {
             case "Interaction Zone":
-                Debug.Log("Can interact");
-                InteractionManager.inInteractionZone = true;
+                InteractionManager.PlayerInInteractionZone();
                 break;
         }
 
@@ -123,8 +127,7 @@ public class PlayerManager : Singleton<PlayerManager> {
         switch (collider.name)
         {
             case "Interaction Zone":
-                Debug.Log("Cant interact");
-                InteractionManager.inInteractionZone = false;
+                InteractionManager.PlayerOutInteractionZone();
                 break;
             default:
                 break;

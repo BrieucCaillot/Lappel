@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class CascadeSceneManager : MonoBehaviour
@@ -10,28 +11,25 @@ public class CascadeSceneManager : MonoBehaviour
     [SerializeField] 
     private GameObject colliders = null;
 
-    private bool canInteract = false;
-    // private bool playedAnim = false;
+    private void Start()
+    {
+        InteractionManager.onPlayerCanInteract += CanInteract;
+    }
 
     public static void Play()
     {
         Debug.Log("CASCADE SCENE PLAY");
+        
         PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, -170, 0));
     }
 
-    private void Update()
+    private void CanInteract()
     {
-        // if (playedAnim) return;    
-        if (InteractionManager.inInteractionZone)
-        {
-            if (Input.GetKeyDown(KeyCode.Space)) canInteract = true;
-
-            if (!canInteract) return;
-            colliders.SetActive(false);
-            
-            // Vector3 playerPos = Vector3.Lerp(PlayerManager.Instance.GetPosition(), interactionJump.transform.position, 0.6f * Time.deltaTime);
-            PlayerManager.Instance.SetPosition(interactionJump.transform.position);
-        }
+        Debug.Log("FROM CASCADE SCENE");
+        
+        PlayerManager.Instance.GetRigidbody()
+            .DOMove(interactionJump.transform.position, 1f)
+            .OnComplete(() => colliders.SetActive(true));
     }
 }
