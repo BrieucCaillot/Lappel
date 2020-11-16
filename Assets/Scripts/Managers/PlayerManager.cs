@@ -105,29 +105,20 @@ public class PlayerManager : Singleton<PlayerManager> {
     private void OnTriggerEnter(Collider collider) {
         Debug.Log(collider.name);
         switch (collider.name) {
-            case "Interaction Zone":
-                InteractionManager.PlayerInInteractionZone();
+            case "INTERACTION ZONE":
+                collider.transform.parent.GetComponent<InteractionManager>().PlayerInInteractionZone();
                 break;
         }
 
-        switch (collider.name) {
-            case "defaultToOutroCollider":
-                CameraManagerTimeline.Instance.StartTimeline("defaultToOutro");
-                break;
-            case "defaultToSidesCollider":
-                CameraManagerTimeline.Instance.StartTimeline("defaultToSides");
-                break;
-            default:
-                break;
-        }
+        CameraManagerTimeline.Instance.StartTimeline(collider.name);
     }
 
     private void OnTriggerExit(Collider collider)
     {
         switch (collider.name)
         {
-            case "Interaction Zone":
-                InteractionManager.PlayerOutInteractionZone();
+            case "INTERACTION ZONE":
+                collider.transform.parent.GetComponent<InteractionManager>().PlayerOutInteractionZone();
                 break;
             default:
                 break;

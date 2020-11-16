@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
-    public static event Action onPlayerInInteractionZone;
-    public static event Action onPlayerOutInteractionZone;
-    public static event Action onPlayerCanInteract;
+    public event Action onPlayerInInteractionZone;
+    public event Action onPlayerOutInteractionZone;
+    public event Action onPlayerCanInteract;
     
     private static bool inInteractionZone = false;
     private float speed = 4f;
@@ -21,11 +21,11 @@ public class InteractionManager : MonoBehaviour
     void Start()
     {
         interactionOn.DOFade(0, 0);
-        onPlayerInInteractionZone += BlinkInteraction;
+        onPlayerInInteractionZone += ShowInteractionOn;
+        onPlayerInInteractionZone += HideInteractionOff;
         
         onPlayerOutInteractionZone += HideInteractionOn;
         onPlayerOutInteractionZone += ShowInteractionOff;
-        onPlayerOutInteractionZone += CancelInvoke;
     }
 
     private void Update()
@@ -33,31 +33,21 @@ public class InteractionManager : MonoBehaviour
         if (inInteractionZone && Input.GetKeyDown(KeyCode.Space)) PlayerCanInteract();
     }
 
-    public static void PlayerInInteractionZone()
+    public void PlayerInInteractionZone()
     {
         inInteractionZone = true;
         if (onPlayerInInteractionZone != null) onPlayerInInteractionZone();
     }
     
-    public static void PlayerOutInteractionZone()
+    public void PlayerOutInteractionZone()
     {
         inInteractionZone = false;
         if (onPlayerOutInteractionZone != null) onPlayerOutInteractionZone();
     }
     
-    public static void PlayerCanInteract()
+    public void PlayerCanInteract()
     {
-    
         if (onPlayerCanInteract != null) onPlayerCanInteract();
-    }
-
-    public void BlinkInteraction()
-    {
-
-            InvokeRepeating("ShowInteractionOn", 0f, speed);
-            InvokeRepeating("HideInteractionOn", speed / 2, speed);
-            InvokeRepeating("ShowInteractionOff", speed / 2, speed);
-            InvokeRepeating("HideInteractionOff", 0f, speed);
     }
 
     private void ShowInteractionOn()
