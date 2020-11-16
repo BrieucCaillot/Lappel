@@ -3,7 +3,327 @@ guid: ec741077900cd0b49a6ee3d07c6c8ce1
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cailloux_1
+    second: {fileID: 2100000, guid: 0c7ac39f2ca8baf4a89d57dd96d8e73f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cailloux_2
+    second: {fileID: 2100000, guid: 379d0f85609c9ab45928e874820f17f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cailloux_3
+    second: {fileID: 2100000, guid: 7499f1ba2d581dd428fe6f39efa2c7aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_sol_gauche_1
+    second: {fileID: 2100000, guid: c450a801c60b048479524341602f40c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_sol_gauche_2
+    second: {fileID: 2100000, guid: b6505534f2338ab4680250f117d19e24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_sol_gauche_3
+    second: {fileID: 2100000, guid: b1088dcafe95c4c40bbe91c82e99e66c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_sol_gauche_4
+    second: {fileID: 2100000, guid: f5e168cf779b5f548a4809f72cbdbf7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_sol_gauche_5
+    second: {fileID: 2100000, guid: bd8fb8e7f3a953a4f91ef6e848f43f3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glaciers_sol_droite_1
+    second: {fileID: 2100000, guid: 5d7afe954c2aea44f95eba0e92d56317, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glaciers_sol_droite_2
+    second: {fileID: 2100000, guid: b47a5495f6c9fb744b9f8975bc98f06a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glaciers_sol_droite_3
+    second: {fileID: 2100000, guid: 121794cb6d53058418334400f49c4af0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_banquise_1
+    second: {fileID: 2100000, guid: 44da056348515ef4c9161405e2faa94b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_banquise_2
+    second: {fileID: 2100000, guid: d15631627adace944ac4bf039db9f8c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gros_morceau_banquise_1
+    second: {fileID: 2100000, guid: f2d94f40b0e959843826efd1650f6291, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gros_morceau_banquise_2
+    second: {fileID: 2100000, guid: 6107caecbd2c70647b0c7269a2e6e566, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gros_morceau_banquise_3
+    second: {fileID: 2100000, guid: dbc5c1f3bc940b741ae1e4a5edabf59f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_droite_1
+    second: {fileID: 2100000, guid: adb66d03f240a7f40a6be478075c4935, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_droite_2
+    second: {fileID: 2100000, guid: 122c58e746fc50747aa1c6967b72763c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_1
+    second: {fileID: 2100000, guid: 8d425604248e9b34fb4659980e02707c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_2
+    second: {fileID: 2100000, guid: baae1efe26b05f142b76b14546344fbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_3
+    second: {fileID: 2100000, guid: 2e8f9f7d43eb38c47a89ad8a10618195, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_4
+    second: {fileID: 2100000, guid: 60b5eaef32c3c604cb51f70d53276218, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_5
+    second: {fileID: 2100000, guid: f44014d217892564a9520dbb94cce806, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_horizon_1
+    second: {fileID: 2100000, guid: d387d638ab70fae429ef23aec564ea2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_horizon_2
+    second: {fileID: 2100000, guid: 3c1791438b64b6748ba20b48376dcb24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_horizon_3
+    second: {fileID: 2100000, guid: 08e9fa5806467ca49b661fa72baa1a6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_horizon_4
+    second: {fileID: 2100000, guid: ac8988b00215dcb46a75cc3391a9efcc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_horizon_5
+    second: {fileID: 2100000, guid: ab7e6b2ed6fc8eb40ae52101593196c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_horizon_6
+    second: {fileID: 2100000, guid: eceb615afb513cf4ea0046689fc0dd83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_horizon_7
+    second: {fileID: 2100000, guid: 4dc461401644e1a408f3b03c752f2ebf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_horizon_8
+    second: {fileID: 2100000, guid: 915a2bcbc2189854c90e7334291c50dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_horizon_9
+    second: {fileID: 2100000, guid: 262a10ad4d41abb47bef148a365c6c15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moyen_glacier_banquise_1
+    second: {fileID: 2100000, guid: 86513daedd1e0d3429fbb69da39f65f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moyen_glacier_banquise_2
+    second: {fileID: 2100000, guid: fb5ff8fecf7cf47499465d18ae14519d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moyen_morceau_banquise_1
+    second: {fileID: 2100000, guid: 676945bdec766be4699fd0de608760b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moyen_morceau_banquise_2
+    second: {fileID: 2100000, guid: d8149cafd0a1e0c459acc2b572572614, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moyen_morceau_banquise_3
+    second: {fileID: 2100000, guid: 77abf9f665a4cbd4a92a0f9ec251dada, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moyen_morceau_banquise_4
+    second: {fileID: 2100000, guid: 302fac430789e4e41999009757b89416, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_banquise_1
+    second: {fileID: 2100000, guid: 23e29018599d79144bcd87894d3c2820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_banquise_2
+    second: {fileID: 2100000, guid: 430a74871e50bb44e83ecd8be1e3b49a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_banquise_3
+    second: {fileID: 2100000, guid: f50ceada0bad4b147a7ad3aa0934efb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_banquise_4
+    second: {fileID: 2100000, guid: f3b1d3d8ddb06b14daaf0a1473935f83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_banquise_5
+    second: {fileID: 2100000, guid: 79fb5a6b52e812644a2d8e7ab1b99b33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_banquise_6
+    second: {fileID: 2100000, guid: 776a5581d72535b4a869d6664d035746, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_banquise_7
+    second: {fileID: 2100000, guid: 830cf6fa3c9972748ba41af75bc3e11a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_banquise_8
+    second: {fileID: 2100000, guid: 7198891daa869a546872eec0731cd41f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_banquise_9
+    second: {fileID: 2100000, guid: 9ac725ae066a3e540a95883c3891ecbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_morceau_banquise_1
+    second: {fileID: 2100000, guid: e5974415120deab48ae32bc39a1a4ad9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_morceau_banquise_2
+    second: {fileID: 2100000, guid: 5d6e3ac7cae0b5c4294072409a5dff35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_morceau_banquise_3
+    second: {fileID: 2100000, guid: 46c4a6d56b2296c41af1738507341feb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_morceau_banquise_4
+    second: {fileID: 2100000, guid: 9547239f9e772f64f8d5bd0866d91598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_morceau_banquise_5
+    second: {fileID: 2100000, guid: 34f9a991b4bed984e99e4d1f486e4af8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_morceau_banquise_6
+    second: {fileID: 2100000, guid: 08234bc68d106d5449d06588003078a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_morceau_banquise_7
+    second: {fileID: 2100000, guid: da70b0d35d4600c45936f60b0c355446, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_1
+    second: {fileID: 2100000, guid: db3622244ffa4bf45a75e413517a187e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_2
+    second: {fileID: 2100000, guid: a45af5e686d721c4cae9b0f21727002b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_3
+    second: {fileID: 2100000, guid: 274330e7c2b521440b039e6341d90d20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_4
+    second: {fileID: 2100000, guid: e2d2b25847f14a048b26e3375a1b985d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_bas1
+    second: {fileID: 2100000, guid: 178360e634e3b2548b77787bace91b43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_bas2
+    second: {fileID: 2100000, guid: bd70af29b5fe9324dafbd872c8261cbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_cotes1
+    second: {fileID: 2100000, guid: 2fcf728d898e52c49bfff9466e846773, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_cotes2
+    second: {fileID: 2100000, guid: 273a1aeeb04c35e41a398b8978c97932, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut1
+    second: {fileID: 2100000, guid: 20f5294a77ef9d743a2e5e88a37ce17b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut2
+    second: {fileID: 2100000, guid: bdd87be0c60508d4a923a2bb22ea5cd4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
