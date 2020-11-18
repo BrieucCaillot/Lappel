@@ -1,0 +1,306 @@
+fileFormatVersion: 2
+guid: 23ed405f0657e2d438fd8bf56d57f256
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cailloux_1
+    second: {fileID: 2100000, guid: 0aca467eeed512f469ab4f7adfc59d7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cailloux_2
+    second: {fileID: 2100000, guid: c9cd338eb868b994cadbc57ae4e52375, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cailloux_3.001
+    second: {fileID: 2100000, guid: 3546cf413cf259543bb3b8c472253834, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cailloux_4
+    second: {fileID: 2100000, guid: 4a8eefd79a0b9e348a808429488b3272, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cailloux_5
+    second: {fileID: 2100000, guid: a64c37bda91b32446ae790c2024ede6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: colonne_1
+    second: {fileID: 2100000, guid: ddf387b919ba48a46bf6d23460b9f457, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: colonne_2
+    second: {fileID: 2100000, guid: 5b43b4bbc5b75db4bab8827bcf4685c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: colonne_3
+    second: {fileID: 2100000, guid: d9f219fb9aa1b564e975934dae437465, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: colonne_4
+    second: {fileID: 2100000, guid: e227303be2423d14d8eab411ade9e25b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: falaise_marine_devant
+    second: {fileID: 2100000, guid: 0372fb6493709f9499b2c4d4c23bae25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: falaise_marine_enorme
+    second: {fileID: 2100000, guid: b655759d21867404885961e2c91b20e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: falaise_marine_gauche
+    second: {fileID: 2100000, guid: fb09be79395fcf74c982205afce0b373, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_flottant_1
+    second: {fileID: 2100000, guid: b8d87770b4f61a346a16c26d7e3245fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_flottant_2
+    second: {fileID: 2100000, guid: 48cfad3cea532ce44a4ebd117e01a77e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_flottant_3
+    second: {fileID: 2100000, guid: 7a75c8762ef618e43ad0482c2e59667b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_flottant_4
+    second: {fileID: 2100000, guid: f9d70d92c7ffcb54681128cff3ac8c22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_flottant_5
+    second: {fileID: 2100000, guid: 58c4940579325c944a25368de25784fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gros_rocher_1
+    second: {fileID: 2100000, guid: 77a20906971d238488f296fc5611e6a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gros_rocher_2
+    second: {fileID: 2100000, guid: 4f042459ff3d47946ab89be70b2e4ba1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gros_rocher_3
+    second: {fileID: 2100000, guid: 9336ec41ecd0e374798b8d97fdeba807, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gros_rocher_4
+    second: {fileID: 2100000, guid: 3829cb5dd993cb5459b138bfe4a7bf41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gros_rocher_5
+    second: {fileID: 2100000, guid: 2ef8c734105e6294b8e8a114952c93ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_1
+    second: {fileID: 2100000, guid: cfb23a04fd2289a41b85e9cce4861f2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_2
+    second: {fileID: 2100000, guid: cfdf366822ef18547ba59ad9546136cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_3
+    second: {fileID: 2100000, guid: bdd3613b733cde444be04971fe02d44e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mur_cotes
+    second: {fileID: 2100000, guid: 49bb57695337eec44bb1985ea95b6a0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mur_dos_1
+    second: {fileID: 2100000, guid: 92fb0f4c689c881479b60a0a859ec3b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mur_dos_2
+    second: {fileID: 2100000, guid: 77876ac3a1fcc124fa9b444e27bc2ca1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mur_face_1
+    second: {fileID: 2100000, guid: ff0258f9cf28a3f4483e1f2f42fbe97b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mur_face_2
+    second: {fileID: 2100000, guid: 90ac6e22374c24f4b83a3f0f8751733e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_pont
+    second: {fileID: 2100000, guid: a865203b66fb5084ab39370ceaf13ef3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plafond_bas_1
+    second: {fileID: 2100000, guid: 45e4fb436b8c4474ba218ba17e1e87f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plafond_bas_2
+    second: {fileID: 2100000, guid: 73cf5d4cfb85c1c438c6b7f76d1ece16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plafond_cotes
+    second: {fileID: 2100000, guid: 8a5c62fedea4c8141aa0b77959139350, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plafond_haut_1
+    second: {fileID: 2100000, guid: 8b671849a966ca14188b1ca00ec73867, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plafond_haut_2
+    second: {fileID: 2100000, guid: d305dd4f6fafe7943a05bf5444bbdd5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_bas_1
+    second: {fileID: 2100000, guid: 645e135f0458e9c499c724e2c2d7966b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_bas_2
+    second: {fileID: 2100000, guid: 8bd8e863a6dc49b4aa7012b3e3a31621, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_cotes
+    second: {fileID: 2100000, guid: f79d3a7023dda3042b47e9fdc72f86a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut_1
+    second: {fileID: 2100000, guid: b01ac216eba5dfd439962302fecd66b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut_2
+    second: {fileID: 2100000, guid: 61836873352309c4fba62f0fb7a6ddb3, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
