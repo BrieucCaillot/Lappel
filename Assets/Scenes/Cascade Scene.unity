@@ -20703,6 +20703,7 @@ MonoBehaviour:
   introToDefaultTimeline: {fileID: 0}
   defaultToOutroTimeline: {fileID: 1839784389}
   defaultToSides: {fileID: 0}
+  glacier: {fileID: 0}
 --- !u!4 &671744907
 Transform:
   m_ObjectHideFlags: 0
@@ -23576,7 +23577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1877467261
 Rigidbody:
   m_ObjectHideFlags: 0
