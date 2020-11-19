@@ -3,7 +3,307 @@ guid: 0d6399246c2a49b4dbb406936cb6ccaa
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_facade_gauche
+    second: {fileID: 2100000, guid: bc4790a0134c1314b82107ea76660fcc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_sol_droite_1
+    second: {fileID: 2100000, guid: 2252b0d139a188447a765a3196b63b25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_sol_gauche_1
+    second: {fileID: 2100000, guid: 98f3e0edd98a41c45a3485d879cbeb84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_sol_gauche_2
+    second: {fileID: 2100000, guid: 9bb4ef3aa590cbd4e9b28988aa2e51ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_sol_gauche_3
+    second: {fileID: 2100000, guid: 4ea888e29f8a91d40b745d8cfaf0d0ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cascade_roche_bas
+    second: {fileID: 2100000, guid: 707cd4232cfd5594c9fad1f5eb2141ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cascade_roche_haut
+    second: {fileID: 2100000, guid: e87320a839d9d224e82263d5f912f859, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: enorme_rocher_droite
+    second: {fileID: 2100000, guid: c261f2ed5d2ba4b46b41ac97e209c56c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_premierplan_1
+    second: {fileID: 2100000, guid: 88df6d6da36add048a5e8cbee6312c00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_premierplan_2
+    second: {fileID: 2100000, guid: fc912e926bd1f3647b94d529c83e8fa8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_droite_1
+    second: {fileID: 2100000, guid: d212421e9d9ccb9458151bb0cb8809cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_droite_2
+    second: {fileID: 2100000, guid: 8f50c39d83d80924eb47f90937f929cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_droite_3
+    second: {fileID: 2100000, guid: f0851b9c006ac2f48988aea2617407c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_droite_4
+    second: {fileID: 2100000, guid: 5bbd04a33a7e5d64f8586b6856f9d6f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_droite_5
+    second: {fileID: 2100000, guid: 002da3e8236960b4fa05667e46475120, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_gauche_1
+    second: {fileID: 2100000, guid: 781d36e138a1e2a4da34351d59344487, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_gauche_2
+    second: {fileID: 2100000, guid: 18738820c6a429549a54523c9cab670b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grand_glacier_gauche_3
+    second: {fileID: 2100000, guid: d43c64a4a45fe384aa50205f400e47f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: long_rocher_droite_1
+    second: {fileID: 2100000, guid: 03884c94b35fed34e9a0b08b223f9bf2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: long_rocher_droite_2
+    second: {fileID: 2100000, guid: 2f83d1c6133538846afba7734917a933, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_1
+    second: {fileID: 2100000, guid: 1daea5338f61ddb44a5be0b2708fb22e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_2
+    second: {fileID: 2100000, guid: d46089fa8899a0c4099fe78e3ea6b3fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_3
+    second: {fileID: 2100000, guid: c16daea164948634ea79655b9bc405df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_4
+    second: {fileID: 2100000, guid: b9963bd3d1305ce4f921a418afa5ac75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mesh_cascade
+    second: {fileID: 2100000, guid: 451d73aa88df9384a959f4abc1a8a4bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mesh_lac
+    second: {fileID: 2100000, guid: f7fcbea353d21704dbe99aa321126e1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mini_pont_gauche
+    second: {fileID: 2100000, guid: bcee439cf79bb5b4bb2021de46a08783, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: muraille_droite
+    second: {fileID: 2100000, guid: 9f49d948cabae434c8405784b331e075, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: muraille_gauche
+    second: {fileID: 2100000, guid: 18002a4211865d54c89330251482be24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: panneau_interaction_1
+    second: {fileID: 2100000, guid: e0e35b6b74396b443a1f97834e5891aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: panneau_interaction_2
+    second: {fileID: 2100000, guid: 00ec225c71bf9e148808705d27b80946, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_droite_1
+    second: {fileID: 2100000, guid: 8af90720ac1ec1f4d82503b68a3ce24a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_droite_2
+    second: {fileID: 2100000, guid: d6b3ddcc31cb1404bb727dc7e4b9b6f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_droite_3
+    second: {fileID: 2100000, guid: a246b38e3c35d8e40af476b66e8904e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_droite_4
+    second: {fileID: 2100000, guid: f5d6d1d7c0d48374580150f42d5d2479, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_droite_5
+    second: {fileID: 2100000, guid: fd17689d166e81f489059326606bf0c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_gauche_1
+    second: {fileID: 2100000, guid: 9549c78b35206ad42be2b1f27c9d8a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_gauche_2
+    second: {fileID: 2100000, guid: 8df7af7029019bc4ab995384e581ec0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: petit_glacier_gauche_3
+    second: {fileID: 2100000, guid: 9d5913bebc8db944ab3b873e816f1b4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pont
+    second: {fileID: 2100000, guid: e933e5908d95b3845a5c08026a0be2d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_facade_gauche
+    second: {fileID: 2100000, guid: 8b942eaf59bfd4040b5e3a7d807b5d79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_facade_gauche_2
+    second: {fileID: 2100000, guid: 0f79d1c065bc67d4e82e2789e82617d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_facade_gauche_3
+    second: {fileID: 2100000, guid: eff77a1b45e212646aaf545545441f28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_haut_droite_1
+    second: {fileID: 2100000, guid: 4b3f633ef1d1c1843864dc89e7a81484, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_haut_droite_2
+    second: {fileID: 2100000, guid: 98b73bf757cf3a149a3621fc3c76b33b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_haut_droite_3
+    second: {fileID: 2100000, guid: 5d5c4dbb3d8d08a4fb02f6e3e071c3b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_haut_droite_4
+    second: {fileID: 2100000, guid: d6a8ab3c864455b42923e0a3671d66af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_haut_droite_5
+    second: {fileID: 2100000, guid: cba05fa02b532444fb0a15740ae9c054, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_haut_gauche_1
+    second: {fileID: 2100000, guid: 4b92a817d6abd474a96dc33eb93804c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_haut_gauche_2
+    second: {fileID: 2100000, guid: a820d2980e5d7a64883eef138a7ab157, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_haut_gauche_3
+    second: {fileID: 2100000, guid: 25ff664eb56cfbf49ab9be49bfc721b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_sol_droite
+    second: {fileID: 2100000, guid: 916c9d2a6a141814c85d0e73bcf7ac35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_trou_droite
+    second: {fileID: 2100000, guid: 9f4055119fa6ecc4d9a501f487660d63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_bas1
+    second: {fileID: 2100000, guid: 81f10646e431c5848a9cd3d24c9ba53a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_bas2
+    second: {fileID: 2100000, guid: ca2c9961bea176642a4c5a43d2a5a0a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_cotes
+    second: {fileID: 2100000, guid: 0e813e8b5faf6c646aee5e9fd81e4381, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_crevasse
+    second: {fileID: 2100000, guid: b50b0e1f49f89354697cf571182b907b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut1
+    second: {fileID: 2100000, guid: fb2c61657b6eec04f84c95af19b8f3ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut2
+    second: {fileID: 2100000, guid: ee5499ce68bc95f4b9a99561441abeb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_lac
+    second: {fileID: 2100000, guid: 3a9ce8e4b32881e4cb827340a8ae08f3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
