@@ -10,6 +10,8 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
     public PlayableDirector defaultToOutroTimeline;
     public PlayableDirector defaultToSides;
 
+    public GameObject glacier;
+
     public void StartTimeline(string Movement) {
         switch (Movement) {
             case "introToDefault":
@@ -30,6 +32,7 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
 
     IEnumerator StartTransitionToEnv2() {
         yield return new WaitForSeconds(5f);
+        glacier.transform.position = new Vector3(170, -8.5f, 37);
         SceneManager.LoadSceneAsync("Cascade Scene");
         CascadeSceneManager.Play();
     }
