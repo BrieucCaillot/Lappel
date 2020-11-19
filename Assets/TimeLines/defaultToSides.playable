@@ -73,13 +73,13 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 3548878836716503648}
-    m_Duration: 16.216666666666665
+    m_Duration: 10.05
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3965760771151817694}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 15.966666666666665
+    m_BlendOutDuration: 10.05
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -106,25 +106,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -139,16 +121,16 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: DEFAULT CAMERA
   - m_Version: 1
-    m_Start: 0.25
+    m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -5464415645241061621}
-    m_Duration: 35
+    m_Duration: 29.883333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3965760771151817694}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 15.966666666666665
-    m_BlendOutDuration: 18.316666666666666
+    m_BlendInDuration: 10.05
+    m_BlendOutDuration: 19.833333333333332
     m_MixInCurve:
       serializedVersion: 2
       m_Curve: []
@@ -172,58 +154,61 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: DEFAULT LEFTSIDE CAMERA
   - m_Version: 1
-    m_Start: 16.933333333333334
-    m_ClipIn: 0
-    m_Asset: {fileID: 3964505651870568496}
-    m_Duration: 42.95
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -3965760771151817694}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 18.316666666666666
-    m_BlendOutDuration: 24.63333333333334
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: DEFAULT CAMERA
-  - m_Version: 1
-    m_Start: 35.25
+    m_Start: 10.05
     m_ClipIn: 0
     m_Asset: {fileID: -3985123176003225100}
-    m_Duration: 58.733333333333334
+    m_Duration: 29.966666666666665
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3965760771151817694}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 24.63333333333334
-    m_BlendOutDuration: 33.06666666666667
+    m_BlendInDuration: 19.833333333333332
+    m_BlendOutDuration: 10.133333333333333
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -238,19 +223,37 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: DEFAULT RIGHTSIDE CAMERA
   - m_Version: 1
-    m_Start: 60.916666666666664
+    m_Start: 29.883333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -7114010416132937960}
-    m_Duration: 34.416666666666664
+    m_Duration: 10.133333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3965760771151817694}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 33.06666666666667
+    m_BlendInDuration: 10.133333333333333
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -348,20 +351,4 @@ MonoBehaviour:
   DisplayName: 
   VirtualCamera:
     exposedName: fbca9393bae1bac4d8f368df32135d62
-    defaultValue: {fileID: 0}
---- !u!114 &3964505651870568496
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: b885b13c749613249a2b9663a0ad898e
     defaultValue: {fileID: 0}
