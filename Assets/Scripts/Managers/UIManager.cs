@@ -8,8 +8,9 @@ using DG.Tweening;
 public class UIManager : Singleton<UIManager>
 {
     // public Image Background;
-    public Text Logo;
-    public Text PressSpace;
+    public Text Logo = null;
+    public Text PressSpace = null;
+    public Sprite CascadeMotion = null;
     private static float duration = 2f;
 
     private void Start()
@@ -31,6 +32,16 @@ public class UIManager : Singleton<UIManager>
         if (!GameManager.Instance.introShowed) return;
         Logo.DOFade(0, duration);
         PressSpace.DOFade(0, duration);
+    }
+
+    public void ShowMotionCascade()
+    {
+        Debug.Log("SHOW MOTION CASCADE");
+    }
+    
+    public void HideMotionCascade()
+    {
+        Debug.Log("SHOW MOTION CASCADE");
     }
 
     // private void BackgroundFadeIn()

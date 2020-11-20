@@ -5,10 +5,14 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PlayerManager : Singleton<PlayerManager> {
+    
+    public bool canMove = false; 
+    public bool canRotateIntro = false;
+    
     [SerializeField] private GameObject player = null;
 
     [Range(0, 50)]
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float speed = 6f;
     [SerializeField] private float rotationRate = 360;
     
     private Animator anim;
@@ -27,9 +31,9 @@ public class PlayerManager : Singleton<PlayerManager> {
             return;
         }
 
-        if (GameManager.Instance.pressedSpaceIntro) {
-            if (GameManager.Instance.canRotateIntro) Rotate180();
-            if (GameManager.Instance.canMove) Move();
+        if (GameManager.Instance.enteredGame) {
+            if (canRotateIntro) Rotate180();
+            if (canMove) Move();
         }
     }
     
@@ -41,6 +45,11 @@ public class PlayerManager : Singleton<PlayerManager> {
     public Rigidbody GetRigidbody()
     {
         return rigidBody;
+    }
+    
+    public Transform GetTransform()
+    {
+        return transform;
     }
 
     private void Move() {
@@ -78,8 +87,8 @@ public class PlayerManager : Singleton<PlayerManager> {
         Quaternion newRotation = Quaternion.Euler(eulerAngle180 * Time.deltaTime);
         rigidBody.MoveRotation(rigidBody.rotation * newRotation);
         if (rigidBody.rotation.y == 1) {
-            GameManager.Instance.canRotateIntro = false;
-            GameManager.Instance.canMove = true;
+            canRotateIntro = false;
+            canMove = true;
         }
     }
 

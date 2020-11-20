@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class PlayerAnimManager : MonoBehaviour
 {
-   private Animator anim;
+   private static Animator anim;
    
    private void Start()
    {
       anim = GetComponent<Animator>();
    }
 
-   public void onCascadeAnimDone()
+   public static void OnCrevasseAnimStart()
    {
-      anim.SetBool("Jump", false);
+      anim.SetTrigger("Jump Crevasse");
+   }
+   
+   public void OnCascadeAnimEnd()
+   {
+      anim.SetBool("Jump Creve", false);
    }
 }

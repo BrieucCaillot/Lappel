@@ -6,9 +6,7 @@ using System.Collections;
 public class GameManager : Singleton<GameManager>
 {
     public bool DebugMode = false;
-    public bool pressedSpaceIntro = false; 
-    public bool canMove = false; 
-    public bool canRotateIntro = false; 
+    public bool enteredGame = false;  
     public bool introShowed = false; 
 
     void Start()
@@ -19,10 +17,10 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        if (pressedSpaceIntro || !introShowed) return;
+        if (enteredGame || !introShowed) return;
         if (Input.GetKey(KeyCode.Space))
         {
-            pressedSpaceIntro = true;
+            enteredGame = true;
             MainSceneManager.Play();
         }
     }
