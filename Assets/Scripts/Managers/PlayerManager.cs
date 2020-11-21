@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerManager : Singleton<PlayerManager> {
     
+    [NonSerialized]
     public bool canMove = false; 
-    public bool canRotateIntro = false;
-    
-    [SerializeField] private GameObject player = null;
-
     [Range(0, 50)]
-    [SerializeField] private float speed = 6f;
+    public float speed = 6f;
+
+    [SerializeField] private GameObject player = null;
     [SerializeField] private float rotationRate = 360;
     
     private Animator anim;
@@ -23,18 +20,14 @@ public class PlayerManager : Singleton<PlayerManager> {
     {
         anim = player.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
+        
+        if (GameManager.Instance.DebugMode) canMove = true;
     }
 
-    private void FixedUpdate() {
-        if (GameManager.Instance.DebugMode) {
-            Move();
-            return;
-        }
-
-        if (GameManager.Instance.enteredGame) {
-            if (canRotateIntro) Rotate180();
-            if (canMove) Move();
-        }
+    private void FixedUpdate()
+    {
+        if (!GameManager.Instance.enteredGame || !canMove) return;
+        Move();
     }
     
     public Animator GetAnim()
@@ -46,13 +39,9 @@ public class PlayerManager : Singleton<PlayerManager> {
     {
         return rigidBody;
     }
-    
-    public Transform GetTransform()
-    {
-        return transform;
-    }
 
-    private void Move() {
+    private void Move()
+    {
         float hAxis = Input.GetAxis("Horizontal");
         float vAxis = Input.GetAxis("Vertical");
 
@@ -76,20 +65,10 @@ public class PlayerManager : Singleton<PlayerManager> {
         rigidBody.MovePosition(newPosition);
     }
 
-    private bool isGrounded()
+    public void RotateIntro()
     {
-        float jumpRaycastDistance = 1.1f;
-        return Physics.Raycast(transform.position, Vector3.down, jumpRaycastDistance);
-    }
-
-    private void Rotate180() {
-        Vector3 eulerAngle180 = new Vector3(0, 180, 0);
-        Quaternion newRotation = Quaternion.Euler(eulerAngle180 * Time.deltaTime);
-        rigidBody.MoveRotation(rigidBody.rotation * newRotation);
-        if (rigidBody.rotation.y == 1) {
-            canRotateIntro = false;
-            canMove = true;
-        }
+        rigidBody.DORotate(new Vector3(0, 180, 0), 2f)
+            .OnPlay(() => canMove = true);
     }
 
     public void ResetPosition()
@@ -116,6 +95,9 @@ public class PlayerManager : Singleton<PlayerManager> {
         switch (collider.name) {
             case "INTERACTION ZONE":
                 collider.transform.parent.GetComponent<InteractionManager>().PlayerInInteractionZone();
+                break;
+            case "TRIGGER SCENE MOUNTAIN":
+                UnderwaterSceneManager.NextScene();
                 break;
         }
 

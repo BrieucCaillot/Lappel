@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerAnimManager : MonoBehaviour
+public class PlayerAnimManager : Singleton<PlayerAnimManager>
 {
    private static Animator anim;
    
@@ -11,14 +8,35 @@ public class PlayerAnimManager : MonoBehaviour
    {
       anim = GetComponent<Animator>();
    }
-
-   public static void OnCrevasseAnimStart()
+   
+   public void StartIdleAnim()
    {
-      anim.SetTrigger("Jump Crevasse");
+      print("START IDLE");
+      anim.SetTrigger("StartIdleAnim");
+   }
+
+   public void StartCrevasseAnim()
+   {
+      anim.SetTrigger("StartCrevasseAnim");
+   }
+
+   public void StartCascadeAnim()
+   {
+      anim.SetTrigger("StartCascadeAnim");
    }
    
-   public void OnCascadeAnimEnd()
+   public void StartUnderwaterAnim()
    {
-      anim.SetBool("Jump Creve", false);
+      anim.SetTrigger("StartUnderwaterAnim");
+   }
+   
+   public void OnAnimStart()
+   {
+      PlayerManager.Instance.canMove = false;
+   }
+
+   public void OnAnimEnd()
+   {
+      PlayerManager.Instance.canMove = true;
    }
 }

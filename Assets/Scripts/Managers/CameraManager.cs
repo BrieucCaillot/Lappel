@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
-using UnityEditor.UIElements;
+﻿using Cinemachine;
 using UnityEngine;
-using DG.Tweening;
 
 public class CameraManager : Singleton<CameraManager>
 {

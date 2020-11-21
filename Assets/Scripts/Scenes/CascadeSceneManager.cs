@@ -1,50 +1,48 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
 public class CascadeSceneManager : MonoBehaviour
 {
     [SerializeField] private InteractionManager interactionManagerCrevasse = null;
     private bool crevasseAnimPlayed = false;
-    
-    [SerializeField] private InteractionManager interactionManagerCascade = null; 
-    [SerializeField] private Animator cascadeAnimator = null; 
+
+    [SerializeField] private InteractionManager interactionManagerCascade = null;
+    [SerializeField] private GameObject cascadeSplash = null;
+    private ParticleSystem cascadeSplashParticles = null;
     private bool cascadeAnimPlayed = false;
-    
-    [SerializeField] 
+
+    [SerializeField]
     private GameObject colliders = null;
 
     private void Start()
     {
         interactionManagerCrevasse.onPlayerCanInteract += OnInteractCrevasse;
+        cascadeSplashParticles = cascadeSplash.GetComponent<ParticleSystem>();
     }
 
     public static void Play()
     {
         Debug.Log("CASCADE SCENE PLAY");
-        
+
         PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
     }
 
     private void OnInteractCrevasse()
     {
-        
+
         Debug.Log("OnInteractCrevasse");
-        
+
         if (crevasseAnimPlayed) return;
         crevasseAnimPlayed = true;
-        PlayerManager.Instance.GetTransform()
+        PlayerManager.Instance.transform
             .DORotate(new Vector3(0, 180, 0), 1f)
             .OnComplete(() =>
             {
                 colliders.SetActive(false);
-                PlayerManager.Instance.canMove = false;
-                PlayerAnimManager.OnCrevasseAnimStart();
-                PlayerManager.Instance.GetTransform()
-                    .DOMove(PlayerManager.Instance.GetTransform().position + Vector3.back * 10, 1f)
+                PlayerAnimManager.Instance.StartCrevasseAnim();
+                PlayerManager.Instance.transform
+                    .DOMove(PlayerManager.Instance.transform.position + Vector3.back * 10, 1f)
                     .SetDelay(2f)
                     .OnComplete(() =>
                     {
@@ -52,32 +50,34 @@ public class CascadeSceneManager : MonoBehaviour
                         interactionManagerCrevasse.onPlayerCanInteract -= OnInteractCrevasse;
                         interactionManagerCascade.onPlayerCanInteract += OnInteractCascade;
                     });
-                
+
             });
     }
 
     private void OnInteractCascade()
     {
         Debug.Log("OnInteractCascade");
-        
+
         if (cascadeAnimPlayed) return;
         cascadeAnimPlayed = true;
-        PlayerManager.Instance.GetTransform()
-            .DORotate(new Vector3(0, 180, 0), 2f)
+        PlayerManager.Instance.transform
+            .DORotate(new Vector3(0, 200, 0), 2f)
             .OnComplete(() =>
             {
                 colliders.SetActive(false);
                 PlayerManager.Instance.canMove = false;
-                PlayerAnimManager.OnCrevasseAnimStart();
-                PlayerManager.Instance.GetTransform()
-                    .DOMove(PlayerManager.Instance.GetTransform().position + Vector3.back * 10, 1f)
+                var destination = PlayerManager.Instance.transform.position + Vector3.back * 10;
+                PlayerAnimManager.Instance.StartCascadeAnim();
+                PlayerManager.Instance.transform
+                    .DOMove(destination, 1f)
                     .SetDelay(2f)
                     .OnComplete(() =>
                     {
-                        colliders.SetActive(true);
-                        cascadeAnimator.SetTrigger("Cascade Anim");
+                        cascadeSplash.transform.DOMove(destination + Vector3.down * 3, 0f).OnComplete(() => cascadeSplashParticles.Play());
+                        UIManager.Instance.ShowCascadeTransition();
+                        // UnderwaterSceneManager.Play();
                     });
             });
-        
+
     }
 }

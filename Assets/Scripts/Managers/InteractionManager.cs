@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,21 +7,20 @@ public class InteractionManager : MonoBehaviour
     public event Action onPlayerInInteractionZone;
     public event Action onPlayerOutInteractionZone;
     public event Action onPlayerCanInteract;
-    
+
     private static bool inInteractionZone = false;
-    private float speed = 4f;
     [SerializeField]
     private SpriteRenderer interactionOn = null;
     [SerializeField]
     private SpriteRenderer interactionOff = null;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         interactionOn.DOFade(0, 0);
         onPlayerInInteractionZone += ShowInteractionOn;
         onPlayerInInteractionZone += HideInteractionOff;
-        
+
         onPlayerOutInteractionZone += HideInteractionOn;
         onPlayerOutInteractionZone += ShowInteractionOff;
     }
@@ -38,13 +35,13 @@ public class InteractionManager : MonoBehaviour
         inInteractionZone = true;
         if (onPlayerInInteractionZone != null) onPlayerInInteractionZone();
     }
-    
+
     public void PlayerOutInteractionZone()
     {
         inInteractionZone = false;
         if (onPlayerOutInteractionZone != null) onPlayerOutInteractionZone();
     }
-    
+
     public void PlayerCanInteract()
     {
         if (onPlayerCanInteract != null) onPlayerCanInteract();
@@ -59,7 +56,7 @@ public class InteractionManager : MonoBehaviour
     {
         interactionOn.DOFade(0, 2f);
     }
-    
+
     private void ShowInteractionOff()
     {
         interactionOff.DOFade(1, 2f);
