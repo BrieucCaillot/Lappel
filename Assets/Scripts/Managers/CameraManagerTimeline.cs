@@ -22,7 +22,6 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
                 defaultToOutroTimeline.Play();
                 StartCoroutine("StartTransitionToEnv2");
                 break;
-
             default:
                 break;
         }

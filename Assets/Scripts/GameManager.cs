@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -14,7 +16,7 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        if (DebugMode) return;
+        if (DebugMode) EnterGame();
         onPlayerStart += EnterGame;
         StartCoroutine("LetsGo");
         // AudioManager.Instance.PlaySound(AudioManager.Sound.Whatever);
@@ -22,7 +24,6 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        if (DebugMode) enteredGame = true;
         if (enteredGame || !introShowed) return;
         if (Input.GetKey(KeyCode.Space)) PlayerEnterGame();
     }
@@ -34,8 +35,8 @@ public class GameManager : Singleton<GameManager>
 
     private void EnterGame()
     {
+        if (SceneManager.GetActiveScene().name == "Main Scene") MainSceneManager.Play();
         enteredGame = true;
-        MainSceneManager.Play();
     }
 
     IEnumerator LetsGo()

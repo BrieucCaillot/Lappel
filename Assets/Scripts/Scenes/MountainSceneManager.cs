@@ -11,5 +11,6 @@ public class MountainSceneManager : MonoBehaviour
         PlayerManager.Instance.SetPosition(new Vector3(0, 0, 0));
         PlayerManager.Instance.speed = 6;
         PlayerAnimManager.Instance.StartIdleAnim();
+        EnvironmentManager.Instance.MountainEnvironment();
     }
 }

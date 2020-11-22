@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 
-public class MainSceneManager : MonoBehaviour {
-    
+public class MainSceneManager : MonoBehaviour
+{
+    private void Start()
+    {
+        EnvironmentManager.Instance.SnowEnvironment();
+    }
+
     public static void Play()
     {
         Debug.Log("MAIN SCENE PLAY");

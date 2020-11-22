@@ -10,7 +10,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     public float speed = 6f;
 
     [SerializeField] private GameObject player = null;
-    [SerializeField] private float rotationRate = 360;
+    private float rotationRate = 360;
     
     private Animator anim;
     private static Rigidbody rigidBody;
@@ -20,8 +20,12 @@ public class PlayerManager : Singleton<PlayerManager> {
     {
         anim = player.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
-        
-        if (GameManager.Instance.DebugMode) canMove = true;
+
+        if (GameManager.Instance.DebugMode)
+        {
+            canMove = true;
+            speed = 20;
+        }
     }
 
     private void FixedUpdate()
@@ -54,7 +58,8 @@ public class PlayerManager : Singleton<PlayerManager> {
 
         Vector3 eulerAngleVelocity = new Vector3(0, hAxis * rotationRate * Time.deltaTime, 0);
         Quaternion newRotation = Quaternion.Euler(eulerAngleVelocity);
-        rigidBody.MoveRotation(rigidBody.rotation * newRotation);
+        var rotation = rigidBody.rotation * newRotation;
+        rigidBody.MoveRotation(rotation);
     }
 
     private void AutoMove() {
@@ -67,7 +72,7 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     public void RotateIntro()
     {
-        rigidBody.DORotate(new Vector3(0, 180, 0), 2f)
+        transform.DORotate(new Vector3(0, 180, 0), 2f)
             .OnPlay(() => canMove = true);
     }
 
@@ -98,6 +103,8 @@ public class PlayerManager : Singleton<PlayerManager> {
                 break;
             case "TRIGGER SCENE MOUNTAIN":
                 UnderwaterSceneManager.NextScene();
+                break;
+            default:
                 break;
         }
 

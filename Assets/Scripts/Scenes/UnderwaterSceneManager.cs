@@ -8,6 +8,7 @@ public class UnderwaterSceneManager : MonoBehaviour
         PlayerManager.Instance.SetPosition(new Vector3(0, 0, 0));
         PlayerAnimManager.Instance.StartUnderwaterAnim();
         PlayerManager.Instance.speed = 12;
+        EnvironmentManager.Instance.UnderwaterEnvironment();
     }
 
     public static void Play()

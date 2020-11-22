@@ -11,7 +11,6 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    
    public void StartIdleAnim()
    {
-      print("START IDLE");
       anim.SetTrigger("StartIdleAnim");
    }
 

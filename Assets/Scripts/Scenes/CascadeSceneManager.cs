@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CascadeSceneManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class CascadeSceneManager : MonoBehaviour
     {
         interactionManagerCrevasse.onPlayerCanInteract += OnInteractCrevasse;
         cascadeSplashParticles = cascadeSplash.GetComponent<ParticleSystem>();
+        EnvironmentManager.Instance.CascadeEnvironment();
     }
 
     public static void Play()
@@ -50,7 +52,6 @@ public class CascadeSceneManager : MonoBehaviour
                         interactionManagerCrevasse.onPlayerCanInteract -= OnInteractCrevasse;
                         interactionManagerCascade.onPlayerCanInteract += OnInteractCascade;
                     });
-
             });
     }
 
@@ -78,6 +79,5 @@ public class CascadeSceneManager : MonoBehaviour
                         // UnderwaterSceneManager.Play();
                     });
             });
-
     }
 }
