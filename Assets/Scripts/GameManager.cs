@@ -17,9 +17,16 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         if (DebugMode) EnterGame();
-        onPlayerStart += EnterGame;
-        StartCoroutine("LetsGo");
-        // AudioManager.Instance.PlaySound(AudioManager.Sound.Whatever);
+        if (SceneManager.GetActiveScene().name == "Main Scene")
+        {
+            onPlayerStart += EnterGame;
+            StartCoroutine("LetsGo");
+        }
+        else
+        {
+            EnterGame();
+            PlayerManager.Instance.canMove = true;
+        }
     }
 
     private void Update()
