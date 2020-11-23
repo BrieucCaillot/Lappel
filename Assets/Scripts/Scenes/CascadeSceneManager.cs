@@ -1,13 +1,12 @@
 ﻿using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class CascadeSceneManager : MonoBehaviour
 {
-    [SerializeField] private InteractionManager interactionManagerCrevasse = null;
+    [SerializeField] private InteractionCrevasseManager interactionCrevasseManager = null;
     private bool crevasseAnimPlayed = false;
 
-    [SerializeField] private InteractionManager interactionManagerCascade = null;
+    [SerializeField] private InteractionCascadeManager interactionCascadeManager = null;
     [SerializeField] private GameObject cascadeSplash = null;
     private ParticleSystem cascadeSplashParticles = null;
     private bool cascadeAnimPlayed = false;
@@ -17,7 +16,8 @@ public class CascadeSceneManager : MonoBehaviour
 
     private void Start()
     {
-        interactionManagerCrevasse.onPlayerCanInteract += OnInteractCrevasse;
+        interactionCrevasseManager.onPlayerCanInteract += OnInteractCrevasse;
+        interactionCascadeManager.onPlayerCanInteract += OnInteractCascade;
         cascadeSplashParticles = cascadeSplash.GetComponent<ParticleSystem>();
         EnvironmentManager.Instance.CascadeEnvironment();
     }
@@ -32,7 +32,6 @@ public class CascadeSceneManager : MonoBehaviour
 
     private void OnInteractCrevasse()
     {
-
         Debug.Log("OnInteractCrevasse");
 
         if (crevasseAnimPlayed) return;
@@ -49,8 +48,6 @@ public class CascadeSceneManager : MonoBehaviour
                     .OnComplete(() =>
                     {
                         colliders.SetActive(true);
-                        interactionManagerCrevasse.onPlayerCanInteract -= OnInteractCrevasse;
-                        interactionManagerCascade.onPlayerCanInteract += OnInteractCascade;
                     });
             });
     }

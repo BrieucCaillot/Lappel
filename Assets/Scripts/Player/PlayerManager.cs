@@ -31,10 +31,6 @@ public class PlayerManager : Singleton<PlayerManager> {
         Move();
     }
 
-    public Animator GetAnim() {
-        return anim;
-    }
-
     public Rigidbody GetRigidbody() {
         return rigidBody;
     }
@@ -86,30 +82,32 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     private void OnTriggerEnter(Collider collider) {
-        Debug.Log(collider.name);
+        Debug.Log("OnTriggerEnter " + collider.name);
         switch (collider.name) {
-            case "INTERACTION ZONE":
-                collider.transform.parent.GetComponent<InteractionManager>().PlayerInInteractionZone();
+            case "INTERACTION ZONE CREVASSE":
+                collider.transform.parent.GetComponent<InteractionCrevasseManager>().PlayerInInteractionZone();
+                break;
+            case "INTERACTION ZONE CASCADE":
+                collider.transform.parent.GetComponent<InteractionCascadeManager>().PlayerInInteractionZone();
                 break;
             case "TRIGGER SCENE MOUNTAIN":
                 UnderwaterSceneManager.NextScene();
                 break;
-
             default:
                 break;
         }
 
-        CameraManagerTimeline.Instance.StartTimeline(collider.name);
+        CameraManager.Instance.StartTimeline(collider.name);
     }
 
     private void OnTriggerExit(Collider collider) {
+        Debug.Log("OnTriggerExit " + collider.name);
         switch (collider.name) {
-            case "INTERACTION ZONE":
-                collider.transform.parent.GetComponent<InteractionManager>().PlayerOutInteractionZone();
+            case "INTERACTION ZONE CREVASSE":
+                collider.transform.parent.GetComponent<InteractionCrevasseManager>().PlayerOutInteractionZone();
                 break;
-            case "cascadeSceneDefaultToRight":
-                Debug.Log("allo");
-                CameraManagerTimeline.Instance.StartTimeline("cascadeSceneRightToDefault");
+            case "INTERACTION ZONE CASCADE":
+                collider.transform.parent.GetComponent<InteractionCascadeManager>().PlayerOutInteractionZone();
                 break;
             default:
                 break;

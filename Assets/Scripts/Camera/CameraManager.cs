@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
+public class CameraManager : Singleton<CameraManager> {
     public PlayableDirector mainSceneIntroToDefault;
     public PlayableDirector mainSceneDefaultToOutro;
     public PlayableDirector mainSceneDefaultToSides;
@@ -14,6 +14,7 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
 
     public void StartTimeline(string Movement) {
         switch (Movement) {
+            // MAIN SCENE
             case "mainSceneIntroToDefault":
                 mainSceneIntroToDefault.Play();
                 break;
@@ -24,8 +25,9 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
                 mainSceneDefaultToOutro.Play();
                 StartCoroutine("StartTransitionToEnv2");
                 break;
+            
+            // CASCADE SCENE
             case "cascadeSceneDefaultToRight":
-                Debug.Log("MONSIEUR");
                 cascadeSceneRightToDefault.Stop();
                 cascadeSceneDefaultToRight.Play();
                 break;
