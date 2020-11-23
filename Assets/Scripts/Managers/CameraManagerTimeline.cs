@@ -41,7 +41,12 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
     IEnumerator StartTransitionToEnv2() {
         yield return new WaitForSeconds(5f);
         glacier.transform.position = new Vector3(170, -8.5f, 37);
-        SceneManager.LoadSceneAsync("Cascade Scene");
+        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Cascade Scene");
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
         CascadeSceneManager.Play();
     }
 }

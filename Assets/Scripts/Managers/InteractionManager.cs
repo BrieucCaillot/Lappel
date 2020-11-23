@@ -20,11 +20,11 @@ public class InteractionManager : MonoBehaviour
         interactionOn.DOFade(0, 0);
         onPlayerInInteractionZone += ShowInteractionOn;
         onPlayerInInteractionZone += HideInteractionOff;
-        onPlayerInInteractionZone += SoundManager.Instance.SoundInInteractionZone;
+        // onPlayerInInteractionZone += SoundManager.Instance.SoundInInteractionZone;
 
         onPlayerOutInteractionZone += HideInteractionOn;
         onPlayerOutInteractionZone += ShowInteractionOff;
-        onPlayerOutInteractionZone += SoundManager.Instance.SoundOutInteractionZone;
+        // onPlayerOutInteractionZone += SoundManager.Instance.SoundOutInteractionZone;
     }
 
     private void Update()

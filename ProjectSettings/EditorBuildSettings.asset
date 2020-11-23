@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mountain Scene.unity
     guid: 1a36716b3760fdd4ebe16b5cd868e52e
+  - enabled: 1
+    path: Assets/Scenes/Test.unity
+    guid: a2cd3d5db5ad7fa4db3d1237759b84a3
   m_configObjects: {}
