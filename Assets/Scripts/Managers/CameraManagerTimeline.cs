@@ -4,23 +4,34 @@ using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class CameraManagerTimeline : Singleton<CameraManagerTimeline> {
-    public PlayableDirector introToDefaultTimeline;
-    public PlayableDirector defaultToOutroTimeline;
-    public PlayableDirector defaultToSides;
+    public PlayableDirector mainSceneIntroToDefault;
+    public PlayableDirector mainSceneDefaultToOutro;
+    public PlayableDirector mainSceneDefaultToSides;
+    public PlayableDirector cascadeSceneDefaultToRight;
+    public PlayableDirector cascadeSceneRightToDefault;
 
     public GameObject glacier;
 
     public void StartTimeline(string Movement) {
         switch (Movement) {
-            case "introToDefault":
-                introToDefaultTimeline.Play();
+            case "mainSceneIntroToDefault":
+                mainSceneIntroToDefault.Play();
                 break;
-            case "defaultToSides":
-                defaultToSides.Play();
+            case "mainSceneDefaultToSides":
+                mainSceneDefaultToSides.Play();
                 break;
-            case "defaultToOutro":
-                defaultToOutroTimeline.Play();
+            case "mainSceneDefaultToOutro":
+                mainSceneDefaultToOutro.Play();
                 StartCoroutine("StartTransitionToEnv2");
+                break;
+            case "cascadeSceneDefaultToRight":
+                Debug.Log("MONSIEUR");
+                cascadeSceneRightToDefault.Stop();
+                cascadeSceneDefaultToRight.Play();
+                break;
+            case "cascadeSceneRightToDefault":
+                cascadeSceneDefaultToRight.Stop();
+                cascadeSceneRightToDefault.Play();
                 break;
             default:
                 break;
