@@ -4,10 +4,10 @@ public class MovementScript : MonoBehaviour {
 
     public Rigidbody rb;
     public GameObject cameraManager;
-    private CameraManagerTimeline cameraManagerScript;
+    private CameraManager cameraManagerScript;
 
     void Start() {
-        cameraManagerScript = cameraManager.GetComponent<CameraManagerTimeline>();
+        cameraManagerScript = cameraManager.GetComponent<CameraManager>();
     }
 
     private void OnTriggerEnter(Collider collider) {

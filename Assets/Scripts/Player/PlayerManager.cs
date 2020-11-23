@@ -3,49 +3,39 @@ using DG.Tweening;
 using UnityEngine;
 
 public class PlayerManager : Singleton<PlayerManager> {
-    
+
     [NonSerialized]
-    public bool canMove = false; 
+    public bool canMove = false;
     [Range(0, 50)]
     public float speed = 6f;
 
     [SerializeField] private GameObject player = null;
     private float rotationRate = 360;
-    
+
     private Animator anim;
     private static Rigidbody rigidBody;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         anim = player.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
 
-        if (GameManager.Instance.DebugMode)
-        {
+        if (GameManager.Instance.DebugMode) {
             canMove = true;
             speed = 20;
         }
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         if (!GameManager.Instance.enteredGame || !canMove) return;
         Move();
     }
-    
-    public Animator GetAnim()
-    {
-        return anim;
-    }
-    
-    public Rigidbody GetRigidbody()
-    {
+
+    public Rigidbody GetRigidbody() {
         return rigidBody;
     }
 
-    private void Move()
-    {
+    private void Move() {
         float hAxis = Input.GetAxis("Horizontal");
         float vAxis = Input.GetAxis("Vertical");
 
@@ -70,14 +60,12 @@ public class PlayerManager : Singleton<PlayerManager> {
         rigidBody.MovePosition(newPosition);
     }
 
-    public void RotateIntro()
-    {
+    public void RotateIntro() {
         transform.DORotate(new Vector3(0, 180, 0), 2f)
             .OnPlay(() => canMove = true);
     }
 
-    public void ResetPosition()
-    {
+    public void ResetPosition() {
         SetPosition(new Vector3(0, 0, 0));
     }
 
@@ -85,21 +73,22 @@ public class PlayerManager : Singleton<PlayerManager> {
         return rigidBody.position;
     }
 
-    public void SetPosition(Vector3 position)
-    {
+    public void SetPosition(Vector3 position) {
         rigidBody.MovePosition(position);
     }
-    
-    public void SetRotation(Vector3 rotation)
-    {
+
+    public void SetRotation(Vector3 rotation) {
         rigidBody.MoveRotation(Quaternion.Euler(rotation));
     }
 
     private void OnTriggerEnter(Collider collider) {
-        Debug.Log(collider.name);
+        Debug.Log("OnTriggerEnter " + collider.name);
         switch (collider.name) {
-            case "INTERACTION ZONE":
-                collider.transform.parent.GetComponent<InteractionManager>().PlayerInInteractionZone();
+            case "INTERACTION ZONE CREVASSE":
+                collider.transform.parent.GetComponent<InteractionCrevasseManager>().PlayerInInteractionZone();
+                break;
+            case "INTERACTION ZONE CASCADE":
+                collider.transform.parent.GetComponent<InteractionCascadeManager>().PlayerInInteractionZone();
                 break;
             case "TRIGGER SCENE MOUNTAIN":
                 UnderwaterSceneManager.NextScene();
@@ -108,15 +97,17 @@ public class PlayerManager : Singleton<PlayerManager> {
                 break;
         }
 
-        CameraManagerTimeline.Instance.StartTimeline(collider.name);
+        CameraManager.Instance.StartTimeline(collider.name);
     }
 
-    private void OnTriggerExit(Collider collider)
-    {
-        switch (collider.name)
-        {
-            case "INTERACTION ZONE":
-                collider.transform.parent.GetComponent<InteractionManager>().PlayerOutInteractionZone();
+    private void OnTriggerExit(Collider collider) {
+        Debug.Log("OnTriggerExit " + collider.name);
+        switch (collider.name) {
+            case "INTERACTION ZONE CREVASSE":
+                collider.transform.parent.GetComponent<InteractionCrevasseManager>().PlayerOutInteractionZone();
+                break;
+            case "INTERACTION ZONE CASCADE":
+                collider.transform.parent.GetComponent<InteractionCascadeManager>().PlayerOutInteractionZone();
                 break;
             default:
                 break;
