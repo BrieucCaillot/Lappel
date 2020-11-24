@@ -10939,7 +10939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419002570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: -450}
+  m_LocalPosition: {x: 0, y: -140, z: -450}
   m_LocalScale: {x: 1733.5754, y: 1, z: 1994.8351}
   m_Children: []
   m_Father: {fileID: 1365931217}
@@ -16391,7 +16391,7 @@ GameObject:
   - component: {fileID: 859661448}
   - component: {fileID: 859661447}
   m_Layer: 0
-  m_Name: TRIGGER SCENE MOUNTAIN
+  m_Name: underwaterToMoutain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16405,7 +16405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859661445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.4, y: 0, z: -182.4}
+  m_LocalPosition: {x: 65.4, y: -140, z: -182.4}
   m_LocalScale: {x: 339.94525, y: 8.267027, z: 1}
   m_Children: []
   m_Father: {fileID: 1365931217}

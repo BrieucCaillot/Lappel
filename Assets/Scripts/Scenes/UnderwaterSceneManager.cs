@@ -15,7 +15,7 @@ public class UnderwaterSceneManager : MonoBehaviour
     {
         Debug.Log("UNDERWATER SCENE PLAY");
         SceneManager.LoadSceneAsync("Underwater Scene");
-        PlayerManager.Instance.SetPosition(new Vector3(0, 0, 0));
+        PlayerManager.Instance.SetPosition(new Vector3(0, -139, 0));
         PlayerManager.Instance.speed = 12;
         PlayerAnimManager.Instance.StartUnderwaterAnim();
     }

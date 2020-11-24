@@ -9,6 +9,9 @@ public class CameraManager : Singleton<CameraManager> {
     public PlayableDirector mainSceneDefaultToSides;
     public PlayableDirector cascadeSceneDefaultToRight;
     public PlayableDirector cascadeSceneRightToDefault;
+    public PlayableDirector cascadeSceneRightToUnderwater;
+    public PlayableDirector underwaterToMoutain;
+    
 
     public GameObject glacier;
 
@@ -25,8 +28,8 @@ public class CameraManager : Singleton<CameraManager> {
                 mainSceneDefaultToOutro.Play();
                 StartCoroutine("StartTransitionToEnv2");
                 break;
-            
-            // CASCADE SCENE
+
+                // CASCADE SCENE
             case "cascadeSceneDefaultToRight":
                 cascadeSceneRightToDefault.Stop();
                 cascadeSceneDefaultToRight.Play();
@@ -34,6 +37,15 @@ public class CameraManager : Singleton<CameraManager> {
             case "cascadeSceneRightToDefault":
                 cascadeSceneDefaultToRight.Stop();
                 cascadeSceneRightToDefault.Play();
+                break;
+            case "cascadeSceneRightToUnderwater":
+                cascadeSceneRightToUnderwater.Play();
+                break;
+
+                //UNDERWATER
+            case "underwaterToMoutain":
+                UnderwaterSceneManager.NextScene();
+                underwaterToMoutain.Play();
                 break;
             default:
                 break;
@@ -43,10 +55,9 @@ public class CameraManager : Singleton<CameraManager> {
     IEnumerator StartTransitionToEnv2() {
         yield return new WaitForSeconds(5f);
         glacier.transform.position = new Vector3(170, -8.5f, 37);
-        
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Cascade Scene");
-        while (!asyncLoad.isDone)
-        {
+        while (!asyncLoad.isDone) {
             yield return null;
         }
         CascadeSceneManager.Play();

@@ -90,9 +90,7 @@ public class PlayerManager : Singleton<PlayerManager> {
             case "INTERACTION ZONE CASCADE":
                 collider.transform.parent.GetComponent<InteractionCascadeManager>().PlayerInInteractionZone();
                 break;
-            case "TRIGGER SCENE MOUNTAIN":
-                UnderwaterSceneManager.NextScene();
-                break;
+          
             default:
                 break;
         }
