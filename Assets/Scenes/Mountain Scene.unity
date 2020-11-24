@@ -373,10 +373,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92168329eb6d6f846942cc19cff9e795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introToDefaultTimeline: {fileID: 0}
-  defaultToOutroTimeline: {fileID: 0}
-  defaultToSides: {fileID: 0}
-  glacier: {fileID: 0}
+  cascadeSceneDefaultToRightStarted: 0
+  cascadeSceneDefaultToRightEnded: 0
+  cascadeSceneRightToDefaultStarted: 0
+  cascadeSceneRightToDefaultEnded: 1
 --- !u!4 &83209607
 Transform:
   m_ObjectHideFlags: 0
@@ -2052,7 +2052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4f7066a5820c73448880ef95842a50d9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4f7066a5820c73448880ef95842a50d9, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2360,7 +2360,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138569251}
-  m_LocalRotation: {x: 3.8628355e-17, y: 0.99493957, z: -3.8250997e-16, w: 0.100475505}
+  m_LocalRotation: {x: -5.1549588e-17, y: 0.99493957, z: 5.1046e-16, w: 0.100475505}
   m_LocalPosition: {x: -4.53, y: 4.17, z: 22.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2570,7 +2570,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355448139}
-  m_LocalRotation: {x: 3.8628355e-17, y: 0.99493957, z: -3.8250997e-16, w: 0.100475505}
+  m_LocalRotation: {x: -5.1549588e-17, y: 0.99493957, z: 5.1046e-16, w: 0.100475505}
   m_LocalPosition: {x: -4.53, y: 4.17, z: 22.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
