@@ -20,7 +20,7 @@ public class PenguinFootstepSpawn : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(leftFootLocation.position, leftFootLocation.forward, out hit))
         {
-            audioSources[Random.Range(0, audioSources.Length - 1)].Play();
+            if (audioSources.Length > 0) audioSources[Random.Range(0, audioSources.Length - 1)].Play();
             var left = Instantiate(leftFootprint, hit.point + hit.normal * footPrintOffset, Quaternion.LookRotation(hit.normal, leftFootLocation.up));
             left.GetComponent<SpriteRenderer>().DOFade(0, footprintFadeValue)
                 .OnComplete(() => Destroy(left, 0));
@@ -31,7 +31,7 @@ public class PenguinFootstepSpawn : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(rightFootLocation.position, rightFootLocation.forward, out hit))
         {
-            audioSources[Random.Range(0, audioSources.Length - 1)].Play();
+            if (audioSources.Length > 0) audioSources[Random.Range(0, audioSources.Length - 1)].Play();
             var right = Instantiate(rightFootprint, hit.point + hit.normal * footPrintOffset, Quaternion.LookRotation(hit.normal, rightFootLocation.up));
 
             right.GetComponent<SpriteRenderer>().DOFade(0, footprintFadeValue)

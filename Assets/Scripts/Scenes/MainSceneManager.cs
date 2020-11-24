@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainSceneManager : MonoBehaviour
@@ -8,13 +9,6 @@ public class MainSceneManager : MonoBehaviour
         EnvironmentManager.Instance.SnowEnvironment();
     }
     
-    void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 150, 100), "I am a button"))
-        {
-            SceneManager.LoadSceneAsync("Cascade Scene");
-        }
-    }
 
     public static void Play()
     {

@@ -1,46 +1,71 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.AI;
 
 public class PenguinController : MonoBehaviour
 {
-    [Range(0, 10)]
-    [SerializeField] private float speed = 10f;
-    [Range(0, 10)]
-    [SerializeField] private float maxYRot = 8f;
-    private Rigidbody rigidBody;
+    private NavMeshAgent agent;
+    private Animator anim;
+    [SerializeField]
+    private GameObject destinations = null;
+
+    private float acceleration = 2f;
+    private float deceleration = 10f;
+    private int maxDistance = 0;
+    private bool reachedDestination = false;
+    private Vector3 currentDestination;
 
     private void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();
-        InvokeRepeating("RandomRotation", 2f, 10);
+        anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        maxDistance = Random.Range(3, 8);
+        agent.stoppingDistance = maxDistance;
+        StartCoroutine(nameof(ReachDestination));
+        Invoke("RandomPause", Random.Range(5, 10));
     }
 
-    void FixedUpdate()
+    private void Update()
     {
-        // AutoMove();
+        if (!reachedDestination && agent.remainingDistance > 0 && agent.remainingDistance < maxDistance) OnPenguinReachedDestination(); 
     }
 
-    private void AutoMove()
+    private void PickRandomDestination() 
     {
-        Vector3 movement = Vector3.forward * speed * Time.fixedDeltaTime;
-        Vector3 newPosition = rigidBody.position + rigidBody.transform.TransformDirection(movement);
-        rigidBody.MovePosition(newPosition);
+        var randomId = Random.Range(0, destinations.transform.childCount - 1);
+        currentDestination = destinations.transform.GetChild(randomId).GetComponent<NavMeshObstacle>().transform.position;
     }
 
-    private void RandomRotation()
+    private void RandomPause()
     {
-        float rotationY = rigidBody.rotation.y > 0
-            ? UnityEngine.Random.Range(-maxYRot, 0)
-            : UnityEngine.Random.Range(0, maxYRot);
-        
-        transform.Rotate(transform.rotation.x, rotationY, transform.rotation.z);
-        Debug.Log("RANDOM ROTATION " + transform.rotation);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Penguin")
+        if (agent.remainingDistance > 50)
         {
-            Debug.Log("Penguin touched another penguin");
+            agent.isStopped = !agent.isStopped;
+            anim.SetTrigger(agent.isStopped ? "StartIdle" : "StartWalking"); 
         }
+        
+        float randomTime = Random.Range(5, 15);
+        Invoke("RandomPause", randomTime);
+    }
+
+    IEnumerator ReachDestination()
+    {
+        var randomSeconds = Random.Range(0f, 7f);
+        yield return new WaitForSeconds(randomSeconds);
+        
+        // print("REACH DESTINATION");
+        
+        reachedDestination = false;
+        PickRandomDestination();
+        anim.SetTrigger("StartWalking");
+        agent.SetDestination(currentDestination);
+    }
+
+    private void OnPenguinReachedDestination()
+    {
+        // print("OnPenguinReachedDestination");
+        anim.SetTrigger("StartIdle");
+        reachedDestination = true;
+        StartCoroutine(nameof(ReachDestination));
     }
 }
