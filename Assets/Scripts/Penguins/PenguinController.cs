@@ -1,16 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class PenguinController : MonoBehaviour
 {
     private NavMeshAgent agent;
     private Animator anim;
-    [SerializeField]
-    private GameObject destinations = null;
+    [NonSerialized]
+    public GameObject destinations = null;
 
-    private float acceleration = 2f;
-    private float deceleration = 10f;
     private int maxDistance = 0;
     private bool reachedDestination = false;
     private Vector3 currentDestination;
