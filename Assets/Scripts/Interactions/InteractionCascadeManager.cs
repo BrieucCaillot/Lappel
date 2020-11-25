@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractionCascadeManager : MonoBehaviour {
     public event Action onPlayerInInteractionZone;
     public event Action onPlayerOutInteractionZone;
-    public event Action onPlayerCanInteract;
+    public event Action onPlayerInteracted;
 
     private static bool inInteractionZone = false;
     private static bool interacted = false;
@@ -25,7 +25,7 @@ public class InteractionCascadeManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (inInteractionZone && Input.GetKeyDown(KeyCode.Space)) PlayerCanInteract();
+        if (inInteractionZone && Input.GetKeyDown(KeyCode.Space)) PlayerInteracted();
     }
 
     public void PlayerInInteractionZone() {
@@ -40,9 +40,9 @@ public class InteractionCascadeManager : MonoBehaviour {
         if (onPlayerOutInteractionZone != null) onPlayerOutInteractionZone();
     }
 
-    public void PlayerCanInteract() {
+    public void PlayerInteracted() {
         interacted = true;
-        if (onPlayerCanInteract != null) onPlayerCanInteract();
+        if (onPlayerInteracted != null) onPlayerInteracted();
     }
 
     private void ShowInteractionOn() {

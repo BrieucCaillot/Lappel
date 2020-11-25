@@ -1,0 +1,501 @@
+fileFormatVersion: 2
+guid: 401aafb5411662149bb7b01859dfa0c9
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 67197e908457bd94e976b0330cf8003d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillar_Broken_01
+    second: {fileID: 2100000, guid: ae5cb81dde5560142a34def34946d281, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillar_Broken_02
+    second: {fileID: 2100000, guid: db23cd13a43c25b449e243b187c71230, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillar_Perfect
+    second: {fileID: 2100000, guid: 59057e823737f3f41b4292809678c102, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockPile_porte_1
+    second: {fileID: 2100000, guid: a4a3c2aef8c14cc40b7b0d958bcfdad8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockPile_porte_2
+    second: {fileID: 2100000, guid: ff1d1e51e6cfd2947921515400ef9671, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockPile_porte_3
+    second: {fileID: 2100000, guid: d2f6163651ccedb43bdf441985cd054d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockPile_porte_4
+    second: {fileID: 2100000, guid: d84d727453ece4140ad425317903626e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockPile_porte_5
+    second: {fileID: 2100000, guid: 3ac82e4b0d145364196974eb202be1f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockPile_porte_6
+    second: {fileID: 2100000, guid: e28c296989e7de743b60812c6bf53dca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockPile_sol_droite_1
+    second: {fileID: 2100000, guid: 04e93abf130acf24db993c3e6dbec6a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockPile_sol_droite_2
+    second: {fileID: 2100000, guid: d28058825ecfb7d4ea469505ec59e662, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockPile_sol_gauche
+    second: {fileID: 2100000, guid: 803809d48695b7c418a236593775ca6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: big_rocher_sol_1
+    second: {fileID: 2100000, guid: 754174372566a784fba8b5d7d7e98180, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: big_rocher_sol_2
+    second: {fileID: 2100000, guid: 5b45f70137d1f494fbd7b057a7017bbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: falaise
+    second: {fileID: 2100000, guid: 283985494124d1b4dabd118b37f42357, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_fond_1
+    second: {fileID: 2100000, guid: 5d3e7085385836d4d952aeb185487feb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_fond_2
+    second: {fileID: 2100000, guid: 00a0f8be12ff7a74f83ae9e014e9ca37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_montagne_droite_1
+    second: {fileID: 2100000, guid: ad35a542feccb91469195d751795f3ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_montagne_droite_2
+    second: {fileID: 2100000, guid: b97e818550ecd0e4693ff1610819531a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_montagne_gauche_1
+    second: {fileID: 2100000, guid: 884ffa7674cf6a24c8f3bf68e7b8731d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacier_montagne_gauche_2
+    second: {fileID: 2100000, guid: 60c4bf80ddc835045860adba84ff047f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_1
+    second: {fileID: 2100000, guid: d3588dd8638e6c1499d618340b0290f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_2
+    second: {fileID: 2100000, guid: c1017080e464ffa46be021a3ee55cde8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_droite_1
+    second: {fileID: 2100000, guid: b652090c078d67b448f72a21cf7eddd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_droite_2
+    second: {fileID: 2100000, guid: aaf883d890596c54d95dbd801b290771, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_droite_3
+    second: {fileID: 2100000, guid: c0956df710bdc9545a3142c0e00500bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_droite_4
+    second: {fileID: 2100000, guid: 01231b3e41671d04a9d7f4770bf74d60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_droite_5
+    second: {fileID: 2100000, guid: fcd35268eac82914f83c2d9d754de848, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_droite_6
+    second: {fileID: 2100000, guid: b34e00a777618bc46bd3e83ef859f595, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_droite_7
+    second: {fileID: 2100000, guid: 183c377ff3712b1478d0e3d54ea7d7b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_droite_8
+    second: {fileID: 2100000, guid: 136a2ec4be52b51469204d761a3ce553, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_droite_9
+    second: {fileID: 2100000, guid: 498cef78132823d4eb8cbf437c31fdbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_gauche_1
+    second: {fileID: 2100000, guid: 8823fb883c7707744a2adc52a9c4e892, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_gauche_2
+    second: {fileID: 2100000, guid: c67aa039c1abced4e97c7e2247dfcf38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_gauche_3
+    second: {fileID: 2100000, guid: b857a3b443eacb5488841966173cb2f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_milieu_1
+    second: {fileID: 2100000, guid: 4b7be2311e5f7ad469a47e6330350250, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_fond_milieu_2
+    second: {fileID: 2100000, guid: cac704050cd0f704e8cdc8c16bcf338a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_pente
+    second: {fileID: 2100000, guid: 8a3aabe292090ba40a2a6419e65855f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pebbles_1
+    second: {fileID: 2100000, guid: d2e7e5608bc45d444a230323b5cc04fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pebbles_2
+    second: {fileID: 2100000, guid: 6eeb5e17bcad3314aac7687ede882b50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte
+    second: {fileID: 2100000, guid: 11535f5d09941f1459ea3e4b12ba3598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_grand_1
+    second: {fileID: 2100000, guid: 5c65520978b5fac49965065ed4415373, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_grand_2
+    second: {fileID: 2100000, guid: 626f59088815f77469de51f2ead649bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_grand_3
+    second: {fileID: 2100000, guid: baaff2c6287202d4eaf0e2b957fe339d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_grand_4
+    second: {fileID: 2100000, guid: 3dceb63d1762f334d9caf6b631172cb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_grand_5
+    second: {fileID: 2100000, guid: c34fb39752688f64a965374bb00c8511, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_grand_6
+    second: {fileID: 2100000, guid: 5f71527aa94a42a4ca6a5bff200b5971, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_petit_1
+    second: {fileID: 2100000, guid: d71328e2781ec7b4b8dfbc1c593757c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_petit_2
+    second: {fileID: 2100000, guid: fd57d95b021de5a4db0d07522c2ff606, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_petit_3
+    second: {fileID: 2100000, guid: 1724a3fbeecd19945b158a559eea2d48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_petit_4
+    second: {fileID: 2100000, guid: d9a060e4d99460e4d87e9deedd1e91a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_arc_petit_5
+    second: {fileID: 2100000, guid: c06cd34d2aa6ff146b4e2e64d8500c35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: porte_epaisseur_couloir
+    second: {fileID: 2100000, guid: aa9787332ec24db4d982501bd6ec8d6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_010
+    second: {fileID: 2100000, guid: 998435624dca0534d9e44802ead88dd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_011
+    second: {fileID: 2100000, guid: 8b910eb32ec082d42b4a54e5880dd368, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_012
+    second: {fileID: 2100000, guid: ab72f78ddae43f5489fafc30f5e02e67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_013
+    second: {fileID: 2100000, guid: 3968f8ad923fe0742a95f157b4b08cd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_014
+    second: {fileID: 2100000, guid: 152a0fb3013047d4080a92f2d47647f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_015
+    second: {fileID: 2100000, guid: eaf4eb4a323b28046b7976c3f40f3fbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_1
+    second: {fileID: 2100000, guid: 7a59d9149a9cdb84581de0363a75ead8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_2
+    second: {fileID: 2100000, guid: cab7cb1e5de4fbe4aba6fa8fec27b87b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_3
+    second: {fileID: 2100000, guid: f17d13e8b323e2d48ac9962bc54a28ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_4
+    second: {fileID: 2100000, guid: 279c6bde12c4be24c83c95224ad75957, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_5
+    second: {fileID: 2100000, guid: 0c0867e95ad41914d931d21013a39c5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_7
+    second: {fileID: 2100000, guid: 123f5a8c7c3d99043bd742acfff98d68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_8
+    second: {fileID: 2100000, guid: feea9cac7964df340b7bb7323b9ba75c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_pente_9
+    second: {fileID: 2100000, guid: db55fd4471fa1cd44a3eeb288c01cd4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_sol_droite_1
+    second: {fileID: 2100000, guid: f20c55522e0024f4abe3ce92e01a2c09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_sol_droite_2
+    second: {fileID: 2100000, guid: 4bda62534b178574788ef308b72761e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_sol_gauche_1
+    second: {fileID: 2100000, guid: 39e17ab2051fa884cb32ec1e30ec5436, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_sol_gauche_2
+    second: {fileID: 2100000, guid: ad1ea1f0dfdbd9a4ba86e5b0e84f45b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_sol_gauche_3
+    second: {fileID: 2100000, guid: ac9b7af000a670446bb4113f438c9a8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rocher_sol_gauche_4
+    second: {fileID: 2100000, guid: 498a0f4cabe5b0844b99bc7bde4f3f31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rosace
+    second: {fileID: 2100000, guid: ecab11c6ef7ca9644813948c7c5ad579, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_cotes_1
+    second: {fileID: 2100000, guid: 7e0dacb7c20594544ae1b446be7b4af4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_cotes_2
+    second: {fileID: 2100000, guid: b00e8a9ab267c5943b5be88790c9088a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut_1
+    second: {fileID: 2100000, guid: 9311a479b2a56564f89ed139e49430de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut_2
+    second: {fileID: 2100000, guid: 23db6231c055b0048a2184f7f98178ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut_3
+    second: {fileID: 2100000, guid: e497d11540d8a724ca1aafb011f60408, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

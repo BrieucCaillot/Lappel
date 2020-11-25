@@ -22,7 +22,7 @@ public class UnderwaterSceneManager : MonoBehaviour
 
     public static void NextScene()
     {
-        MountainSceneManager.Play();
+        MountainSceneManager.Instance.Play();
     }
     
 }

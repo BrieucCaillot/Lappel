@@ -16,8 +16,8 @@ public class CascadeSceneManager : MonoBehaviour
 
     private void Start()
     {
-        interactionCrevasseManager.onPlayerCanInteract += OnInteractCrevasse;
-        interactionCascadeManager.onPlayerCanInteract += OnInteractCascade;
+        interactionCrevasseManager.onPlayerInteracted += OnInteractCrevasse;
+        interactionCascadeManager.onPlayerInteracted += OnInteractCascade;
         cascadeSplashParticles = cascadeSplash.GetComponent<ParticleSystem>();
         EnvironmentManager.Instance.CascadeEnvironment();
     }

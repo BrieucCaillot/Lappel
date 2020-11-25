@@ -6,7 +6,7 @@ public class InteractionMountainManager : MonoBehaviour
 {
     public event Action onPlayerInInteractionZone;
     public event Action onPlayerOutInteractionZone;
-    public event Action onPlayerCanInteract;
+    public event Action onPlayerInteracted;
 
     private static bool inInteractionZone = false;
     [SerializeField]
@@ -22,11 +22,13 @@ public class InteractionMountainManager : MonoBehaviour
 
         onPlayerOutInteractionZone += HideInteractionOn;
         onPlayerOutInteractionZone += ShowInteractionOff;
+
+        onPlayerInteracted += MountainSceneManager.Instance.OpenDoor;
     }
 
     private void Update()
     {
-        if (inInteractionZone && Input.GetKeyDown(KeyCode.Space)) PlayerCanInteract();
+        if (inInteractionZone && Input.GetKeyDown(KeyCode.Space)) PlayerInteracted();
     }
 
     public void PlayerInInteractionZone()
@@ -41,9 +43,9 @@ public class InteractionMountainManager : MonoBehaviour
         if (onPlayerOutInteractionZone != null) onPlayerOutInteractionZone();
     }
 
-    public void PlayerCanInteract()
+    public void PlayerInteracted()
     {
-        if (onPlayerCanInteract != null) onPlayerCanInteract();
+        if (onPlayerInteracted != null) onPlayerInteracted();
     }
 
     private void ShowInteractionOn()

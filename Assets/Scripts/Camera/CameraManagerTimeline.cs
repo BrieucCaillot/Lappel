@@ -1,11 +1,15 @@
-﻿public class CameraManagerTimeline : Singleton<CameraManagerTimeline>
-{
+﻿using System;
 
+public class CameraManagerTimeline : Singleton<CameraManagerTimeline>
+{
+    [NonSerialized]
     public bool cascadeSceneDefaultToRightStarted = false;
+    [NonSerialized]
     public bool cascadeSceneDefaultToRightEnded = false;
+    [NonSerialized]
     public bool cascadeSceneRightToDefaultStarted = false;
+    [NonSerialized]
     public bool cascadeSceneRightToDefaultEnded = true;
-    
 
     // private void FixedUpdate()
     // {
