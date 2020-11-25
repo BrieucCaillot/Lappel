@@ -11,22 +11,27 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    
    public void StartIdleAnim()
    {
-      anim.SetTrigger("StartIdleAnim");
+      anim.SetTrigger("StartIdle");
+   }
+   
+   public void StartBeakAnim()
+   {
+      anim.SetTrigger("StartBeak");
    }
 
    public void StartCrevasseAnim()
    {
-      anim.SetTrigger("StartCrevasseAnim");
+      anim.SetTrigger("StartCrevasse");
    }
 
    public void StartCascadeAnim()
    {
-      anim.SetTrigger("StartCascadeAnim");
+      anim.SetTrigger("StartCascade");
    }
    
    public void StartUnderwaterAnim()
    {
-      anim.SetTrigger("StartUnderwaterAnim");
+      anim.SetTrigger("StartUnderwater");
    }
    
    public void OnAnimStart()

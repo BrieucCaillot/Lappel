@@ -23,6 +23,7 @@ public class PenguinController : MonoBehaviour
         agent.stoppingDistance = maxDistance;
         StartCoroutine(nameof(ReachDestination));
         Invoke("RandomPause", Random.Range(5, 10));
+        Invoke("RandomCry", Random.Range(10, 20));
     }
 
     private void Update()
@@ -46,6 +47,14 @@ public class PenguinController : MonoBehaviour
         
         float randomTime = Random.Range(5, 15);
         Invoke("RandomPause", randomTime);
+    }
+
+    private void RandomCry()
+    {
+        anim.SetTrigger("StartBeak"); 
+
+        float randomTime = Random.Range(10, 25);
+        Invoke("RandomCry", randomTime);
     }
 
     IEnumerator ReachDestination()

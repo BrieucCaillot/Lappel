@@ -1,5 +1,7 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PenguinFootstepSpawn : MonoBehaviour
 {
@@ -11,10 +13,14 @@ public class PenguinFootstepSpawn : MonoBehaviour
     
     public float footPrintOffset = 0.05f;
     
-    public AudioSource[] audioSources;
-
+    private AudioSource[] audioSources;
     private float footprintFadeValue = 7f;
-    
+
+    private void Start()
+    {
+        audioSources = transform.GetComponents<AudioSource>();
+    }
+
     public void LeftFootstep()
     {
         RaycastHit hit;
