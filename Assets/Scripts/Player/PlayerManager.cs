@@ -7,12 +7,13 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     [NonSerialized]
     public bool canMove = false;
+    [NonSerialized]
+    public bool autoMoveIntro = false;
     [Range(0, 50)]
     public float speed = 6f;
 
     [SerializeField] private GameObject player = null;
     private float rotationRate = 360;
-    private bool autoMoveIntro = false;
 
     private Animator anim;
     private static Rigidbody rigidBody;
@@ -67,7 +68,11 @@ public class PlayerManager : Singleton<PlayerManager> {
     public void RotateIntro()
     {
         transform.DORotate(new Vector3(0, 180, 0), 2f)
-            .OnPlay(() => autoMoveIntro = true);
+            .OnPlay(() =>
+            {
+                autoMoveIntro = true;
+                SoundManager.Instance.PlayAuroreCallMainScene();
+            });
     }
 
     public void ResetPosition() {

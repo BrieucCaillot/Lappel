@@ -15676,8 +15676,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859661445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.4, y: -140, z: -13}
-  m_LocalScale: {x: 339.94525, y: 8.267027, z: 1}
+  m_LocalPosition: {x: 65.4, y: -140, z: -345}
+  m_LocalScale: {x: 1277.4679, y: 8.267027, z: 1}
   m_Children: []
   m_Father: {fileID: 1365931217}
   m_RootOrder: 1
@@ -30210,9 +30210,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f21555f7a5b074a814905aac483fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainSceneSnapshot: {fileID: 0}
   cascadeSceneSnapshot: {fileID: -7637514010629895099, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   underwaterSceneSnapshot: {fileID: -4250259408613194925, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   mountainSceneSnapshot: {fileID: 24500006, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
+  finalSceneSnapshot: {fileID: 0}
+  Aurore: {fileID: 0}
+  AuroreCall: {fileID: 0}
+  Ambiant1: {fileID: 0}
+  Ambiant2: {fileID: 0}
 --- !u!114 &1136675894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40281,8 +40287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cb5f6a8a7934b279fb2efad16ccc7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logo: {fileID: 1942284475}
+  logo: {fileID: 0}
   interaction: {fileID: 771304381}
+  command: {fileID: 0}
   cascadeTransitionAnimator: {fileID: 1597363245}
 --- !u!114 &1461736825
 MonoBehaviour:
@@ -40592,7 +40599,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainSceneIntroToDefault: {fileID: 0}
-  mainSceneDefaultToOutro: {fileID: 0}
   mainSceneDefaultToSides: {fileID: 0}
   cascadeSceneDefaultToRight: {fileID: 0}
   cascadeSceneRightToDefault: {fileID: 0}

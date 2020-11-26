@@ -30,6 +30,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) UIManager.Instance.HideCommands();
         if (enteredGame || !introShowed) return;
         if (Input.GetKey(KeyCode.Space)) PlayerEnterGame();
     }
@@ -41,13 +42,13 @@ public class GameManager : Singleton<GameManager>
 
     private void EnterGame()
     {
-        if (SceneManager.GetActiveScene().name == "Main Scene") MainSceneManager.Play();
+        if (SceneManager.GetActiveScene().name == "Main Scene") MainSceneManager.Instance.Play();
         enteredGame = true;
     }
 
     IEnumerator LetsGo()
     {
         yield return new WaitForSeconds(7f);
-        UIManager.Instance.ShowIntro();
+        UIManager.Instance.ShowInteraction();
     }
 }

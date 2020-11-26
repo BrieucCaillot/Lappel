@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.SceneManagement;
 
 public class CameraManager : Singleton<CameraManager>
 {
+    [SerializeField]
+    public Camera mainCamera;
     public PlayableDirector mainSceneIntroToDefault;
     // public PlayableDirector mainSceneDefaultToOutro;
     public PlayableDirector mainSceneDefaultToSides;
@@ -24,8 +24,8 @@ public class CameraManager : Singleton<CameraManager>
                 mainSceneIntroToDefault.Play();
                 break;
             case "mainSceneDefaultToSides":
+                MainSceneManager.Instance.OnTriggerEnterColliderTimeline();
                 mainSceneDefaultToSides.Play();
-                StartCoroutine("StartCascadeScene");
                 break;
                 // case "mainSceneDefaultToOutro":
                 //     mainSceneDefaultToOutro.Play();
@@ -56,17 +56,8 @@ public class CameraManager : Singleton<CameraManager>
         }
     }
 
-    IEnumerator StartCascadeScene()
+    public Vector3 MainCameraPosition()
     {
-        yield return new WaitForSeconds(47f);
-        glacier.transform.position = new Vector3(170, -8.5f, 37);
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Cascade Scene");
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-        CascadeSceneManager.Play();
+        return mainCamera.transform.position;
     }
-
 }

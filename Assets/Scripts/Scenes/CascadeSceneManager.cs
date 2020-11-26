@@ -25,14 +25,8 @@ public class CascadeSceneManager : MonoBehaviour
     public static void Play()
     {
         Debug.Log("CASCADE SCENE PLAY");
-
         PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
-    }
-
-    private void Update()
-    {
-        Debug.Log(PlayerManager.Instance.transform.rotation.y);
     }
 
     private void OnInteractCrevasse()

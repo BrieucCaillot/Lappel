@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Audio;
 
 public class SoundManager : Singleton<SoundManager>
 {
     [Header("Snapshots")]
+    [SerializeField]
+    private AudioMixerSnapshot mainSceneSnapshot = null;
     [SerializeField]
     private AudioMixerSnapshot cascadeSceneSnapshot = null;
     [SerializeField]
@@ -17,10 +20,22 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField]
     private AudioSource Aurore = null;
     [SerializeField]
+    private GameObject AuroreCall = null;
+    private AudioSource AuroreCallSource = null;
+    [SerializeField]
     private AudioSource Ambiant1 = null;
     [SerializeField]
     private AudioSource Ambiant2 = null;
-    
+
+    private void Start()
+    {
+        AuroreCallSource = AuroreCall.GetComponent<AudioSource>();
+    }
+
+    public void MainSceneSnapshot()
+    {
+        mainSceneSnapshot.TransitionTo(4f);
+    }
     public void CascadeSceneSnapshot()
     {
         cascadeSceneSnapshot.TransitionTo(4f);
@@ -43,6 +58,22 @@ public class SoundManager : Singleton<SoundManager>
     public void PlayAurore()
     {
         Aurore.Play();
+    }
+    public void PlayAuroreCall()
+    {
+        AuroreCallSource.spatialBlend = Single.MaxValue;   
+        AuroreCallSource.Play();
+    }
+
+    public void PlayAuroreCallMainScene()
+    {
+        AuroreCallSource.spatialBlend = Single.MinValue;   
+        AuroreCallSource.Play();
+    }
+
+    public void MoveAuroreCall(Vector3 position)
+    {
+        AuroreCall.transform.position = position;
     }
 
     public void PlayAmbiant1()
