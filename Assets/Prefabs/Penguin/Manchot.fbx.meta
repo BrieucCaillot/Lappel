@@ -111,13 +111,6 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: NewEvent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0
         functionName: OnAnimStart
         data: 
         objectReferenceParameter: {fileID: 5298737118336480038, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
