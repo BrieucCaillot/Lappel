@@ -30,25 +30,40 @@ public class CascadeSceneManager : MonoBehaviour
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
     }
 
+    private void Update()
+    {
+        Debug.Log(PlayerManager.Instance.transform.rotation.y);
+    }
+
     private void OnInteractCrevasse()
     {
         Debug.Log("OnInteractCrevasse");
 
         if (crevasseAnimPlayed) return;
         crevasseAnimPlayed = true;
+        if (Mathf.Abs(PlayerManager.Instance.transform.rotation.y) < 0.95)
+        {
+            PlayerManager.Instance.transform
+                .DORotate(new Vector3(0, 180, 0), 1f)
+                .OnComplete(Jump);
+        }
+        else
+        {
+            Jump();
+        }
+
+    }
+
+    private void Jump()
+    {
+        colliders.SetActive(false);
+        PlayerAnimManager.Instance.StartCrevasseAnim();
         PlayerManager.Instance.transform
-            .DORotate(new Vector3(0, 180, 0), 1f)
+            .DOMove(PlayerManager.Instance.transform.position + Vector3.back * 10, 1f)
+            .SetDelay(2f)
             .OnComplete(() =>
             {
-                colliders.SetActive(false);
-                PlayerAnimManager.Instance.StartCrevasseAnim();
-                PlayerManager.Instance.transform
-                    .DOMove(PlayerManager.Instance.transform.position + Vector3.back * 10, 1f)
-                    .SetDelay(2f)
-                    .OnComplete(() =>
-                    {
-                        colliders.SetActive(true);
-                    });
+                colliders.SetActive(true);
             });
     }
 
@@ -73,7 +88,7 @@ public class CascadeSceneManager : MonoBehaviour
                     {
                         cascadeSplash.transform.DOMove(destination + Vector3.down * 3, 0f).OnComplete(() => cascadeSplashParticles.Play());
                         UIManager.Instance.ShowCascadeTransition();
-                        // UnderwaterSceneManager.Play();
+                        // UnderwaterSceneManager.Instance.Play();
                     });
             });
     }
