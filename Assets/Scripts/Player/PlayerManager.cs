@@ -103,7 +103,9 @@ public class PlayerManager : Singleton<PlayerManager> {
             case "INTERACTION ZONE MOUNTAIN":
                 collider.transform.parent.GetComponent<InteractionMountainManager>().PlayerInInteractionZone();
                 break;
-          
+            case "INTERACTION ZONE FINAL":
+                collider.transform.parent.GetComponent<InteractionFinalManager>().PlayerInInteractionZone();
+                break;
             default:
                 break;
         }
@@ -122,6 +124,9 @@ public class PlayerManager : Singleton<PlayerManager> {
                 break;
             case "INTERACTION ZONE MOUNTAIN":
                 collider.transform.parent.GetComponent<InteractionMountainManager>().PlayerOutInteractionZone();
+                break;
+            case "INTERACTION ZONE FINAL":
+                collider.transform.parent.GetComponent<InteractionFinalManager>().PlayerOutInteractionZone();
                 break;
             default:
                 break;
