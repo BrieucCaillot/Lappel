@@ -3,9 +3,10 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class CameraManager : Singleton<CameraManager> {
+public class CameraManager : Singleton<CameraManager>
+{
     public PlayableDirector mainSceneIntroToDefault;
-    public PlayableDirector mainSceneDefaultToOutro;
+    // public PlayableDirector mainSceneDefaultToOutro;
     public PlayableDirector mainSceneDefaultToSides;
     public PlayableDirector cascadeSceneDefaultToRight;
     public PlayableDirector cascadeSceneRightToDefault;
@@ -14,19 +15,22 @@ public class CameraManager : Singleton<CameraManager> {
 
     public GameObject glacier;
 
-    public void StartTimeline(string Movement) {
-        switch (Movement) {
+    public void StartTimeline(string Movement)
+    {
+        switch (Movement)
+        {
             // MAIN SCENE
             case "mainSceneIntroToDefault":
                 mainSceneIntroToDefault.Play();
                 break;
             case "mainSceneDefaultToSides":
                 mainSceneDefaultToSides.Play();
-                break;
-            case "mainSceneDefaultToOutro":
-                mainSceneDefaultToOutro.Play();
                 StartCoroutine("StartCascadeScene");
                 break;
+                // case "mainSceneDefaultToOutro":
+                //     mainSceneDefaultToOutro.Play();
+
+                // break;
 
                 // CASCADE SCENE
             case "cascadeSceneDefaultToRight":
@@ -52,12 +56,14 @@ public class CameraManager : Singleton<CameraManager> {
         }
     }
 
-    IEnumerator StartCascadeScene() {
-        yield return new WaitForSeconds(5f);
+    IEnumerator StartCascadeScene()
+    {
+        yield return new WaitForSeconds(47f);
         glacier.transform.position = new Vector3(170, -8.5f, 37);
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Cascade Scene");
-        while (!asyncLoad.isDone) {
+        while (!asyncLoad.isDone)
+        {
             yield return null;
         }
         CascadeSceneManager.Play();
