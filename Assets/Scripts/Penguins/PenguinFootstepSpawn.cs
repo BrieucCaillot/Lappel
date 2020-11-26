@@ -1,24 +1,32 @@
 ﻿using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class PenguinFootstepSpawn : MonoBehaviour
 {
-    public GameObject rightFootprint;
-    public GameObject leftFootprint;
-
-    public Transform leftFootLocation;
-    public Transform rightFootLocation;
+    [Header("Footprint")]
+    [SerializeField]
+    private GameObject rightFootprint = null;
+    [SerializeField]
+    private GameObject leftFootprint = null;
     
-    public float footPrintOffset = 0.05f;
+    [SerializeField]
+    private Transform leftFootLocation = null;
+    [SerializeField]
+    private Transform rightFootLocation = null;
     
-    private AudioSource[] audioSources;
+    [SerializeField]
+    private float footPrintOffset = 0.05f;
     private float footprintFadeValue = 7f;
+
+    [SerializeField]
+    private PenguinFootstepsSound penguinFootstepsSound = null;
 
     private void Start()
     {
-        audioSources = transform.GetComponents<AudioSource>();
+        penguinFootstepsSound.GetComponent<PenguinFootstepsSound>();
     }
 
     public void LeftFootstep()
@@ -26,7 +34,7 @@ public class PenguinFootstepSpawn : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(leftFootLocation.position, leftFootLocation.forward, out hit))
         {
-            if (audioSources.Length > 0) audioSources[Random.Range(0, audioSources.Length - 1)].Play();
+            penguinFootstepsSound.PlayFootstepSound();
             var left = Instantiate(leftFootprint, hit.point + hit.normal * footPrintOffset, Quaternion.LookRotation(hit.normal, leftFootLocation.up));
             left.GetComponent<SpriteRenderer>().DOFade(0, footprintFadeValue)
                 .OnComplete(() => Destroy(left, 0));
@@ -37,9 +45,8 @@ public class PenguinFootstepSpawn : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(rightFootLocation.position, rightFootLocation.forward, out hit))
         {
-            if (audioSources.Length > 0) audioSources[Random.Range(0, audioSources.Length - 1)].Play();
+            penguinFootstepsSound.PlayFootstepSound();
             var right = Instantiate(rightFootprint, hit.point + hit.normal * footPrintOffset, Quaternion.LookRotation(hit.normal, rightFootLocation.up));
-
             right.GetComponent<SpriteRenderer>().DOFade(0, footprintFadeValue)
                 .OnComplete(() => Destroy(right, 0));
         }

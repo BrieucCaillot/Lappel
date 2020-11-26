@@ -1,6 +1,7 @@
 ﻿using System;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerManager : Singleton<PlayerManager> {
 
@@ -15,10 +16,11 @@ public class PlayerManager : Singleton<PlayerManager> {
     private Animator anim;
     private static Rigidbody rigidBody;
 
-    // Start is called before the first frame update
     void Start() {
         anim = player.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
+        
+        Invoke("RandomCry", Random.Range(5, 10));
 
         if (GameManager.Instance.DebugMode) {
             canMove = true;
@@ -79,6 +81,14 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     public void SetRotation(Vector3 rotation) {
         rigidBody.MoveRotation(Quaternion.Euler(rotation));
+    }
+    
+    private void RandomCry()
+    {
+        PlayerAnimManager.Instance.StartBeakAnim();
+        
+        float randomTime = Random.Range(10, 25);
+        Invoke("RandomCry", randomTime);
     }
 
     private void OnTriggerEnter(Collider collider) {
