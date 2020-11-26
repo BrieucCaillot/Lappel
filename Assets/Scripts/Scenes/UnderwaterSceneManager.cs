@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 public class UnderwaterSceneManager : MonoBehaviour {
 
     [SerializeField]
-    private ParticleSystem bubbles = null;
+    private ParticleSystem bubblesRightLeft = null;
+    [SerializeField]
+    private ParticleSystem bubblesRightWing = null;
     
     private void Start() {
         // @TODO Remove when project is done 
@@ -23,7 +25,7 @@ public class UnderwaterSceneManager : MonoBehaviour {
     }
     
     public void PlayBubbles() {
-        bubbles.Play();
+        
     }
 
     public static void NextScene() {

@@ -304,6 +304,7 @@ AudioMixerController:
     - 8a7bf5f59f30c4748b4b039605551966
     - 2db1b63e8b45c1a469b1d6411686e5fb
     - 9c1408006650e424b962aa3cd851e246
+    - e11b52b99ecc323438450060a1e2b318
     - e0471e8d299fbf9419213fa3ba574c89
     - 59eec221f6e80a949af34a129df1f187
     name: UnderwaterScene
@@ -314,8 +315,8 @@ AudioMixerController:
     - e11b52b99ecc323438450060a1e2b318
     - 59eec221f6e80a949af34a129df1f187
     name: MountainScene
-  m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_CurrentViewIndex: 2
+  m_TargetSnapshot: {fileID: -4250259408613194925}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

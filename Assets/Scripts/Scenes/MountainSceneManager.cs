@@ -12,6 +12,12 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
     [SerializeField]
     private ParticleSystem dustParticlesDoor = null;
 
+    private void Start()
+    {
+        PlayerAnimManager.Instance.StartIdleAnim();
+        EnvironmentManager.Instance.MountainEnvironment();
+    }
+
     public void Play()
     {
         Debug.Log("MOUNTAIN SCENE PLAY");

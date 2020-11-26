@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c64877012cc6c04aa49878af3801c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubblesWingLeft: {fileID: 1870237925027558918}
+  bubblesWingRight: {fileID: 1770891820003433186}
 --- !u!1001 &7508430408806449540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,5 +135,15 @@ PrefabInstance:
 --- !u!1 &2430722212256887458 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5298737118336480038, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
+  m_PrefabInstance: {fileID: 7508430408806449540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1870237925027558918 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8198564352435779458, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
+  m_PrefabInstance: {fileID: 7508430408806449540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1770891820003433186 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8115544899867466598, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
   m_PrefabInstance: {fileID: 7508430408806449540}
   m_PrefabAsset: {fileID: 0}
