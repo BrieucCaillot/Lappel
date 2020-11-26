@@ -24,14 +24,4 @@ public class SoundManager : Singleton<SoundManager>
     {
         mountainSceneSnapshot.TransitionTo(2f);
     }
-
-    public void SoundInInteractionZone()
-    {
-        print("INNNN");
-    }
-    
-    public void SoundOutInteractionZone()
-    {
-        print("OUTTTTT");
-    }
 }

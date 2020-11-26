@@ -22,7 +22,7 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
     public void UnderwaterEnvironment() {
         groundBubbles.SetActive(true);
         snowParticles.SetActive(false);
-        // glacierTransition.SetActive(false);
+        if (glacierTransition != null) glacierTransition.SetActive(false);
         SoundManager.Instance.UnderwaterSceneSnapshot();
     }
 
