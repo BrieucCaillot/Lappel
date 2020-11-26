@@ -14,5 +14,6 @@ public class MainSceneManager : MonoBehaviour
         UIManager.Instance.HideIntro();
         PlayerManager.Instance.RotateIntro();
         CameraManager.Instance.StartTimeline("mainSceneIntroToDefault");
+        SoundManager.Instance.PlayAurore();
     }
 }

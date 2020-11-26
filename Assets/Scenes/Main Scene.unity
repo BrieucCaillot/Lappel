@@ -1615,7 +1615,7 @@ GameObject:
   - component: {fileID: 353587718}
   - component: {fileID: 353587719}
   m_Layer: 0
-  m_Name: Water Sound
+  m_Name: Underwater Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1633,7 +1633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1136675895}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &353587719
 AudioSource:
@@ -1906,7 +1906,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364419778}
-  m_LocalRotation: {x: 0.042780243, y: 0.90097153, z: -0.09133762, w: 0.42199245}
+  m_LocalRotation: {x: 0.04278024, y: 0.90097153, z: -0.09133761, w: 0.42199245}
   m_LocalPosition: {x: -30, y: 12, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1973,7 +1973,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401990443}
-  m_LocalRotation: {x: -0.0135356, y: 0.9864435, z: -0.11883021, w: -0.112362884}
+  m_LocalRotation: {x: -0.013535601, y: 0.9864435, z: -0.1188302, w: -0.112362914}
   m_LocalPosition: {x: 4.48, y: 8.87, z: 19.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2255,7 +2255,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1136675895}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &440704702
 AudioSource:
@@ -2377,7 +2377,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444539159}
-  m_LocalRotation: {x: 0.06363602, y: 0.8736199, z: -0.11890501, w: 0.46754718}
+  m_LocalRotation: {x: 0.06363603, y: 0.8736199, z: -0.11890499, w: 0.4675472}
   m_LocalPosition: {x: -45, y: 19, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10534,6 +10534,10 @@ MonoBehaviour:
   cascadeSceneSnapshot: {fileID: -7637514010629895099, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   underwaterSceneSnapshot: {fileID: -4250259408613194925, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   mountainSceneSnapshot: {fileID: 24500006, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
+  finalSceneSnapshot: {fileID: 7887354816457371935, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
+  Aurore: {fileID: 1912450029}
+  Ambiant1: {fileID: 440704702}
+  Ambiant2: {fileID: 1634615547}
 --- !u!114 &1136675894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10558,10 +10562,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1912450028}
-  - {fileID: 353587718}
-  - {fileID: 1915669457}
   - {fileID: 440704701}
   - {fileID: 1634615546}
+  - {fileID: 1915669457}
+  - {fileID: 353587718}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17556,7 +17560,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1136675895}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1634615547
 AudioSource:
@@ -18928,10 +18932,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6645677197860352805, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1040af05b2b444c87803c60f48c1ffce, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -19090,7 +19094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1136675895}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1915669458
 AudioSource:

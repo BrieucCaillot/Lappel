@@ -12,6 +12,7 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     [SerializeField] private GameObject player = null;
     private float rotationRate = 360;
+    private bool autoMoveIntro = false;
 
     private Animator anim;
     private static Rigidbody rigidBody;
@@ -29,6 +30,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     private void FixedUpdate() {
+        if (autoMoveIntro) AutoMove();
         if (!GameManager.Instance.enteredGame || !canMove) return;
         Move();
     }
@@ -62,9 +64,10 @@ public class PlayerManager : Singleton<PlayerManager> {
         rigidBody.MovePosition(newPosition);
     }
 
-    public void RotateIntro() {
+    public void RotateIntro()
+    {
         transform.DORotate(new Vector3(0, 180, 0), 2f)
-            .OnPlay(() => canMove = true);
+            .OnPlay(() => autoMoveIntro = true);
     }
 
     public void ResetPosition() {
@@ -103,7 +106,9 @@ public class PlayerManager : Singleton<PlayerManager> {
             case "INTERACTION ZONE MOUNTAIN":
                 collider.transform.parent.GetComponent<InteractionMountainManager>().PlayerInInteractionZone();
                 break;
-          
+            case "INTERACTION ZONE FINAL":
+                collider.transform.parent.GetComponent<InteractionFinalManager>().PlayerInInteractionZone();
+                break;
             default:
                 break;
         }
@@ -122,6 +127,9 @@ public class PlayerManager : Singleton<PlayerManager> {
                 break;
             case "INTERACTION ZONE MOUNTAIN":
                 collider.transform.parent.GetComponent<InteractionMountainManager>().PlayerOutInteractionZone();
+                break;
+            case "INTERACTION ZONE FINAL":
+                collider.transform.parent.GetComponent<InteractionFinalManager>().PlayerOutInteractionZone();
                 break;
             default:
                 break;
