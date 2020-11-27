@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
@@ -19,7 +18,6 @@ public class GameManager : Singleton<GameManager>
         if (SceneManager.GetActiveScene().name == "Main Scene")
         {
             onPlayerStart += EnterGame;
-            StartCoroutine("LetsGo");
         }
         else
         {
@@ -44,11 +42,5 @@ public class GameManager : Singleton<GameManager>
     {
         if (SceneManager.GetActiveScene().name == "Main Scene") MainSceneManager.Instance.Play();
         enteredGame = true;
-    }
-
-    IEnumerator LetsGo()
-    {
-        yield return new WaitForSeconds(7f);
-        UIManager.Instance.ShowInteraction();
     }
 }

@@ -16,9 +16,15 @@ public class MainSceneManager : Singleton<MainSceneManager>
     {
         Debug.Log("MAIN SCENE PLAY");
         UIManager.Instance.HideInteraction();
-        PlayerManager.Instance.RotateIntro();
-        CameraManager.Instance.StartTimeline("mainSceneIntroToDefault");
         SoundManager.Instance.MoveAuroreCall(new Vector3(0, 0, -200));
+        SoundManager.Instance.PlayAuroreCallMainScene();
+        StartCoroutine(MoveIntro());
+    }
+
+    IEnumerator MoveIntro()
+    {
+        yield return new WaitForSeconds(4f);
+        PlayerManager.Instance.RotateIntro();
     }
 
     public void OnTriggerEnterColliderTimeline()
@@ -27,6 +33,7 @@ public class MainSceneManager : Singleton<MainSceneManager>
         PlayerManager.Instance.canMove = true;
         UIManager.Instance.ShowCommands();
     }
+    
 
     public void NextSene()
     {

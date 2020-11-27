@@ -10,6 +10,8 @@ public class UIManager : Singleton<UIManager>
     private CanvasGroup interaction = null;
     [SerializeField]
     private CanvasGroup command = null;
+    [SerializeField]
+    private Image backgroundBlack = null;
     
     [SerializeField]
     private Animator cascadeTransitionAnimator = null;
@@ -21,6 +23,7 @@ public class UIManager : Singleton<UIManager>
         logo.DOFade(0, 0);
         interaction.DOFade(0, 0);
         command.DOFade(0, 0);
+        backgroundBlack.DOFade(0, 0);
     }
 
     public void ShowInteraction()
@@ -53,6 +56,16 @@ public class UIManager : Singleton<UIManager>
     public void HideCommands()
     {
         command.DOFade(0, duration);
+    }
+    
+    public void ShowBackgroundBlack()
+    {
+        backgroundBlack.DOFade(1, duration);
+    }
+    
+    public void HideBackgroundBlack()
+    {
+        backgroundBlack.DOFade(0, duration);
     }
 
     public void ShowCascadeTransition()

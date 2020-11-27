@@ -21,6 +21,11 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline>
     {
         MainSceneManager.Instance.NextSene();
     }
+    
+    public void ShowInteraction()
+    {
+        UIManager.Instance.ShowInteraction();
+    }
 
     public void PlayAmbiantIntro()
     {

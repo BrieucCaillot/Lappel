@@ -71,7 +71,7 @@ public class PlayerManager : Singleton<PlayerManager> {
             .OnPlay(() =>
             {
                 autoMoveIntro = true;
-                SoundManager.Instance.PlayAuroreCallMainScene();
+                CameraManager.Instance.StartTimeline("mainSceneIntroToDefault");
             });
     }
 

@@ -21,7 +21,17 @@ ModelImporter:
   - first:
       74: 1399698009343331756
     second: armature_manchot|bec
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: manchot
+    second: {fileID: 2100000, guid: 9ad88c58fb879a446a3cb6665ce41237, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: oeil
+    second: {fileID: 2100000, guid: 0568bb76f0ddfcc40ab7784891c08c70, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
