@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainSceneManager : Singleton<MainSceneManager>
@@ -29,8 +30,18 @@ public class MainSceneManager : Singleton<MainSceneManager>
 
     public void NextSene()
     {
+        StartCoroutine(LoadCascadeScene());
         glacierTransition.transform.position = new Vector3(170, -8.5f, 37);
-        SceneManager.LoadSceneAsync("Cascade Scene");
-        CascadeSceneManager.Play();
+    }
+    
+    IEnumerator LoadCascadeScene()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Cascade Scene");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }

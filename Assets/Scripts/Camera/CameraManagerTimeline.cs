@@ -21,12 +21,16 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline>
     {
         MainSceneManager.Instance.NextSene();
     }
+
+    public void PlayAmbiantIntro()
+    {
+        SoundManager.Instance.MainSceneIntroSnapshot();
+        SoundManager.Instance.PlayAmbiant1();
+    }
     
     public void ShowIntro()
     {
         UIManager.Instance.ShowTitle();
-        SoundManager.Instance.MainSceneSnapshot();
-        SoundManager.Instance.PlayAmbiant1();
     }
     
     public void HideIntro()

@@ -6,7 +6,7 @@ public class SoundManager : Singleton<SoundManager>
 {
     [Header("Snapshots")]
     [SerializeField]
-    private AudioMixerSnapshot mainSceneSnapshot = null;
+    private AudioMixerSnapshot mainSceneIntroSnapshot = null;
     [SerializeField]
     private AudioMixerSnapshot cascadeSceneSnapshot = null;
     [SerializeField]
@@ -32,10 +32,11 @@ public class SoundManager : Singleton<SoundManager>
         AuroreCallSource = AuroreCall.GetComponent<AudioSource>();
     }
 
-    public void MainSceneSnapshot()
+    public void MainSceneIntroSnapshot()
     {
-        mainSceneSnapshot.TransitionTo(4f);
+        mainSceneIntroSnapshot.TransitionTo(4f);
     }
+    
     public void CascadeSceneSnapshot()
     {
         cascadeSceneSnapshot.TransitionTo(4f);

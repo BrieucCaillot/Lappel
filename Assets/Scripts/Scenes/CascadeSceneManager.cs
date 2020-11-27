@@ -16,15 +16,11 @@ public class CascadeSceneManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("CASCADE SCENE START");
         interactionCrevasseManager.onPlayerInteracted += OnInteractCrevasse;
         interactionCascadeManager.onPlayerInteracted += OnInteractCascade;
         cascadeSplashParticles = cascadeSplash.GetComponent<ParticleSystem>();
         EnvironmentManager.Instance.CascadeEnvironment();
-    }
-
-    public static void Play()
-    {
-        Debug.Log("CASCADE SCENE PLAY");
         PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
     }

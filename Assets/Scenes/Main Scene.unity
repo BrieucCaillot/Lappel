@@ -921,7 +921,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171105051}
-  m_LocalRotation: {x: -0.037553433, y: 0.9569867, z: -0.14444561, w: -0.24880044}
+  m_LocalRotation: {x: -0.034275685, y: 0.87345874, z: -0.13183808, w: -0.46754578}
   m_LocalPosition: {x: 6.48, y: 8.110001, z: 11.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1275,7 +1275,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233362486}
-  m_LocalRotation: {x: -5.152285e-17, y: 0.99493957, z: 5.101952e-16, w: 0.100475505}
+  m_LocalRotation: {x: 5.152284e-17, y: 0.99493957, z: -5.101951e-16, w: 0.100475505}
   m_LocalPosition: {x: -4.53, y: 4, z: 22.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1915,6 +1915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 359286809}
   - component: {fileID: 359286810}
+  - component: {fileID: 359286811}
   m_Layer: 0
   m_Name: introToDefault
   m_TagString: Untagged
@@ -1953,6 +1954,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 1240001044488390219, guid: bff0b12b58ec58f41bbf20b8ca1bf4d2, type: 2}
     value: {fileID: 171105058}
+  - key: {fileID: 6322006194164401939, guid: bff0b12b58ec58f41bbf20b8ca1bf4d2, type: 2}
+    value: {fileID: 359286808}
   m_ExposedReferences:
     m_References:
     - 9fe03dc788cdc3d4aaf81e9687325a77: {fileID: 1107999525}
@@ -1961,6 +1964,36 @@ PlayableDirector:
     - 64d1ed60aa5a5b14aa2c46fb5aeb69f4: {fileID: 475233814}
     - 4e430fa01011f824ebc491e1b8d55913: {fileID: 475233814}
     - ade8e1aef62aeb64b9c1410218d0efa4: {fileID: 1107999525}
+--- !u!114 &359286811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359286808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 4f13452af1728aa49bc98ee2c1300449, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1634467818}
+          m_TargetAssemblyTypeName: CameraManagerTimeline, Assembly-CSharp
+          m_MethodName: PlayAmbiantIntro
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &364419778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +2018,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364419778}
-  m_LocalRotation: {x: 0.042780243, y: 0.90097153, z: -0.09133762, w: 0.42199245}
+  m_LocalRotation: {x: 0.042780254, y: 0.90097153, z: -0.09133762, w: 0.4219925}
   m_LocalPosition: {x: -30, y: 12, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2052,7 +2085,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401990443}
-  m_LocalRotation: {x: -0.013535597, y: 0.9864435, z: -0.1188302, w: -0.11236288}
+  m_LocalRotation: {x: -0.0135356, y: 0.9864435, z: -0.11883018, w: -0.112362914}
   m_LocalPosition: {x: 4.48, y: 8.87, z: 19.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2514,7 +2547,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444539159}
-  m_LocalRotation: {x: 0.06363602, y: 0.8736199, z: -0.11890501, w: 0.46754718}
+  m_LocalRotation: {x: 0.06363603, y: 0.8736199, z: -0.11890499, w: 0.4675472}
   m_LocalPosition: {x: -45, y: 19, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5860,7 +5893,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107999522}
-  m_LocalRotation: {x: 0.000000002653798, y: 0.9880345, z: -0.15423334, w: 0.000000017000497}
+  m_LocalRotation: {x: -0.000000002653798, y: 0.9880345, z: -0.15423334, w: -0.000000017000497}
   m_LocalPosition: {x: 0, y: 12, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10870,7 +10903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f21555f7a5b074a814905aac483fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSceneSnapshot: {fileID: 2301757251565316252, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
+  mainSceneIntroSnapshot: {fileID: 2301757251565316252, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   cascadeSceneSnapshot: {fileID: -7637514010629895099, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   underwaterSceneSnapshot: {fileID: -4250259408613194925, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   mountainSceneSnapshot: {fileID: 24500006, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
@@ -18611,6 +18644,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 15750c2c7cbdd5940a969b96883468b4, type: 2}
     - {fileID: 11400000, guid: b6c9d6f9bf98978448e8da0aa15023a9, type: 2}
     - {fileID: 11400000, guid: 599ac43be8f4f8f47abf9d41cde56577, type: 2}
+    - {fileID: 11400000, guid: 4f13452af1728aa49bc98ee2c1300449, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -18645,6 +18679,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1634467818}
           m_TargetAssemblyTypeName: CameraManagerTimeline, Assembly-CSharp
           m_MethodName: HideIntro
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1634467818}
+          m_TargetAssemblyTypeName: CameraManagerTimeline, Assembly-CSharp
+          m_MethodName: PlayAmbiantIntro
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
