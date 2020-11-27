@@ -133,10 +133,23 @@ public class PlayerManager : Singleton<PlayerManager> {
             case "INTERACTION ZONE MOUNTAIN":
                 collider.transform.parent.GetComponent<InteractionMountainManager>().PlayerOutInteractionZone();
                 break;
+            case "MOUNTAIN CORRIDOR":
+                MountainSceneManager.Instance.OutCorridor();
+                break;
             case "INTERACTION ZONE FINAL":
                 collider.transform.parent.GetComponent<InteractionFinalManager>().PlayerOutInteractionZone();
                 break;
             default:
+                break;
+        }
+    }
+
+    private void OnTriggerStay(Collider collider)
+    {
+        switch (collider.name)
+        {
+            case "MOUNTAIN CORRIDOR":
+                MountainSceneManager.Instance.InCorridor();
                 break;
         }
     }

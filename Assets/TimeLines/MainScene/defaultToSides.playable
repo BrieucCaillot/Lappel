@@ -592,6 +592,7 @@ MonoBehaviour:
     - {fileID: 7670958994631673812}
     - {fileID: -3647017731288819882}
     - {fileID: 677650797076904853}
+    - {fileID: 5076660579826520753}
 --- !u!114 &677650797076904853
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -640,6 +641,22 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: fbca9393bae1bac4d8f368df32135d62
     defaultValue: {fileID: 0}
+--- !u!114 &5076660579826520753
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 0
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 401874ca601d6f24ca2bc8759d486756, type: 2}
 --- !u!114 &5207841952843850799
 MonoBehaviour:
   m_ObjectHideFlags: 1

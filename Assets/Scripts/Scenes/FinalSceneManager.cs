@@ -13,17 +13,13 @@ public class FinalSceneManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("FINAL SCENE START");
+        UIManager.Instance.FadeBackgroundBlack(0);
         interactionFinalManager.onPlayerInteracted += OnInteractFinal;
-    }
-
-    public static void Play()
-    {
-        Debug.Log("FINAL SCENE PLAY");
-
         PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
         EnvironmentManager.Instance.FinalEnvironment();
-    }
+    }    
 
     private void OnInteractFinal()
     {

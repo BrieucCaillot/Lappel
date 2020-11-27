@@ -33,9 +33,8 @@ public class MainSceneManager : Singleton<MainSceneManager>
         PlayerManager.Instance.canMove = true;
         UIManager.Instance.ShowCommands();
     }
-    
 
-    public void NextSene()
+    public void NextScene()
     {
         StartCoroutine(LoadCascadeScene());
         glacierTransition.transform.position = new Vector3(170, -8.5f, 37);

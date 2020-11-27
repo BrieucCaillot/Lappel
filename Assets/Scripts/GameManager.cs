@@ -30,6 +30,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) UIManager.Instance.HideCommands();
         if (enteredGame || !introShowed) return;
+        print("allez");
         if (Input.GetKey(KeyCode.Space)) PlayerEnterGame();
     }
     
@@ -40,6 +41,7 @@ public class GameManager : Singleton<GameManager>
 
     private void EnterGame()
     {
+        print("ENTER GAME");
         if (SceneManager.GetActiveScene().name == "Main Scene") MainSceneManager.Instance.Play();
         enteredGame = true;
     }

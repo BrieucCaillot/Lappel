@@ -11,7 +11,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private CanvasGroup command = null;
     [SerializeField]
-    private Image backgroundBlack = null;
+    public Image backgroundBlack = null;
     
     [SerializeField]
     private Animator cascadeTransitionAnimator = null;
@@ -28,6 +28,7 @@ public class UIManager : Singleton<UIManager>
 
     public void ShowInteraction()
     {
+        print("ShowInteraction");
         if (GameManager.Instance.DebugMode) return;
         interaction.DOFade(1, duration).OnComplete(() => GameManager.Instance.introShowed = true);
     }
@@ -58,16 +59,11 @@ public class UIManager : Singleton<UIManager>
         command.DOFade(0, duration);
     }
     
-    public void ShowBackgroundBlack()
+    public void FadeBackgroundBlack(float end)
     {
-        backgroundBlack.DOFade(1, duration);
+        backgroundBlack.DOFade(end, 2f);
     }
     
-    public void HideBackgroundBlack()
-    {
-        backgroundBlack.DOFade(0, duration);
-    }
-
     public void ShowCascadeTransition()
     {
         cascadeTransitionAnimator.SetTrigger("Cascade Anim");

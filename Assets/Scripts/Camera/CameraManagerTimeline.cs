@@ -17,9 +17,14 @@ public class CameraManagerTimeline : Singleton<CameraManagerTimeline>
     //     print("RightToStartEnded " + cascadeSceneRightToDefaultEnded);
     // }
     
-    public void OnMainSceneRightToDefaultNextScene()
+    public void LoadCascadeScene()
     {
-        MainSceneManager.Instance.NextSene();
+        MainSceneManager.Instance.NextScene();
+    }
+    
+    public void ShowCommands()
+    {
+        UIManager.Instance.ShowCommands();
     }
     
     public void ShowInteraction()

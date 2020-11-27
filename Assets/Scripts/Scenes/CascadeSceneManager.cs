@@ -41,7 +41,6 @@ public class CascadeSceneManager : MonoBehaviour
         {
             Jump();
         }
-
     }
 
     private void Jump()

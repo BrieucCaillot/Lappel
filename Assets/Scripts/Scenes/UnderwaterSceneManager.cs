@@ -22,8 +22,6 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
     private float offsetZ = -17f;
     private void Start()
     {
-        // @TODO Remove when project is done 
-        // cameraPosition = Camera.main.
         CameraManager.Instance.StartTimeline("cascadeSceneRightToUnderwater");
         PlayerManager.Instance.SetPosition(new Vector3(0, -140, 0));
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
