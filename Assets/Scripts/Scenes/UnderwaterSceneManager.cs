@@ -1,10 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
 {
 
     public Transform fishPosition;
+
+    public Transform fishDestination;
+
+    public Transform cameraPosition;
 
     private bool transitionStarted = false;
 
@@ -19,25 +24,30 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
     {
         // @TODO Remove when project is done 
         // cameraPosition = Camera.main.
+        CameraManager.Instance.StartTimeline("cascadeSceneRightToUnderwater");
         PlayerManager.Instance.SetPosition(new Vector3(0, -140, 0));
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
         PlayerAnimManager.Instance.StartUnderwaterAnim();
         PlayerManager.Instance.speed = 12;
         EnvironmentManager.Instance.UnderwaterEnvironment();
     }
-    
+
     private void Update()
     {
-        print(fishPosition);
-        fishPosition.position = new Vector3(CameraManager.Instance.MainCameraPosition().x + offsetX, CameraManager.Instance.MainCameraPosition().y + offsetY, CameraManager.Instance.MainCameraPosition().z + offsetZ);
-        if (transitionStarted)
+        if (fishPosition != null)
         {
-            offsetZ = offsetZ + 0.1f;
-
-            if (offsetZ >= -5)
+            fishPosition.position = new Vector3(CameraManager.Instance.MainCameraPosition().x + offsetX, CameraManager.Instance.MainCameraPosition().y + offsetY, CameraManager.Instance.MainCameraPosition().z + offsetZ);
+            if (transitionStarted)
             {
-                CameraManager.Instance.underwaterToMoutain.Play();
-                NextScene();
+
+                if (offsetZ >= -5)
+                {
+                    StartCoroutine(LoadYourAsyncScene());
+                }
+                else
+                {
+                    offsetZ = offsetZ + 0.1f;
+                }
             }
         }
     }
@@ -46,8 +56,7 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
     {
         Debug.Log("UNDERWATER SCENE PLAY");
         SceneManager.LoadSceneAsync("Underwater Scene");
-        PlayerManager.Instance.SetPosition(new Vector3(0, -140, 0));
-        PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
+        PlayerManager.Instance.SetPosition(new Vector3(0, -139, 0));
         PlayerManager.Instance.speed = 12;
         PlayerAnimManager.Instance.StartUnderwaterAnim();
     }
@@ -55,12 +64,15 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
     public void StartFishTransition()
     {
         transitionStarted = true;
-        // PlayerManager.Instance.canMove = false;
-        // fishPosition.DOMove(fishDestination.position, 15f);
     }
 
-    public void NextScene()
+    IEnumerator LoadYourAsyncScene()
     {
-        MountainSceneManager.Instance.Play();
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Mountain Scene");
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
+
 }
