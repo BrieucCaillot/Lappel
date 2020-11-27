@@ -10656,6 +10656,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d92bc639c6e7dc43a457bcb1bd8497e, type: 3}
   m_PrefabInstance: {fileID: 747394079}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &747394081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d92bc639c6e7dc43a457bcb1bd8497e, type: 3}
+  m_PrefabInstance: {fileID: 747394079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &747394082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747394081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a968be9a26394429095d001e27e77c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &771304380
 GameObject:
   m_ObjectHideFlags: 0
@@ -30210,7 +30227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f21555f7a5b074a814905aac483fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSceneSnapshot: {fileID: 0}
+  mainSceneIntroSnapshot: {fileID: 0}
   cascadeSceneSnapshot: {fileID: -7637514010629895099, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   underwaterSceneSnapshot: {fileID: -4250259408613194925, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   mountainSceneSnapshot: {fileID: 24500006, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
@@ -40598,6 +40615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5102e72033301a14480764c5ed250a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
   mainSceneIntroToDefault: {fileID: 0}
   mainSceneDefaultToSides: {fileID: 0}
   cascadeSceneDefaultToRight: {fileID: 0}
