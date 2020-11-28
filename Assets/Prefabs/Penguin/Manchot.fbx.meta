@@ -193,7 +193,7 @@ ModelImporter:
       curves: []
       events:
       - time: 1
-        functionName: WingBubbles
+        functionName: PlayWingsBubbles
         data: 
         objectReferenceParameter: {fileID: 5298737118336480038, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
         floatParameter: 0

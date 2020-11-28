@@ -44,7 +44,7 @@ public class SoundManager : Singleton<SoundManager>
     
     public void UnderwaterSceneSnapshot()
     {
-        underwaterSceneSnapshot.TransitionTo(1f);
+        underwaterSceneSnapshot.TransitionTo(0.3f);
     }
     
     public void MountainSceneSnapshot()
@@ -62,14 +62,16 @@ public class SoundManager : Singleton<SoundManager>
     }
     public void PlayAuroreCall()
     {
+        AuroreCallSource.panStereo = 0f;   
         AuroreCallSource.spatialBlend = Single.MaxValue;   
         AuroreCallSource.Play();
     }
 
     public void PlayAuroreCallMainScene()
     {
-        AuroreCallSource.spatialBlend = Single.MinValue;   
+        AuroreCallSource.panStereo = -0.6f;   
         AuroreCallSource.Play();
+        CameraManager.Instance.ShakeCameraAurore(4f, 1f);
     }
 
     public void MoveAuroreCall(Vector3 position)

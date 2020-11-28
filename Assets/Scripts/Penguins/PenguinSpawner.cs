@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PenguinSpawner : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PenguinSpawner : MonoBehaviour
     [SerializeField] private int rangeMin = -10;
     [SerializeField] private int rangeMax = 10;
     
+    private GameObject[] penguins = null;
+    
     private void Start()
     {
         for (var i = 0; i < penguinsCount; i++)
@@ -16,6 +19,13 @@ public class PenguinSpawner : MonoBehaviour
             GameObject penguin = Instantiate(penguinPrefab, position, Quaternion.identity);
             penguin.GetComponent<PenguinController>().destinations = destinations;
             penguin.transform.SetParent(transform);
+            // penguins[i] = penguin;
         }
+    }
+    
+    public void DestroyAllPenguins()
+    {
+        print("DESTROY PENGUINS");
+        // print(penguins.Length);
     }
 }

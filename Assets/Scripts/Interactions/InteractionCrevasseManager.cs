@@ -20,9 +20,12 @@ public class InteractionCrevasseManager : MonoBehaviour
         interactionOn.DOFade(0, 0);
         onPlayerInInteractionZone += ShowInteractionOn;
         onPlayerInInteractionZone += HideInteractionOff;
+        onPlayerInInteractionZone += UIManager.Instance.ShowCommandSpace;
 
         onPlayerOutInteractionZone += HideInteractionOn;
         onPlayerOutInteractionZone += ShowInteractionOff;
+        
+        onPlayerInteracted += UIManager.Instance.HideCommandSpace;
     }
 
     private void Update()
@@ -32,6 +35,7 @@ public class InteractionCrevasseManager : MonoBehaviour
 
     public void PlayerInInteractionZone()
     {
+        print("INNNN");
         inInteractionZone = true;
         if (onPlayerInInteractionZone != null) onPlayerInInteractionZone();
     }

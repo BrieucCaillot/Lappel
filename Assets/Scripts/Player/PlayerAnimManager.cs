@@ -16,6 +16,7 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    
    public void StartIdleAnim()
    {
+      StopWingsBubbles();
       anim.SetTrigger("StartIdle");
    }
    
@@ -49,9 +50,19 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
       PlayerManager.Instance.canMove = true;
    }
 
-   public void WingBubbles()
+   public void PlayWingsBubbles()
    {
       bubblesWingLeft.Play();
       bubblesWingRight.Play();
    }
+   
+   public void StopWingsBubbles()
+   {
+      bubblesWingLeft.Stop();
+      bubblesWingRight.Stop();
+      bubblesWingLeft.Clear();
+      bubblesWingRight.Clear();
+   }
+   
+   
 }

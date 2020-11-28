@@ -22,11 +22,12 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
     private float offsetZ = -17f;
     private void Start()
     {
+        Debug.Log("UNDERWATER SCENE START");
         CameraManager.Instance.StartTimeline("cascadeSceneRightToUnderwater");
         PlayerManager.Instance.SetPosition(new Vector3(0, -140, 0));
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
         PlayerAnimManager.Instance.StartUnderwaterAnim();
-        PlayerManager.Instance.speed = 12;
+        PlayerManager.Instance.speed = 20;
         EnvironmentManager.Instance.UnderwaterEnvironment();
     }
 
@@ -48,15 +49,6 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
                 }
             }
         }
-    }
-
-    public void Play()
-    {
-        Debug.Log("UNDERWATER SCENE PLAY");
-        SceneManager.LoadSceneAsync("Underwater Scene");
-        PlayerManager.Instance.SetPosition(new Vector3(0, -139, 0));
-        PlayerManager.Instance.speed = 12;
-        PlayerAnimManager.Instance.StartUnderwaterAnim();
     }
 
     public void StartFishTransition()

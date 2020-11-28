@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        if (DebugMode) EnterGame();
+        if (DebugMode) OnDebugMode();
         if (SceneManager.GetActiveScene().name == "Main Scene")
         {
             onPlayerStart += EnterGame;
@@ -25,12 +25,29 @@ public class GameManager : Singleton<GameManager>
             PlayerManager.Instance.canMove = true;
         }
     }
+    //
+    // void OnGUI()
+    // {
+    //     if (GUI.Button(new Rect(10, 10, 150, 50), "Idle"))
+    //     {
+    //         PlayerAnimManager.Instance.StartIdleAnim();
+    //     }
+    //     
+    //     if (GUI.Button(new Rect(10, 100, 150, 50), "Cascade"))
+    //     {
+    //         PlayerAnimManager.Instance.StartCascadeAnim();
+    //     }
+    //     
+    //     if (GUI.Button(new Rect(10, 200, 150, 50), "Underwater"))
+    //     {
+    //         PlayerAnimManager.Instance.StartUnderwaterAnim();
+    //     }
+    // }
 
     private void Update()
     {
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) UIManager.Instance.HideCommands();
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) UIManager.Instance.HideCommandKeys();
         if (enteredGame || !introShowed) return;
-        print("allez");
         if (Input.GetKey(KeyCode.Space)) PlayerEnterGame();
     }
     
@@ -41,8 +58,15 @@ public class GameManager : Singleton<GameManager>
 
     private void EnterGame()
     {
-        print("ENTER GAME");
-        if (SceneManager.GetActiveScene().name == "Main Scene") MainSceneManager.Instance.Play();
         enteredGame = true;
+        if (SceneManager.GetActiveScene().name == "Main Scene") MainSceneManager.Instance.Play();
+    }
+
+    private void OnDebugMode()
+    {
+        enteredGame = true;
+        PlayerManager.Instance.canMove = true;
+        PlayerManager.Instance.speed = 20;
+        CameraManager.Instance.StartTimeline("mainSceneIntroToDefault");
     }
 }

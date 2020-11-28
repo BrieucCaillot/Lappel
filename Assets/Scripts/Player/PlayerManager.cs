@@ -23,11 +23,6 @@ public class PlayerManager : Singleton<PlayerManager> {
         rigidBody = GetComponent<Rigidbody>();
         
         Invoke("RandomCry", Random.Range(5, 10));
-
-        if (GameManager.Instance.DebugMode) {
-            canMove = true;
-            speed = 20;
-        }
     }
 
     private void FixedUpdate() {

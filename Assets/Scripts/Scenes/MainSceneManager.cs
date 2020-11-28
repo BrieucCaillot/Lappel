@@ -15,15 +15,15 @@ public class MainSceneManager : Singleton<MainSceneManager>
     public void Play()
     {
         Debug.Log("MAIN SCENE PLAY");
-        UIManager.Instance.HideInteraction();
-        SoundManager.Instance.MoveAuroreCall(new Vector3(0, 0, -200));
+        UIManager.Instance.HideStartGame();
+        SoundManager.Instance.MoveAuroreCall(new Vector3(0, 15, -200));
         SoundManager.Instance.PlayAuroreCallMainScene();
         StartCoroutine(MoveIntro());
     }
 
     IEnumerator MoveIntro()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         PlayerManager.Instance.RotateIntro();
     }
 
@@ -31,7 +31,7 @@ public class MainSceneManager : Singleton<MainSceneManager>
     {
         PlayerManager.Instance.autoMoveIntro = false;
         PlayerManager.Instance.canMove = true;
-        UIManager.Instance.ShowCommands();
+        UIManager.Instance.ShowCommandKeys();
     }
 
     public void NextScene()

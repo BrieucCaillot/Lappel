@@ -7,9 +7,11 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private Image logo = null;
     [SerializeField]
-    private CanvasGroup interaction = null;
+    private Text start = null;
     [SerializeField]
-    private CanvasGroup command = null;
+    private Image commandKeys = null;
+    [SerializeField]
+    private Image commandSpace = null;
     [SerializeField]
     public Image backgroundBlack = null;
     
@@ -21,22 +23,24 @@ public class UIManager : Singleton<UIManager>
     private void Start()
     {
         logo.DOFade(0, 0);
-        interaction.DOFade(0, 0);
-        command.DOFade(0, 0);
+        start.DOFade(0, 0);
+        commandKeys.DOFade(0, 0);
+        commandSpace.DOFade(0, 0);
         backgroundBlack.DOFade(0, 0);
     }
 
-    public void ShowInteraction()
+    public void ShowStartGame()
     {
-        print("ShowInteraction");
         if (GameManager.Instance.DebugMode) return;
-        interaction.DOFade(1, duration).OnComplete(() => GameManager.Instance.introShowed = true);
+        start.DOFade(1, duration).OnComplete(() => GameManager.Instance.introShowed = true);
+        commandSpace.DOFade(1, duration);
     }
 
-    public void HideInteraction()
+    public void HideStartGame()
     {
         if (!GameManager.Instance.introShowed) return;
-        interaction.DOFade(0, duration);
+        start.DOFade(0, duration);
+        commandSpace.DOFade(0, duration);
     }
     
     public void ShowTitle()
@@ -49,14 +53,26 @@ public class UIManager : Singleton<UIManager>
         logo.DOFade(0, duration);
     }
     
-    public void ShowCommands()
+    public void ShowCommandKeys()
     {
-        command.DOFade(1, duration);
+        print("ShowCommandKeys");
+        commandKeys.DOFade(1, duration);
     }
     
-    public void HideCommands()
+    public void HideCommandKeys()
     {
-        command.DOFade(0, duration);
+        commandKeys.DOFade(0, duration);
+    }
+    
+    public void ShowCommandSpace()
+    {
+        print("ShowCommandSpace");
+        commandSpace.DOFade(1, duration);
+    }
+    
+    public void HideCommandSpace()
+    {
+        commandSpace.DOFade(0, duration);
     }
     
     public void FadeBackgroundBlack(float end)
