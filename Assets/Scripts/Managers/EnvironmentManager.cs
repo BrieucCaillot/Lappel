@@ -5,35 +5,28 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
     private GameObject snowParticles = null;
     [SerializeField]
     private GameObject glacierTransition = null;
-    [SerializeField]
-    private GameObject groundBubbles = null;
 
     public void SnowEnvironment() {
-        groundBubbles.SetActive(false);
         snowParticles.SetActive(true);
     }
 
     public void CascadeEnvironment() {
-        groundBubbles.SetActive(false);
         snowParticles.SetActive(true);
         SoundManager.Instance.CascadeSceneSnapshot();
     }
 
     public void UnderwaterEnvironment() {
-        groundBubbles.SetActive(true);
         snowParticles.SetActive(false);
         if (glacierTransition != null) glacierTransition.SetActive(false);
         SoundManager.Instance.UnderwaterSceneSnapshot();
     }
 
     public void MountainEnvironment() {
-        groundBubbles.SetActive(false);
         snowParticles.SetActive(true);
         SoundManager.Instance.MountainSceneSnapshot();
     }
     
     public void FinalEnvironment() {
-        groundBubbles.SetActive(false);
         snowParticles.SetActive(false);
         SoundManager.Instance.FinalSceneCaveSnapshot();
     }
