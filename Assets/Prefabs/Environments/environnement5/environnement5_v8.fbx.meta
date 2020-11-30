@@ -1,0 +1,531 @@
+fileFormatVersion: 2
+guid: dfafdcf7a6d23f84ab552bf4e5252539
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rockpile_grotte
+    second: {fileID: 2100000, guid: c89118e7e59074d49add67409bf7c0db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_grotte_seul_1
+    second: {fileID: 2100000, guid: 402428e9fc51ad642bbeb6b28aaf4879, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_grotte_seul_2
+    second: {fileID: 2100000, guid: 3413e8bd166c565428e3485fcc43e449, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_grotte_seul_3
+    second: {fileID: 2100000, guid: 81413d6b0a65ab04f895ccb85744658f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_grotte_seul_4
+    second: {fileID: 2100000, guid: 2afc17c04da77ed499b2c2d56451d489, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_grotte_seul_5
+    second: {fileID: 2100000, guid: 159f9053bdb4c4845b8f7c0224c3ee13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_grotte_seul_6
+    second: {fileID: 2100000, guid: 3ae9332870623d644a60f05758840e40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_grotte_seul_7
+    second: {fileID: 2100000, guid: 18701b3a4375eb54d9e77b45178918de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_grotte_seul_8
+    second: {fileID: 2100000, guid: 3ce38a0bd391d4448acb49a3c25a24f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: caillou_grotte_seul_9
+    second: {fileID: 2100000, guid: 02eb05af612e21741b581c1794bacaf1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cailloux_squelette
+    second: {fileID: 2100000, guid: d0cb83ae3620dc5488e5a99857f4d99d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grotte
+    second: {fileID: 2100000, guid: b17eb446f0287fd47b730b8f40a03664, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lac_plane
+    second: {fileID: 2100000, guid: 0e41b297fb6801845a1f6b6720248006, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: menhir_squelette
+    second: {fileID: 2100000, guid: 911b8431accf4804bbdfe89e81bbdff1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_droite_1
+    second: {fileID: 2100000, guid: af556a76560298f4390da17c5dd9aec5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_droite_2
+    second: {fileID: 2100000, guid: 9b049426407839d48a6070c5b2ce3c46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_droite_3
+    second: {fileID: 2100000, guid: b2da81c7e1a57f445bc6c78997b9c43e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_droite_4
+    second: {fileID: 2100000, guid: fad78f4eb8efcc84e84840684a3e8979, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_droite_5
+    second: {fileID: 2100000, guid: 4117dcead11f3df4685f2a6b3594a3df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_1
+    second: {fileID: 2100000, guid: 31c3dc5ea3dea674e98a3a4ff4e7da7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_2
+    second: {fileID: 2100000, guid: e3b618d13fc9fd54387d71da89d93f6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_3
+    second: {fileID: 2100000, guid: 87c1b7f4b87d9dc44bb7d78cd31aaeab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_4
+    second: {fileID: 2100000, guid: f97948b4ea44e5e46aaa18ae6312e393, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: montagne_gauche_5
+    second: {fileID: 2100000, guid: cec6ea27e570b83438558616b5412022, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: panneau_interaction
+    second: {fileID: 2100000, guid: 73b218980dc6f8b42ac94a5417ea64cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pebbles_grotte_1
+    second: {fileID: 2100000, guid: 2b051b0662f03b04c993ba15502a6d17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pebbles_grotte_2
+    second: {fileID: 2100000, guid: 1bbd7daf4c60c4c4d9c5c402284025e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: premierplanrocher
+    second: {fileID: 2100000, guid: ff2e3e02a26779e49a2c2e2dfb70be48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: premierplanrocher_stalactite_1
+    second: {fileID: 2100000, guid: 16c3ca70d07622b45babc2cda8f9f2a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: premierplanrocher_stalactite_2
+    second: {fileID: 2100000, guid: 7efd7e0206ad5c24b995706e3d2e9b67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_plan_rocher
+    second: {fileID: 2100000, guid: 23e5c934f48320b43a0406c939155ab5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_plan_rocher_stalactites
+    second: {fileID: 2100000, guid: 46c79d1d3bfbd9445a3c23b709a1c28e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_cotes_1
+    second: {fileID: 2100000, guid: 716b66bfba2312445a0c83df65d656e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_cotes_2
+    second: {fileID: 2100000, guid: 93a37495d3e974843968bcf0233392c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut_1
+    second: {fileID: 2100000, guid: 082e2878f83685940a25609d23c2bc99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sol_haut_2
+    second: {fileID: 2100000, guid: aebc9c117506392458f82f0d3703291d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cotes.001
+    second: {fileID: 2100000, guid: 172b42f26335f4044b21630e634ed8b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cotes.002
+    second: {fileID: 2100000, guid: d05ed45dfb9788749a1577d60a7bffeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cotes.003
+    second: {fileID: 2100000, guid: ad21615c22a64ba46a932497933ceff5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cotes.004
+    second: {fileID: 2100000, guid: ad9ea35cd9865e54988d5cb5b1c26e03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cotes.005
+    second: {fileID: 2100000, guid: f3ac014d72a5620439b350a83b27bc99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cotes.006
+    second: {fileID: 2100000, guid: 3b1b2eb6e854ce341988b3e8d4e04767, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cotes.007
+    second: {fileID: 2100000, guid: 269379d77b1e4f6429fd5e8870d09410, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cotes.008
+    second: {fileID: 2100000, guid: 151f47d6efc9876428c3806b966fb574, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.001
+    second: {fileID: 2100000, guid: b1165b704643d9f4899350f535341c61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.002
+    second: {fileID: 2100000, guid: 64d0db5edd81dae46b92a4696bf3c827, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.003
+    second: {fileID: 2100000, guid: 6d4a21c854e367743a8ad9d223b71359, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.004
+    second: {fileID: 2100000, guid: 26bb895e609f26445a6b2fcbbda86f8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.005
+    second: {fileID: 2100000, guid: 6582a7f8f3323e0479f9f0f9425ea5c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.006
+    second: {fileID: 2100000, guid: e2b91ae8df6ce894d965926e04c53b7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.007
+    second: {fileID: 2100000, guid: 89faaec60ee1f9b4896288cfde71a5bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.008
+    second: {fileID: 2100000, guid: ea8d6c9767267c44cab1a923b3283517, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.009
+    second: {fileID: 2100000, guid: ce9cdbb82a92d5d499079f95c21212c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.010
+    second: {fileID: 2100000, guid: 228a092b19b0ab741ab3adf1b4992218, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.011
+    second: {fileID: 2100000, guid: fed1f9c062ce68d45b534d242d419a5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.012
+    second: {fileID: 2100000, guid: cd628964b82a7e84a92392fd8e504d44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.013
+    second: {fileID: 2100000, guid: 7cdc5f97f2c36274cade79e2a7fdeac2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.014
+    second: {fileID: 2100000, guid: 5598d851cd9ffd3409407ab10600eee5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.015
+    second: {fileID: 2100000, guid: 7843bac2ecfc8ff4b942de634c9fb28d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.016
+    second: {fileID: 2100000, guid: b5eebb39d8a7e284bb01e98b17bc2313, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.017
+    second: {fileID: 2100000, guid: 97667907d5042b34dbce182c4db40b98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_cou.018
+    second: {fileID: 2100000, guid: afa9e450db8fe8345b54d17b370ad6b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_crane_bas
+    second: {fileID: 2100000, guid: b2a7da6e161ec1f4a8e269c7b5bc1bad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_crane_haut
+    second: {fileID: 2100000, guid: 7321062bcd7faf340beabb7f8df5087c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.001
+    second: {fileID: 2100000, guid: 21caf8e15b4d05e4088b50057f6ef302, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.002
+    second: {fileID: 2100000, guid: 973f2ce320eb024498a4fbdab175798d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.003
+    second: {fileID: 2100000, guid: 5f9371e28571b1e4b9ce070e3fd5aa80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.004
+    second: {fileID: 2100000, guid: 5daf33c15a1fa004993a87ca8e89c103, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.005
+    second: {fileID: 2100000, guid: 885cef9b38955634bb0c9a6b2e1327e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.006
+    second: {fileID: 2100000, guid: eb5b325bec622e14c9b103103e119126, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.007
+    second: {fileID: 2100000, guid: afa6c6851b203434fbaf9951e8d4bf9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.008
+    second: {fileID: 2100000, guid: df900140ebf04ee4a8a143421a52c8da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.009
+    second: {fileID: 2100000, guid: 6ee69e2246b77ce44b200f15fe218712, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.010
+    second: {fileID: 2100000, guid: 616eda8dd4ccdd24695079c0e239ed98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squelette_queue.011
+    second: {fileID: 2100000, guid: e3764a322461a3a4ca0edaf56d9634c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_1
+    second: {fileID: 2100000, guid: 6407353ec023a1745baf476a87ec6691, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_2
+    second: {fileID: 2100000, guid: f3010fa534a33454f91364e9e506e3cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_3
+    second: {fileID: 2100000, guid: 820f273a46f87a146875000572e249ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_4
+    second: {fileID: 2100000, guid: 11d706a9f5a95924f899d9b66c50c35e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_5
+    second: {fileID: 2100000, guid: 5eb698628e5bf1c458eb897cdbcbbbdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_6
+    second: {fileID: 2100000, guid: ed3ec99ca83554c42a9ccad909e202f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_7
+    second: {fileID: 2100000, guid: 0ecb0cccc6679604389e128b2fd8ac99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_8
+    second: {fileID: 2100000, guid: bc6e6eb5db826ce48a4408e12f554b8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_9
+    second: {fileID: 2100000, guid: 46082218cd2b5b4439db05ec737f78e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_sortie_droite
+    second: {fileID: 2100000, guid: 3f4bd65c1638fa6498979862ef20ac88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stalactite_sortie_gauche
+    second: {fileID: 2100000, guid: 102f5a72302d08f439690d16f51c860a, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

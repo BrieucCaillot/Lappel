@@ -117,7 +117,7 @@ Material:
     - _edgeFoamAmount: 18.89
     - _edgeFoamCutoff: 0.32
     - _fakeSpecular: -40
-    - _waterDepth: 1.6
+    - _waterDepth: 9.91
     - _waterSmoothness: 1.29
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
