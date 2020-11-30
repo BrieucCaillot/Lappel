@@ -19,7 +19,13 @@ public class CameraManager : Singleton<CameraManager>
     private PlayableDirector cascadeSceneRightToDefault = null;
     [SerializeField]
     private PlayableDirector cascadeSceneRightToUnderwater = null;
+
     public PlayableDirector underwaterToMoutain = null;
+
+    [SerializeField]
+    private PlayableDirector mountainDefaultToFar = null;
+    [SerializeField]
+    private PlayableDirector mountainFarToClose = null;
 
     public GameObject glacier;
 
@@ -62,6 +68,13 @@ public class CameraManager : Singleton<CameraManager>
                 //poisson qui passe devant la cam
                 UnderwaterSceneManager.Instance.StartFishTransition();
                 break;
+
+            case "mountainDefaultToFar":
+                mountainDefaultToFar.Play();
+                break;
+            case "mountainFarToClose":
+                mountainFarToClose.Play();
+                break;
             default:
                 break;
         }
@@ -75,6 +88,6 @@ public class CameraManager : Singleton<CameraManager>
     public void ShakeCameraAurore(float amplitude, float frequency)
     {
         cinemachineBrain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CameraShake>()
-            .ShakeCameraAurore(amplitude, frequency); 
+            .ShakeCameraAurore(amplitude, frequency);
     }
 }
