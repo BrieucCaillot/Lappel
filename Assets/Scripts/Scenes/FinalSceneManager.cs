@@ -15,10 +15,14 @@ public class FinalSceneManager : MonoBehaviour
     {
         Debug.Log("FINAL SCENE START");
         UIManager.Instance.FadeBackgroundBlack(0);
-        interactionFinalManager.onPlayerInteracted += OnInteractFinal;
+        PlayerManager.Instance.autoMove = false;
+        PlayerManager.Instance.canMove = true;
+        PlayerAnimManager.Instance.StartIdleAnim();
         PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
         EnvironmentManager.Instance.FinalEnvironment();
+        
+        interactionFinalManager.onPlayerInteracted += OnInteractFinal;
     }    
 
     private void OnInteractFinal()

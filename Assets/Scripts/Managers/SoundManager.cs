@@ -14,6 +14,10 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField]
     private AudioMixerSnapshot mountainSceneSnapshot = null;
     [SerializeField]
+    private AudioMixerSnapshot mountainSceneCorridorSnapshot = null;
+    [SerializeField]
+    private AudioMixerSnapshot finalSceneCaveSnapshot = null;
+    [SerializeField]
     private AudioMixerSnapshot finalSceneSnapshot = null;
 
     [Header("Ambiants Sounds")]
@@ -51,6 +55,17 @@ public class SoundManager : Singleton<SoundManager>
     {
         mountainSceneSnapshot.TransitionTo(2f);
     }
+    
+    public void MountainSceneCorridorSnapshot()
+    {
+        mountainSceneCorridorSnapshot.TransitionTo(1f);
+    }
+    
+    public void FinalSceneCaveSnapshot()
+    {
+        finalSceneCaveSnapshot.TransitionTo(2f);
+    }
+    
     public void FinalSceneSnapshot()
     {
         finalSceneSnapshot.TransitionTo(2f);

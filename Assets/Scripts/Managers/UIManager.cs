@@ -77,7 +77,7 @@ public class UIManager : Singleton<UIManager>
     
     public void FadeBackgroundBlack(float end)
     {
-        backgroundBlack.DOFade(end, 2f);
+        backgroundBlack.DOFade(end, MountainSceneManager.Instance.maxTimeInCorridor);
     }
     
     public void ShowCascadeTransition()

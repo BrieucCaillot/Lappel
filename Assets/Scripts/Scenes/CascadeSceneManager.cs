@@ -20,9 +20,9 @@ public class CascadeSceneManager : MonoBehaviour
         interactionCrevasseManager.onPlayerInteracted += OnInteractCrevasse;
         interactionCascadeManager.onPlayerInteracted += OnInteractCascade;
         cascadeSplashParticles = cascadeSplash.GetComponent<ParticleSystem>();
-        EnvironmentManager.Instance.CascadeEnvironment();
         PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
+        EnvironmentManager.Instance.CascadeEnvironment();
     }
 
     private void OnInteractCrevasse()

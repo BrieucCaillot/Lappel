@@ -35,6 +35,6 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
     public void FinalEnvironment() {
         groundBubbles.SetActive(false);
         snowParticles.SetActive(false);
-        SoundManager.Instance.FinalSceneSnapshot();
+        SoundManager.Instance.FinalSceneCaveSnapshot();
     }
 }

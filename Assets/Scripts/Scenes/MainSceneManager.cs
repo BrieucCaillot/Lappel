@@ -29,7 +29,7 @@ public class MainSceneManager : Singleton<MainSceneManager>
 
     public void OnTriggerEnterColliderTimeline()
     {
-        PlayerManager.Instance.autoMoveIntro = false;
+        PlayerManager.Instance.autoMove = false;
         PlayerManager.Instance.canMove = true;
         UIManager.Instance.ShowCommandKeys();
     }

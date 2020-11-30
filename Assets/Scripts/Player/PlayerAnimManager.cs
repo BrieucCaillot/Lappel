@@ -17,6 +17,7 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    public void StartIdleAnim()
    {
       StopWingsBubbles();
+      anim.SetFloat("vertical", 0);
       anim.SetTrigger("StartIdle");
    }
    

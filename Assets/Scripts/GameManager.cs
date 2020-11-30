@@ -25,24 +25,34 @@ public class GameManager : Singleton<GameManager>
             PlayerManager.Instance.canMove = true;
         }
     }
-    //
-    // void OnGUI()
-    // {
-    //     if (GUI.Button(new Rect(10, 10, 150, 50), "Idle"))
-    //     {
-    //         PlayerAnimManager.Instance.StartIdleAnim();
-    //     }
-    //     
-    //     if (GUI.Button(new Rect(10, 100, 150, 50), "Cascade"))
-    //     {
-    //         PlayerAnimManager.Instance.StartCascadeAnim();
-    //     }
-    //     
-    //     if (GUI.Button(new Rect(10, 200, 150, 50), "Underwater"))
-    //     {
-    //         PlayerAnimManager.Instance.StartUnderwaterAnim();
-    //     }
-    // }
+    
+    void OnGUI()
+    {
+        // if (GUI.Button(new Rect(10, 10, 150, 50), "Idle"))
+        // {
+        //     PlayerAnimManager.Instance.StartIdleAnim();
+        // }
+        //
+        // if (GUI.Button(new Rect(10, 100, 150, 50), "Cascade"))
+        // {
+        //     PlayerAnimManager.Instance.StartCascadeAnim();
+        // }
+        //
+        // if (GUI.Button(new Rect(10, 200, 150, 50), "Underwater"))
+        // {
+        //     PlayerAnimManager.Instance.StartUnderwaterAnim();
+        // }
+        
+        // if (GUI.Button(new Rect(10, 10, 150, 50), "FadeIn Background Black"))
+        // {
+        //     UIManager.Instance.FadeBackgroundBlack(1);
+        // }
+        //
+        // if (GUI.Button(new Rect(10, 80, 150, 50), "FadeOut Background Black"))
+        // {
+        //     UIManager.Instance.FadeBackgroundBlack(0);
+        // }
+    }
 
     private void Update()
     {

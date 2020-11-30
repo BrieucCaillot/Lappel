@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MountainSceneManager : Singleton<MountainSceneManager>
 {
+    public float maxTimeInCorridor = 4f;
     [SerializeField]
     private Transform door = null;
     [SerializeField]
@@ -24,13 +25,12 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
         EnvironmentManager.Instance.MountainEnvironment();
     }
 
-    public void Play()
-    {
-        Debug.Log("MOUNTAIN SCENE PLAY");
-    }
-
     public void OpenDoor()
     {
+        PlayerAnimManager.Instance.StartIdleAnim();
+        PlayerManager.Instance.RotateMoutainCorridor();
+        PlayerManager.Instance.canMove = false;
+        
         door.DOShakePosition(0.3f, new Vector3(0.2f, 0, 0.2f), 5, 25, false, false)
             .OnStart((() => dustParticlesDoor.Play()))
             .OnComplete(() =>
@@ -47,16 +47,18 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
                             dustParticlesDoor.Play();
                             playedParticles = true;
                         }
-                    });
+                    })
+                    .OnComplete(() => PlayerManager.Instance.autoMove = true);
             });
     }
 
     public void InCorridor()
     {
         UIManager.Instance.FadeBackgroundBlack(1);
+        SoundManager.Instance.MountainSceneCorridorSnapshot();
         if (loadedScene) return;
         stayTime += Time.deltaTime;
-        if (stayTime > 4f)
+        if (stayTime > maxTimeInCorridor)
         {
             loadedScene = true;
             StartCoroutine(LoadFinalScene());
@@ -67,11 +69,13 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
     {
         stayTime = 0.0f;
         UIManager.Instance.FadeBackgroundBlack(0);
+        SoundManager.Instance.MountainSceneSnapshot();
     }
 
     IEnumerator LoadFinalScene()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Final Scene");
+        print("LOAD FINAL SCENE");
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)

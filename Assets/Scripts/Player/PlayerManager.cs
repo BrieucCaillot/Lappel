@@ -8,7 +8,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     [NonSerialized]
     public bool canMove = false;
     [NonSerialized]
-    public bool autoMoveIntro = false;
+    public bool autoMove = false;
     [Range(0, 50)]
     public float speed = 6f;
 
@@ -26,7 +26,7 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     private void FixedUpdate() {
-        if (autoMoveIntro) AutoMove();
+        if (autoMove) AutoMove();
         if (!GameManager.Instance.enteredGame || !canMove) return;
         Move();
     }
@@ -65,9 +65,14 @@ public class PlayerManager : Singleton<PlayerManager> {
         transform.DORotate(new Vector3(0, 180, 0), 2f)
             .OnPlay(() =>
             {
-                autoMoveIntro = true;
+                autoMove = true;
                 CameraManager.Instance.StartTimeline("mainSceneIntroToDefault");
             });
+    }
+    
+    public void RotateMoutainCorridor()
+    {
+        transform.DORotate(new Vector3(0, 203, 0), 1f);
     }
 
     public void ResetPosition() {
