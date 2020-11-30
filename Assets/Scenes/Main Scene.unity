@@ -2063,7 +2063,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401990443}
-  m_LocalRotation: {x: -0.0135356, y: 0.9864435, z: -0.11883018, w: -0.112362914}
+  m_LocalRotation: {x: -0.013535597, y: 0.9864435, z: -0.1188302, w: -0.11236288}
   m_LocalPosition: {x: 4.48, y: 8.87, z: 19.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5510,7 +5510,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056638832}
-  m_LocalRotation: {x: 3.5876208e-23, y: 0.81124216, z: 7.9942053e-23, w: 0.5847103}
+  m_LocalRotation: {x: -2.0773085e-15, y: 0.8112422, z: 2.8821116e-15, w: 0.5847103}
   m_LocalPosition: {x: -60, y: 4, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5833,7 +5833,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107999522}
-  m_LocalRotation: {x: 0.0000000026537996, y: 0.9880345, z: -0.15423334, w: 0.00000001700051}
+  m_LocalRotation: {x: 0.000000002653798, y: 0.9880345, z: -0.15423334, w: 0.000000017000497}
   m_LocalPosition: {x: 0, y: 12, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10848,6 +10848,8 @@ MonoBehaviour:
   cascadeSceneSnapshot: {fileID: -7637514010629895099, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   underwaterSceneSnapshot: {fileID: -4250259408613194925, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   mountainSceneSnapshot: {fileID: 24500006, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
+  mountainSceneCorridorSnapshot: {fileID: 4245896205455780790, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
+  finalSceneCaveSnapshot: {fileID: 7138821139503206342, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   finalSceneSnapshot: {fileID: 7887354816457371935, guid: 1fdc1ad0d89964d29991930516b6560b, type: 2}
   Aurore: {fileID: 1912450029}
   AuroreCall: {fileID: 459716237}
@@ -17873,6 +17875,8 @@ MonoBehaviour:
   cascadeSceneRightToDefault: {fileID: 137127684}
   cascadeSceneRightToUnderwater: {fileID: 914407569}
   underwaterToMoutain: {fileID: 1050416693}
+  mountainDefaultToFar: {fileID: 0}
+  mountainFarToClose: {fileID: 0}
   glacier: {fileID: 1395268824}
 --- !u!1 &1634615545
 GameObject:
