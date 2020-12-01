@@ -4,12 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
 {
-
-    public Transform fishPosition;
-
-    public Transform fishDestination;
-
-    public Transform cameraPosition;
+    [SerializeField]
+    private Transform fishPosition = null;
 
     private bool transitionStarted = false;
 
@@ -26,8 +22,8 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
         CameraManager.Instance.StartTimeline("cascadeSceneRightToUnderwater");
         PlayerManager.Instance.SetPosition(new Vector3(0, -140, 0));
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
-        PlayerAnimManager.Instance.StartUnderwaterAnim();
         PlayerManager.Instance.speed = 20;
+        PlayerAnimManager.Instance.StartUnderwaterAnim();
         EnvironmentManager.Instance.UnderwaterEnvironment();
     }
 

@@ -36,7 +36,7 @@ public class PenguinCrySound : MonoBehaviour
         }
     }
     
-    public void PlayFootstepSound()
+    public void PlayCrySound()
     {
         PickRandomSound();
         cryAudioSource.Play();

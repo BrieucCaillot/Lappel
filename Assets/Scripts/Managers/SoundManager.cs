@@ -25,15 +25,27 @@ public class SoundManager : Singleton<SoundManager>
     private AudioSource Aurore = null;
     [SerializeField]
     private GameObject AuroreCall = null;
+    [NonSerialized]
+    public float auroreDuration = 0.0f;
     private AudioSource AuroreCallSource = null;
     [SerializeField]
     private AudioSource Ambiant1 = null;
     [SerializeField]
     private AudioSource Ambiant2 = null;
+    
+    [Header("Winds Sounds")]
+    [SerializeField]
+    private AudioSource wind = null;
+    [SerializeField]
+    private AudioClip windMainScene = null;
+    [SerializeField]
+    private AudioClip windCascadeScene = null;
 
-    private void Start()
+    void Start()
     {
         AuroreCallSource = AuroreCall.GetComponent<AudioSource>();
+        // auroreDuration = AuroreCallSource.clip.length;
+        auroreDuration = 4f;
     }
 
     public void MainSceneIntroSnapshot()
@@ -70,23 +82,26 @@ public class SoundManager : Singleton<SoundManager>
     {
         finalSceneSnapshot.TransitionTo(2f);
     }
-    
+
     public void PlayAurore()
-    {
-        Aurore.Play();
+    { 
+        Aurore.Play();   
     }
+    
     public void PlayAuroreCall()
     {
         AuroreCallSource.panStereo = 0f;   
-        AuroreCallSource.spatialBlend = Single.MaxValue;   
+        AuroreCallSource.spatialBlend = Single.MinValue;   
         AuroreCallSource.Play();
+        CameraManager.Instance.ShakeCameraAurore(auroreDuration, 1f);
     }
 
     public void PlayAuroreCallMainScene()
     {
         AuroreCallSource.panStereo = -0.6f;   
+        AuroreCallSource.spatialBlend = Single.MinValue;   
         AuroreCallSource.Play();
-        CameraManager.Instance.ShakeCameraAurore(4f, 1f);
+        CameraManager.Instance.ShakeCameraAurore(auroreDuration, 1f);
     }
 
     public void MoveAuroreCall(Vector3 position)
@@ -102,5 +117,21 @@ public class SoundManager : Singleton<SoundManager>
     public void PlayAmbiant2()
     {
         Ambiant2.Play();
+    }
+
+    public void PlayWind(GameManager.SceneType sceneType)
+    {
+        switch (sceneType)
+        {
+            case GameManager.SceneType.MainScene:
+                wind.clip = windMainScene;
+                break;
+            case GameManager.SceneType.CascadeScene:
+                wind.clip = windCascadeScene;
+                break;
+            default:
+                break;
+        }   
+        wind.Play();
     }
 }

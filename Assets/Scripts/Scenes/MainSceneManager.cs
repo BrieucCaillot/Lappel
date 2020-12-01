@@ -9,15 +9,16 @@ public class MainSceneManager : Singleton<MainSceneManager>
     
     private void Start()
     {
-        EnvironmentManager.Instance.SnowEnvironment();
+        EnvironmentManager.Instance.MainSceneEnvironment();
     }
     
     public void Play()
     {
         Debug.Log("MAIN SCENE PLAY");
         UIManager.Instance.HideStartGame();
+        SoundManager.Instance.PlayWind(GameManager.SceneType.MainScene);
         SoundManager.Instance.MoveAuroreCall(new Vector3(0, 15, -200));
-        SoundManager.Instance.PlayAuroreCallMainScene();
+        EnvironmentManager.Instance.AuroreCallMainScene();
         StartCoroutine(MoveIntro());
     }
 

@@ -8,9 +8,13 @@ public class GameManager : Singleton<GameManager>
     [NonSerialized]
     public bool enteredGame = false;  
     [NonSerialized]
-    public bool introShowed = false; 
-    
+    public bool introShowed = false;
     public event Action onPlayerStart;
+    
+    public enum SceneType
+    {
+        MainScene, CascadeScene, UnderwaterScene, MountainScene, FinalScene 
+    }
 
     void Start()
     {

@@ -2,18 +2,21 @@
 
 public class PlayerAnimManager : Singleton<PlayerAnimManager>
 {
+   [Header("Anims Sounds")]
+   [SerializeField]
+   private AudioSource jumpAudioSource = null;
+   [SerializeField]
+   private AudioSource diveAudioSource = null;
+   
+   [Header("Bubbles Particles")]
    [SerializeField]
    private ParticleSystem bubblesWingLeft = null;
    [SerializeField]
    private ParticleSystem bubblesWingRight = null;
    
-   private static Animator anim;
-   
-   private void Start()
-   {
-      anim = GetComponent<Animator>();
-   }
-   
+   [SerializeField]
+   private Animator anim = null;
+
    public void StartIdleAnim()
    {
       StopWingsBubbles();
@@ -41,14 +44,26 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
       anim.SetTrigger("StartUnderwater");
    }
    
-   public void OnAnimStart()
+   public void OnAnimCrevasseStart()
+   {
+      PlayerManager.Instance.canMove = false;
+      jumpAudioSource.Play();
+   }
+
+   public void OnAnimCrevasseEnd()
+   {
+      PlayerManager.Instance.canMove = true;
+   }
+   
+   public void OnAnimCascadeStart()
    {
       PlayerManager.Instance.canMove = false;
    }
 
-   public void OnAnimEnd()
+   public void OnAnimCascadeEnd()
    {
       PlayerManager.Instance.canMove = true;
+      diveAudioSource.Play();
    }
 
    public void PlayWingsBubbles()
@@ -64,6 +79,4 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
       bubblesWingLeft.Clear();
       bubblesWingRight.Clear();
    }
-   
-   
 }

@@ -12,7 +12,8 @@ public class PlayerManager : Singleton<PlayerManager> {
     [Range(0, 50)]
     public float speed = 6f;
 
-    [SerializeField] private GameObject player = null;
+    [SerializeField] 
+    private GameObject player = null;
     private float rotationRate = 360;
 
     private Animator anim;
@@ -84,11 +85,25 @@ public class PlayerManager : Singleton<PlayerManager> {
     }
 
     public void SetPosition(Vector3 position) {
-        rigidBody.MovePosition(position);
+        if (rigidBody != null)
+        {
+            rigidBody.MovePosition(position);
+        }
+        else
+        {
+            GetComponent<Rigidbody>().MovePosition(position);
+        }
     }
 
     public void SetRotation(Vector3 rotation) {
-        rigidBody.MoveRotation(Quaternion.Euler(rotation));
+        if (rigidBody != null)
+        {
+            rigidBody.MoveRotation(Quaternion.Euler(rotation));
+        }
+        else
+        {
+            GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(rotation));
+        }
     }
     
     private void RandomCry()
@@ -113,6 +128,9 @@ public class PlayerManager : Singleton<PlayerManager> {
                 break;
             case "INTERACTION ZONE FINAL":
                 collider.transform.parent.GetComponent<InteractionFinalManager>().PlayerInInteractionZone();
+                break;
+            case "AURORE CALL COLLIDER":
+                EnvironmentManager.Instance.AuroreCall();
                 break;
             default:
                 break;

@@ -241,6 +241,7 @@ Transform:
   - {fileID: 199654875}
   - {fileID: 516499379}
   - {fileID: 747327908}
+  - {fileID: 1670657995}
   m_Father: {fileID: 263735008}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20181,7 +20182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &542593044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21345,6 +21346,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionOn: {fileID: 1052996306}
   interactionOff: {fileID: 1354114421}
+--- !u!1 &1670657994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670657995}
+  - component: {fileID: 1670657996}
+  m_Layer: 0
+  m_Name: AURORE CALL COLLIDER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1670657995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670657994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 42.5}
+  m_LocalScale: {x: 285.9572, y: 17.132011, z: 0.0001}
+  m_Children: []
+  m_Father: {fileID: 55893055}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1670657996
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670657994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1777919483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4836321679758471379, guid: 0d6399246c2a49b4dbb406936cb6ccaa, type: 3}

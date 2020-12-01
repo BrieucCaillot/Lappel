@@ -85,7 +85,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.17266186
-        functionName: PlayFootstepSound
+        functionName: PlayCrySound
         data: 
         objectReferenceParameter: {fileID: 5298737118336480038, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
         floatParameter: 0
@@ -121,14 +121,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: OnAnimStart
+        functionName: OnAnimCrevasseStart
         data: 
         objectReferenceParameter: {fileID: 5298737118336480038, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 1
-        functionName: OnAnimEnd
+        functionName: OnAnimCrevasseEnd
         data: 
         objectReferenceParameter: {fileID: 5298737118336480038, guid: 33ea9f874e31d8142a9279c47c78696a, type: 3}
         floatParameter: 0

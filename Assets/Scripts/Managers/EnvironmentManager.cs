@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class EnvironmentManager : Singleton<EnvironmentManager> {
     [SerializeField]
@@ -6,7 +7,30 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
     [SerializeField]
     private GameObject glacierTransition = null;
 
-    public void SnowEnvironment() {
+    private bool auroreCallPlayed = false;
+
+    public void AuroreCallMainScene()
+    {
+        SoundManager.Instance.PlayAuroreCallMainScene();
+        UIManager.Instance.ShowAuroreOverlay();
+    }
+    
+    public void AuroreCall()
+    {
+        if (auroreCallPlayed) return;
+        SoundManager.Instance.PlayAuroreCall();
+        UIManager.Instance.ShowAuroreOverlay();
+        auroreCallPlayed = true;
+        StartCoroutine(DelayBeforeNewAuroreCall());
+    }
+
+    IEnumerator DelayBeforeNewAuroreCall()
+    {
+        yield return new WaitForSeconds(SoundManager.Instance.auroreDuration * 2);
+        auroreCallPlayed = false;
+    }
+    
+    public void MainSceneEnvironment() {
         snowParticles.SetActive(true);
     }
 

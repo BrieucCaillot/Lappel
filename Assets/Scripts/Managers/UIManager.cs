@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
@@ -8,25 +9,34 @@ public class UIManager : Singleton<UIManager>
     private Image logo = null;
     [SerializeField]
     private Text start = null;
+    
+    [Header("Commands")]
     [SerializeField]
     private Image commandKeys = null;
     [SerializeField]
     private Image commandSpace = null;
+
+    [Header("Overlays")]
     [SerializeField]
     public Image backgroundBlack = null;
-    
     [SerializeField]
-    private Animator cascadeTransitionAnimator = null;
+    public Image backgroundWhite = null;
+    
+    [Header("Animators")]
+    [SerializeField]
+    private Animator animAnimator = null;
     
     private static float duration = 2f;
 
     private void Start()
     {
+        GetComponent<CanvasGroup>().alpha = 1;
         logo.DOFade(0, 0);
         start.DOFade(0, 0);
         commandKeys.DOFade(0, 0);
         commandSpace.DOFade(0, 0);
         backgroundBlack.DOFade(0, 0);
+        backgroundWhite.DOFade(0, 0);
     }
 
     public void ShowStartGame()
@@ -55,7 +65,6 @@ public class UIManager : Singleton<UIManager>
     
     public void ShowCommandKeys()
     {
-        print("ShowCommandKeys");
         commandKeys.DOFade(1, duration);
     }
     
@@ -66,7 +75,6 @@ public class UIManager : Singleton<UIManager>
     
     public void ShowCommandSpace()
     {
-        print("ShowCommandSpace");
         commandSpace.DOFade(1, duration);
     }
     
@@ -74,14 +82,31 @@ public class UIManager : Singleton<UIManager>
     {
         commandSpace.DOFade(0, duration);
     }
-    
+
     public void FadeBackgroundBlack(float end)
     {
         backgroundBlack.DOFade(end, MountainSceneManager.Instance.maxTimeInCorridor);
     }
     
+    public void DefaultAnim()
+    {
+        animAnimator.SetTrigger("Default");
+    }
+    
     public void ShowCascadeTransition()
     {
-        cascadeTransitionAnimator.SetTrigger("Cascade Anim");
+        animAnimator.SetTrigger("Cascade Anim");
+    }
+    
+    public void ShowAuroreOverlay()
+    {
+        animAnimator.SetTrigger("Aurore Overlay");
+        StartCoroutine(HideAuroreOverlay());
+    }
+
+    IEnumerator HideAuroreOverlay()
+    {
+        yield return new WaitForSeconds(SoundManager.Instance.auroreDuration);
+        DefaultAnim();
     }
 }
