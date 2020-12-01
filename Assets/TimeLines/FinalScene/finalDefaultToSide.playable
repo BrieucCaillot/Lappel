@@ -110,25 +110,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -143,19 +125,37 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: DEFAULT CAMERA
   - m_Version: 1
-    m_Start: 14.083333333333346
+    m_Start: 12
     m_ClipIn: 0
     m_Asset: {fileID: 9039112512181744751}
-    m_Duration: 10.933333333333332
+    m_Duration: 13.016666666666678
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5218029286243592541}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 9.050000000000011
+    m_BlendInDuration: 11.133333333333358
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -203,7 +203,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 9.4
-    m_BlendOutDuration: 9.050000000000011
+    m_BlendOutDuration: 11.133333333333358
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
