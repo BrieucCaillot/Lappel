@@ -7,8 +7,6 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
     [SerializeField]
     private GameObject glacierTransition = null;
 
-    private bool auroreCallPlayed = false;
-
     public void AuroreCallMainScene()
     {
         SoundManager.Instance.PlayAuroreCallMainScene();
@@ -17,17 +15,14 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
     
     public void AuroreCall()
     {
-        if (auroreCallPlayed) return;
         SoundManager.Instance.PlayAuroreCall();
         UIManager.Instance.ShowAuroreOverlay();
-        auroreCallPlayed = true;
         StartCoroutine(DelayBeforeNewAuroreCall());
     }
 
     IEnumerator DelayBeforeNewAuroreCall()
     {
         yield return new WaitForSeconds(SoundManager.Instance.auroreDuration * 2);
-        auroreCallPlayed = false;
     }
     
     public void MainSceneEnvironment() {
@@ -49,6 +44,7 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
 
     public void MountainEnvironment() {
         snowParticles.SetActive(true);
+        SoundManager.Instance.PlayWind(GameManager.SceneType.MountainScene);
         SoundManager.Instance.MountainSceneSnapshot();
     }
     

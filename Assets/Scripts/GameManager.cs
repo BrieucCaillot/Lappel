@@ -56,6 +56,10 @@ public class GameManager : Singleton<GameManager>
         // {
         //     UIManager.Instance.FadeBackgroundBlack(0);
         // }
+        if (GUI.Button(new Rect(10, 80, 150, 50), "Aurore Call"))
+        {
+            SoundManager.Instance.PlayAuroreCall();
+        }
     }
 
     private void Update()

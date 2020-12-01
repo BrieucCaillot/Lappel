@@ -143,6 +143,12 @@ public class SoundManager : Singleton<SoundManager>
             case GameManager.SceneType.CascadeScene:
                 wind.clip = windCascadeScene;
                 break;
+            case GameManager.SceneType.MountainScene:
+                wind.clip = windMainScene;
+                break;
+            case GameManager.SceneType.FinalScene:
+                wind.clip = windMainScene;
+                break;
             default:
                 break;
         }   

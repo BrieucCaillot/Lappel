@@ -29,6 +29,10 @@ public class UIManager : Singleton<UIManager>
     private Animator auroreAnimator = null;
     [SerializeField]
     private Animator quote1Animator = null;
+    [SerializeField]
+    private Animator quote2Animator = null;
+    [SerializeField]
+    private Animator quote3Animator = null;
     
     private bool quote1Showed = false;
     private bool quote2Showed = false;
@@ -51,14 +55,14 @@ public class UIManager : Singleton<UIManager>
     {
         if (GameManager.Instance.DebugMode) return;
         start.DOFade(1, duration).OnComplete(() => GameManager.Instance.introShowed = true);
-        commandSpace.DOFade(1, duration);
+        // commandSpace.DOFade(1, duration);
     }
 
     public void HideStartGame()
     {
         if (!GameManager.Instance.introShowed) return;
         start.DOFade(0, duration);
-        commandSpace.DOFade(0, duration);
+        // commandSpace.DOFade(0, duration);
     }
     
     public void ShowTitle()
@@ -125,14 +129,14 @@ public class UIManager : Singleton<UIManager>
     {
         if (quote2Showed) return;
         quote2Showed = true;
-        // animAnimator.SetTrigger("Quote 2");
+        quote2Animator.SetTrigger("Quote 2");
     }
     
     public void ShowQuote3()
     {
         if (quote3Showed) return;
         quote3Showed = true;
-        // animAnimator.SetTrigger("Quote 3");
+        quote3Animator.SetTrigger("Quote 3");
     }
 
     IEnumerator HideAuroreOverlay()
