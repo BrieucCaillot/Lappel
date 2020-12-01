@@ -47,7 +47,7 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    public void OnAnimCrevasseStart()
    {
       PlayerManager.Instance.canMove = false;
-      jumpAudioSource.Play();
+      // jumpAudioSource.Play();
    }
 
    public void OnAnimCrevasseEnd()
@@ -63,7 +63,7 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    public void OnAnimCascadeEnd()
    {
       PlayerManager.Instance.canMove = true;
-      diveAudioSource.Play();
+      // diveAudioSource.Play();
    }
 
    public void PlayWingsBubbles()

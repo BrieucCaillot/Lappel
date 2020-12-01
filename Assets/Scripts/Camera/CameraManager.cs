@@ -29,7 +29,7 @@ public class CameraManager : Singleton<CameraManager>
     [SerializeField]
     private PlayableDirector finalDefaultToSide = null;
     [SerializeField]
-    private PlayableDirector finalSideToUp = null;
+    private PlayableDirector finalSideToClose = null;
     [SerializeField]
     private PlayableDirector finalOutro = null;
 
@@ -84,8 +84,8 @@ public class CameraManager : Singleton<CameraManager>
             case "finalDefaultToSide":
                 finalDefaultToSide.Play();
                 break;
-            case "finalSideToUp":
-                finalSideToUp.Play();
+            case "finalSideToClose":
+                finalSideToClose.Play();
                 break;
             case "finalOutro":
                 finalOutro.Play();

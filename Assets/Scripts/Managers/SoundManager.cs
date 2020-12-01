@@ -20,7 +20,7 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField]
     private AudioMixerSnapshot finalSceneSnapshot = null;
 
-    [Header("Ambiants Sounds")]
+    [Header("Aurore Sounds")]
     [SerializeField]
     private AudioSource Aurore = null;
     [SerializeField]
@@ -28,11 +28,17 @@ public class SoundManager : Singleton<SoundManager>
     [NonSerialized]
     public float auroreDuration = 0.0f;
     private AudioSource AuroreCallSource = null;
-    [SerializeField]
-    private AudioSource Ambiant1 = null;
-    [SerializeField]
-    private AudioSource Ambiant2 = null;
     
+    [Header("Ambiants Sounds")]
+    [SerializeField]
+    private AudioSource ambiantMusic = null;
+    [SerializeField]
+    private AudioClip ambiant1 = null;
+    [SerializeField]
+    private AudioClip ambiant2 = null;
+    [SerializeField]
+    private AudioClip ambiant3 = null;
+
     [Header("Winds Sounds")]
     [SerializeField]
     private AudioSource wind = null;
@@ -111,12 +117,20 @@ public class SoundManager : Singleton<SoundManager>
 
     public void PlayAmbiant1()
     {
-        Ambiant1.Play();
+        ambiantMusic.clip = ambiant1;
+        ambiantMusic.Play();
     }
     
     public void PlayAmbiant2()
     {
-        Ambiant2.Play();
+        ambiantMusic.clip = ambiant2;
+        ambiantMusic.Play();
+    }
+    
+    public void PlayAmbiant3()
+    {
+        ambiantMusic.clip = ambiant3;
+        ambiantMusic.Play();
     }
 
     public void PlayWind(GameManager.SceneType sceneType)

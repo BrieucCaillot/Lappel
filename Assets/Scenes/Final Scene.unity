@@ -3319,12 +3319,12 @@ GameObject:
   - component: {fileID: 1732584770}
   - component: {fileID: 1732584771}
   m_Layer: 0
-  m_Name: finalSideToUp
+  m_Name: finalSideToClose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1732584770
 Transform:
   m_ObjectHideFlags: 0
@@ -3333,8 +3333,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732584769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -200}
-  m_LocalScale: {x: 64.89197, y: 2.823, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -240}
+  m_LocalScale: {x: 77.41107, y: 2.823, z: 1}
   m_Children: []
   m_Father: {fileID: 1543859238}
   m_RootOrder: 2

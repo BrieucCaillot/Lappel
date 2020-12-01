@@ -32,6 +32,7 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
     
     public void MainSceneEnvironment() {
         snowParticles.SetActive(true);
+        SoundManager.Instance.PlayWind(GameManager.SceneType.MainScene);
     }
 
     public void CascadeEnvironment() {
@@ -42,6 +43,7 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
     public void UnderwaterEnvironment() {
         snowParticles.SetActive(false);
         if (glacierTransition != null) glacierTransition.SetActive(false);
+        SoundManager.Instance.PlayAmbiant2();
         SoundManager.Instance.UnderwaterSceneSnapshot();
     }
 

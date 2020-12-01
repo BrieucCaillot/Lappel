@@ -16,7 +16,6 @@ public class MainSceneManager : Singleton<MainSceneManager>
     {
         Debug.Log("MAIN SCENE PLAY");
         UIManager.Instance.HideStartGame();
-        SoundManager.Instance.PlayWind(GameManager.SceneType.MainScene);
         SoundManager.Instance.MoveAuroreCall(new Vector3(0, 15, -200));
         EnvironmentManager.Instance.AuroreCallMainScene();
         StartCoroutine(MoveIntro());

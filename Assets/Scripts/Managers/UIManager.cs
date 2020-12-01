@@ -24,7 +24,15 @@ public class UIManager : Singleton<UIManager>
     
     [Header("Animators")]
     [SerializeField]
-    private Animator animAnimator = null;
+    private Animator cascadeAnimator = null;
+    [SerializeField]
+    private Animator auroreAnimator = null;
+    [SerializeField]
+    private Animator quote1Animator = null;
+    
+    private bool quote1Showed = false;
+    private bool quote2Showed = false;
+    private bool quote3Showed = false;
     
     private static float duration = 2f;
 
@@ -90,18 +98,41 @@ public class UIManager : Singleton<UIManager>
     
     public void DefaultAnim()
     {
-        animAnimator.SetTrigger("Default");
+        cascadeAnimator.SetTrigger("Default");
+        auroreAnimator.SetTrigger("Default");
+        quote1Animator.SetTrigger("Default");
     }
     
     public void ShowCascadeTransition()
     {
-        animAnimator.SetTrigger("Cascade Anim");
+        cascadeAnimator.SetTrigger("Cascade Anim");
     }
     
     public void ShowAuroreOverlay()
     {
-        animAnimator.SetTrigger("Aurore Overlay");
+        auroreAnimator.SetTrigger("Aurore Overlay");
         StartCoroutine(HideAuroreOverlay());
+    }
+
+    public void ShowQuote1()
+    {
+        if (quote1Showed) return;
+        quote1Showed = true;
+        quote1Animator.SetTrigger("Quote 1");
+    }    
+    
+    public void ShowQuote2()
+    {
+        if (quote2Showed) return;
+        quote2Showed = true;
+        // animAnimator.SetTrigger("Quote 2");
+    }
+    
+    public void ShowQuote3()
+    {
+        if (quote3Showed) return;
+        quote3Showed = true;
+        // animAnimator.SetTrigger("Quote 3");
     }
 
     IEnumerator HideAuroreOverlay()

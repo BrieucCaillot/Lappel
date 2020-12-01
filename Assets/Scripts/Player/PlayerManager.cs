@@ -132,6 +132,15 @@ public class PlayerManager : Singleton<PlayerManager> {
             case "AURORE CALL COLLIDER":
                 EnvironmentManager.Instance.AuroreCall();
                 break;
+            case "QUOTE 1 COLLIDER":
+                UIManager.Instance.ShowQuote1();
+                break;
+            case "QUOTE 2 COLLIDER":
+                UIManager.Instance.ShowQuote2();
+                break;
+            case "QUOTE 3 COLLIDER":
+                UIManager.Instance.ShowQuote3();
+                break;
             default:
                 break;
         }

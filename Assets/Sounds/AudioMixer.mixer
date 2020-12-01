@@ -217,7 +217,7 @@ AudioMixerSnapshotController:
     42c9fee31f7f33a4d8fa43cf587bb2ec: 0
     76ab49f31c0fb451c989bd4dc2357927: 22000
     d2a22494f6d2d8748981ddfbd1198567: 0
-    b0940516e0912324c82fc9c40476358f: -80
+    b0940516e0912324c82fc9c40476358f: 0.10800299
     ea6037486d27f794881d437e16d16139: -80
     610b8d39b0babb642a9a30efb53823f4: 0
     7b2d1689394c55e40ad0a0533e8c9270: -80
@@ -458,6 +458,7 @@ AudioMixerController:
   - guids:
     - 8a7bf5f59f30c4748b4b039605551966
     - 2db1b63e8b45c1a469b1d6411686e5fb
+    - 4e878561dec7db944a0ecc6f206c2095
     - 9c1408006650e424b962aa3cd851e246
     - e11b52b99ecc323438450060a1e2b318
     - 3b177f0ce4f2bfc4cb5ee54e0052603e
@@ -465,6 +466,7 @@ AudioMixerController:
     name: CascadeScene
   - guids:
     - 8a7bf5f59f30c4748b4b039605551966
+    - 4e878561dec7db944a0ecc6f206c2095
     - 9c1408006650e424b962aa3cd851e246
     - e0471e8d299fbf9419213fa3ba574c89
     name: UnderwaterScene
@@ -488,8 +490,8 @@ AudioMixerController:
     - 59eec221f6e80a949af34a129df1f187
     - 0755a957f01cf8f4c98a9f954c27b4f7
     name: FinalScene
-  m_CurrentViewIndex: 1
-  m_TargetSnapshot: {fileID: -7637514010629895099}
+  m_CurrentViewIndex: 2
+  m_TargetSnapshot: {fileID: -4250259408613194925}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
