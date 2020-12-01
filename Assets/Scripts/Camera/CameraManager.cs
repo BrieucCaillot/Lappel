@@ -26,6 +26,12 @@ public class CameraManager : Singleton<CameraManager>
     private PlayableDirector mountainDefaultToFar = null;
     [SerializeField]
     private PlayableDirector mountainFarToClose = null;
+    [SerializeField]
+    private PlayableDirector finalDefaultToSide = null;
+    [SerializeField]
+    private PlayableDirector finalSideToUp = null;
+    [SerializeField]
+    private PlayableDirector finalOutro = null;
 
     public GameObject glacier;
 
@@ -74,6 +80,15 @@ public class CameraManager : Singleton<CameraManager>
                 break;
             case "mountainFarToClose":
                 mountainFarToClose.Play();
+                break;
+            case "finalDefaultToSide":
+                finalDefaultToSide.Play();
+                break;
+            case "finalSideToUp":
+                finalSideToUp.Play();
+                break;
+            case "finalOutro":
+                finalOutro.Play();
                 break;
             default:
                 break;

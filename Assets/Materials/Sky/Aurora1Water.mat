@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Aurora1Water
   m_Shader: {fileID: -6465566751694194690, guid: d9f50b8e12998b34cadaffa11f1d0544, type: 3}
-  m_ShaderKeywords: _NORMALMAP
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 5d5f4575f58c52f4dbf3d0581eba8a12, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudTex1:
@@ -109,6 +109,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_16B34BC8: 1
+    - Vector1_9B4DF767: 0.01
+    - Vector1_9EA8E3A0: 1
+    - Vector1_FFC86AB7: 0.524
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpOffset: -1.75
