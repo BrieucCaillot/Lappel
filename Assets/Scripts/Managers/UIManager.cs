@@ -26,6 +26,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private Animator cascadeAnimator = null;
     [SerializeField]
+    private Animator fishAnimator = null;
+    [SerializeField]
     private Animator auroreAnimator = null;
     [SerializeField]
     private Animator outroAnimator = null;
@@ -97,6 +99,7 @@ public class UIManager : Singleton<UIManager>
     public void HideCommandSpace()
     {
         commandSpace.DOFade(0, duration);
+        commandSpace.DOFade(0, duration);
     }
 
     public void FadeBackgroundBlack(float end)
@@ -114,6 +117,11 @@ public class UIManager : Singleton<UIManager>
     public void ShowCascadeTransition()
     {
         cascadeAnimator.SetTrigger("Cascade Anim");
+    }
+    
+    public void ShowFishTransition()
+    {
+        fishAnimator.SetTrigger("Fish Anim");
     }
 
     public void ShowAuroreOverlay()

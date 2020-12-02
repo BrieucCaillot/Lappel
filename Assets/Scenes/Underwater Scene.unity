@@ -9942,13 +9942,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: poisson
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d92bc639c6e7dc43a457bcb1bd8497e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d92bc639c6e7dc43a457bcb1bd8497e, type: 3}
---- !u!4 &747394080 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d92bc639c6e7dc43a457bcb1bd8497e, type: 3}
-  m_PrefabInstance: {fileID: 747394079}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &747394081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d92bc639c6e7dc43a457bcb1bd8497e, type: 3}
@@ -29670,10 +29669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1557668b0ec97ec489aecd0b9a806789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPosition: {fileID: 747394080}
-  offsetX: 0
-  offsetY: 0
-  offsetZ: -23
 --- !u!4 &1670656612
 Transform:
   m_ObjectHideFlags: 0

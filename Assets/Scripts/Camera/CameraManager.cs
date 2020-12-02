@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using Cinemachine;
+﻿using Cinemachine;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -64,8 +63,7 @@ public class CameraManager : Singleton<CameraManager>
                 cascadeSceneRightToUnderwater.Play();
                 break;
             case "underwaterToMoutain":
-                //poisson qui passe devant la cam
-                UnderwaterSceneManager.Instance.StartFishTransition();
+                UIManager.Instance.ShowFishTransition();
                 break;
 
             case "mountainDefaultToFar":
