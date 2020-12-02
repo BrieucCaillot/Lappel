@@ -18,11 +18,11 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
     private void Start()
     {
         Debug.Log("MOUNTAIN SCENE START");
+        PlayerAnimManager.Instance.StartIdleAnim();
         PlayerAnimManager.Instance.StopWingsBubbles();
         CameraManager.Instance.underwaterToMoutain.Play();
         PlayerManager.Instance.SetPosition(new Vector3(0, 0, 0));
         PlayerManager.Instance.speed = 6;
-
         EnvironmentManager.Instance.MountainEnvironment();
     }
 

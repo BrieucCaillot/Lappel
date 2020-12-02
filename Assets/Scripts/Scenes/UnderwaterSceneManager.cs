@@ -1,21 +1,7 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
 {
-    [SerializeField]
-    private Transform fishPosition = null;
-
-    private bool transitionStarted = false;
-
-    [SerializeField]
-    private float offsetX = 0f;
-    [SerializeField]
-    private float offsetY = 0f;
-
-    [SerializeField]
-    private float offsetZ = -17f;
 
     private void Start()
     {
@@ -27,40 +13,4 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
         PlayerAnimManager.Instance.StartUnderwaterAnim();
         EnvironmentManager.Instance.UnderwaterEnvironment();
     }
-
-    private void Update()
-    {
-        if (fishPosition != null)
-        {
-            fishPosition.position = new Vector3(CameraManager.Instance.MainCameraPosition().x + offsetX, CameraManager.Instance.MainCameraPosition().y + offsetY, CameraManager.Instance.MainCameraPosition().z + offsetZ);
-            if (transitionStarted)
-            {
-
-                if (offsetZ >= -5)
-                {
-                    PlayerAnimManager.Instance.StartIdleAnim();
-                    StartCoroutine(LoadYourAsyncScene());
-                }
-                else
-                {
-                    offsetZ = offsetZ + 0.1f;
-                }
-            }
-        }
-    }
-
-    public void StartFishTransition()
-    {
-        transitionStarted = true;
-    }
-
-    IEnumerator LoadYourAsyncScene()
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Mountain Scene");
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-    }
-
 }
