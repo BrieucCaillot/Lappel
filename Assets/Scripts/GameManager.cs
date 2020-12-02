@@ -36,38 +36,30 @@ public class GameManager : Singleton<GameManager>
 
     void OnGUI()
     {
-        // if (GUI.Button(new Rect(10, 10, 150, 50), "Idle"))
-        // {
-        //     PlayerAnimManager.Instance.StartIdleAnim();
-        // }
-        //
-        // if (GUI.Button(new Rect(10, 100, 150, 50), "Cascade"))
-        // {
-        //     PlayerAnimManager.Instance.StartCascadeAnim();
-        // }
-        //
-        // if (GUI.Button(new Rect(10, 200, 150, 50), "Underwater"))
-        // {
-        //     PlayerAnimManager.Instance.StartUnderwaterAnim();
-        // }
-
-        // if (GUI.Button(new Rect(10, 10, 150, 50), "FadeIn Background Black"))
-        // {
-        //     UIManager.Instance.FadeBackgroundBlack(1);
-        // }
-        //
-        // if (GUI.Button(new Rect(10, 80, 150, 50), "FadeOut Background Black"))
-        // {
-        //     UIManager.Instance.FadeBackgroundBlack(0);
-        // }
-        // if (GUI.Button(new Rect(10, 80, 150, 50), "Aurore Call"))
-        // {
-        //     SoundManager.Instance.PlayAuroreCall();
-        // }
-        // if (GUI.Button(new Rect(10, 80, 150, 50), "Fish Anim"))
-        // {
-        //     UIManager.Instance.ShowFishTransition();
-        // }
+        if (GUI.Button(new Rect(10, 20, 150, 50), "Idle"))
+        {
+            PlayerAnimManager.Instance.StartIdleAnim();
+        }
+        
+        if (GUI.Button(new Rect(10, 90, 150, 50), "Slide"))
+        {
+            PlayerAnimManager.Instance.StartSlideIdleAnim();
+        }
+        
+        if (GUI.Button(new Rect(10, 150, 150, 50), "Swim"))
+        {
+            PlayerAnimManager.Instance.StartSwimIdleAnim();
+        }
+        
+        if (GUI.Button(new Rect(10, 220, 150, 50), "Mountain"))
+        {
+            PlayerAnimManager.Instance.StartMountainIdleAnim();
+        }
+        
+        if (GUI.Button(new Rect(10, 300, 150, 50), "Mountain"))
+        {
+            PlayerAnimManager.Instance.StartCascadeAnim();
+        }
     }
 
     private void Update()
@@ -92,7 +84,7 @@ public class GameManager : Singleton<GameManager>
     {
         enteredGame = true;
         PlayerManager.Instance.canMove = true;
-        PlayerManager.Instance.speed = 20;
+        // PlayerManager.Instance.speed = 20;
         CameraManager.Instance.StartTimeline("mainSceneIntroToDefault");
     }
 }

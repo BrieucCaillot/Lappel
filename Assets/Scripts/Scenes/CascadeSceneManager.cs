@@ -20,7 +20,7 @@ public class CascadeSceneManager : MonoBehaviour
         interactionCrevasseManager.onPlayerInteracted += OnInteractCrevasse;
         interactionCascadeManager.onPlayerInteracted += OnInteractCascade;
         cascadeSplashParticles = cascadeSplash.GetComponent<ParticleSystem>();
-        PlayerManager.Instance.ResetPosition();
+        // PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
         SoundManager.Instance.PlayWind(GameManager.SceneType.CascadeScene);
         SoundManager.Instance.MoveAuroreCall(new Vector3(0, 15, -300));
@@ -74,12 +74,11 @@ public class CascadeSceneManager : MonoBehaviour
                 PlayerAnimManager.Instance.StartCascadeAnim();
                 PlayerManager.Instance.transform
                     .DOMove(destination, 1f)
-                    .SetDelay(2f)
+                    .SetDelay(1f)
                     .OnComplete(() =>
                     {
                         cascadeSplash.transform.DOMove(destination + Vector3.down * 3, 0f).OnComplete(() => cascadeSplashParticles.Play());
                         UIManager.Instance.ShowCascadeTransition();
-                        // UnderwaterSceneManager.Instance.Play();
                     });
             });
     }

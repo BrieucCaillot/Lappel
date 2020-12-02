@@ -24,6 +24,21 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
       anim.SetTrigger("StartIdle");
    }
    
+   public void StartSlideIdleAnim()
+   {
+      anim.SetTrigger("StartSlideIdle");
+   }
+   
+   public void StartSwimIdleAnim()
+   {
+      anim.SetTrigger("StartSwimIdle");
+   }
+   
+   public void StartMountainIdleAnim()
+   {
+      anim.SetTrigger("StartMountainIdle");
+   }
+   
    public void StartBeakAnim()
    {
       anim.SetTrigger("StartBeak");
@@ -38,12 +53,7 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    {
       anim.SetTrigger("StartCascade");
    }
-   
-   public void StartUnderwaterAnim()
-   {
-      anim.SetTrigger("StartUnderwater");
-   }
-   
+
    public void OnAnimCrevasseStart()
    {
       PlayerManager.Instance.canMove = false;
@@ -76,7 +86,7 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    {
       bubblesWingLeft.Stop();
       bubblesWingRight.Stop();
-      bubblesWingLeft.Clear();
-      bubblesWingRight.Clear();
+      // bubblesWingLeft.Clear();
+      // bubblesWingRight.Clear();
    }
 }

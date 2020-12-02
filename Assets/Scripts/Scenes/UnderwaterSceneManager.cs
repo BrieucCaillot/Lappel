@@ -10,7 +10,8 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
         PlayerManager.Instance.SetPosition(new Vector3(0, -140, 0));
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
         PlayerManager.Instance.speed = 20;
-        PlayerAnimManager.Instance.StartUnderwaterAnim();
+        PlayerManager.Instance.canMove = true;
+        PlayerAnimManager.Instance.StartSwimIdleAnim();
         EnvironmentManager.Instance.UnderwaterEnvironment();
     }
 }
