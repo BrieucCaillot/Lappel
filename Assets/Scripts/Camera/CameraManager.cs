@@ -72,6 +72,7 @@ public class CameraManager : Singleton<CameraManager>
                 break;
             case "mountainFarToClose":
                 mountainFarToClose.Play();
+                MountainSceneManager.Instance.OnMountain();
                 break;
             case "mountainToFinal":
                 mountainToFinal.Play();

@@ -31,18 +31,16 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
 
     public void OnMountain()
     {
-        PlayerAnimManager.Instance.StartMountainIdleAnim();
-        // onMountain = !onMountain;
-        // if (onMountain)
-        // {
-        //     Debug.Log("ON MOUNTAIN");
-        //     PlayerAnimManager.Instance.StartMountainIdleAnim();
-        // }
-        // else
-        // {
-        //     Debug.Log("OUT MOUNTAIN");
-        //     PlayerAnimManager.Instance.StartIdleAnim();
-        // }
+        if (onMountain)
+        {
+            Debug.Log("ON MOUNTAIN");
+            PlayerAnimManager.Instance.StartMountainIdleAnim();
+        }
+        else
+        {
+            Debug.Log("OUT MOUNTAIN");
+            PlayerAnimManager.Instance.StartIdleAnim();
+        }
     }
 
     public void OpenDoor()
