@@ -1,7 +1,7 @@
 ﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -9,7 +9,7 @@ public class UIManager : Singleton<UIManager>
     private Image logo = null;
     [SerializeField]
     private Text start = null;
-    
+
     [Header("Commands")]
     [SerializeField]
     private Image commandKeys = null;
@@ -21,7 +21,7 @@ public class UIManager : Singleton<UIManager>
     public Image backgroundBlack = null;
     [SerializeField]
     public Image backgroundWhite = null;
-    
+
     [Header("Animators")]
     [SerializeField]
     private Animator cascadeAnimator = null;
@@ -37,11 +37,11 @@ public class UIManager : Singleton<UIManager>
     private Animator quote2Animator = null;
     [SerializeField]
     private Animator quote3Animator = null;
-    
+
     private bool quote1Showed = false;
     private bool quote2Showed = false;
     private bool quote3Showed = false;
-    
+
     private static float duration = 2f;
 
     private void Start()
@@ -68,32 +68,32 @@ public class UIManager : Singleton<UIManager>
         start.DOFade(0, duration);
         // commandSpace.DOFade(0, duration);
     }
-    
+
     public void ShowTitle()
     {
         logo.DOFade(1, duration);
     }
-    
+
     public void HideTitle()
     {
         logo.DOFade(0, duration);
     }
-    
+
     public void ShowCommandKeys()
     {
         commandKeys.DOFade(1, duration);
     }
-    
+
     public void HideCommandKeys()
     {
         commandKeys.DOFade(0, duration);
     }
-    
+
     public void ShowCommandSpace()
     {
         commandSpace.DOFade(1, duration);
     }
-    
+
     public void HideCommandSpace()
     {
         commandSpace.DOFade(0, duration);
@@ -103,30 +103,30 @@ public class UIManager : Singleton<UIManager>
     {
         backgroundBlack.DOFade(end, MountainSceneManager.Instance.maxTimeInCorridor);
     }
-    
+
     public void DefaultAnim()
     {
         cascadeAnimator.SetTrigger("Default");
         auroreAnimator.SetTrigger("Default");
         quote1Animator.SetTrigger("Default");
     }
-    
+
     public void ShowCascadeTransition()
     {
         cascadeAnimator.SetTrigger("Cascade Anim");
     }
-    
+
     public void ShowAuroreOverlay()
     {
         auroreAnimator.SetTrigger("Aurore Overlay");
         StartCoroutine(HideAuroreOverlay());
     }
-    
+
     public void ShowOutro()
     {
         outroAnimator.SetTrigger("Outro Anim");
     }
-    
+
     public void ShowCredits()
     {
         creditsAnimator.SetTrigger("Credits Anim");
@@ -137,15 +137,15 @@ public class UIManager : Singleton<UIManager>
         if (quote1Showed) return;
         quote1Showed = true;
         quote1Animator.SetTrigger("Quote 1");
-    }    
-    
+    }
+
     public void ShowQuote2()
     {
         if (quote2Showed) return;
         quote2Showed = true;
         quote2Animator.SetTrigger("Quote 2");
     }
-    
+
     public void ShowQuote3()
     {
         if (quote3Showed) return;

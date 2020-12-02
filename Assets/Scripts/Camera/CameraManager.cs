@@ -27,6 +27,8 @@ public class CameraManager : Singleton<CameraManager>
     [SerializeField]
     private PlayableDirector mountainFarToClose = null;
     [SerializeField]
+    private PlayableDirector mountainToFinal = null;
+    [SerializeField]
     private PlayableDirector finalDefaultToSide = null;
     [SerializeField]
     private PlayableDirector finalSideToClose = null;
@@ -44,19 +46,12 @@ public class CameraManager : Singleton<CameraManager>
     {
         switch (Movement)
         {
-            // MAIN SCENE
             case "mainSceneIntroToDefault":
                 mainSceneIntroToDefault.Play();
                 break;
             case "mainSceneDefaultToSides":
                 mainSceneDefaultToSides.Play();
                 break;
-                // case "mainSceneDefaultToOutro":
-                //     mainSceneDefaultToOutro.Play();
-
-                // break;
-
-                // CASCADE SCENE
             case "cascadeSceneDefaultToRight":
                 cascadeSceneRightToDefault.Stop();
                 cascadeSceneDefaultToRight.Play();
@@ -68,8 +63,6 @@ public class CameraManager : Singleton<CameraManager>
             case "cascadeSceneRightToUnderwater":
                 cascadeSceneRightToUnderwater.Play();
                 break;
-
-                //UNDERWATER
             case "underwaterToMoutain":
                 //poisson qui passe devant la cam
                 UnderwaterSceneManager.Instance.StartFishTransition();
@@ -80,6 +73,9 @@ public class CameraManager : Singleton<CameraManager>
                 break;
             case "mountainFarToClose":
                 mountainFarToClose.Play();
+                break;
+            case "mountainToFinal":
+                mountainToFinal.Play();
                 break;
             case "finalDefaultToSide":
                 finalDefaultToSide.Play();

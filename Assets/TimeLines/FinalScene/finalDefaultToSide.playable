@@ -157,7 +157,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: DEFAULT CAMERA
+    m_DisplayName: FINAL DEFAULT CAMERA
   - m_Version: 1
     m_Start: 12
     m_ClipIn: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: SIDE CAMERA
+    m_DisplayName: FINAL SIDE CAMERA
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: UP CAMERA
+    m_DisplayName: FINAL UP CAMERA
   m_Markers:
     m_Objects: []
 --- !u!114 &8182673785120071345

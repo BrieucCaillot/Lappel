@@ -14,16 +14,17 @@ public class FinalSceneManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("FINAL SCENE START");
-        UIManager.Instance.FadeBackgroundBlack(0);
+
+        CameraManager.Instance.StartTimeline("mountainToFinal");
         PlayerManager.Instance.autoMove = false;
         PlayerManager.Instance.canMove = true;
         PlayerAnimManager.Instance.StartIdleAnim();
         PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
         EnvironmentManager.Instance.FinalCaveEnvironment();
-        
+
         interactionFinalManager.onPlayerInteracted += OnInteractFinal;
-    }    
+    }
 
     private void OnInteractFinal()
     {

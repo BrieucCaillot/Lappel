@@ -18,10 +18,11 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
     private void Start()
     {
         Debug.Log("MOUNTAIN SCENE START");
+        PlayerAnimManager.Instance.StopWingsBubbles();
         CameraManager.Instance.underwaterToMoutain.Play();
         PlayerManager.Instance.SetPosition(new Vector3(0, 0, 0));
         PlayerManager.Instance.speed = 6;
-        PlayerAnimManager.Instance.StartIdleAnim();
+
         EnvironmentManager.Instance.MountainEnvironment();
     }
 
@@ -30,7 +31,7 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
         PlayerAnimManager.Instance.StartIdleAnim();
         PlayerManager.Instance.RotateMoutainCorridor();
         PlayerManager.Instance.canMove = false;
-        
+
         door.DOShakePosition(0.3f, new Vector3(0.2f, 0, 0.2f), 5, 25, false, false)
             .OnStart((() => dustParticlesDoor.Play()))
             .OnComplete(() =>
@@ -52,9 +53,9 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
             });
     }
 
-    public void InCorridor()
+    public void StayInCorridor()
     {
-        UIManager.Instance.FadeBackgroundBlack(1);
+
         SoundManager.Instance.MountainSceneCorridorSnapshot();
         if (loadedScene) return;
         stayTime += Time.deltaTime;
@@ -64,7 +65,12 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
             StartCoroutine(LoadFinalScene());
         }
     }
-    
+
+    public void InCorridor()
+    {
+        UIManager.Instance.FadeBackgroundBlack(1);
+    }
+
     public void OutCorridor()
     {
         stayTime = 0.0f;

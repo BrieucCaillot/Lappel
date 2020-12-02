@@ -3,7 +3,8 @@ using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PlayerManager : Singleton<PlayerManager> {
+public class PlayerManager : Singleton<PlayerManager>
+{
 
     [NonSerialized]
     public bool canMove = false;
@@ -12,31 +13,35 @@ public class PlayerManager : Singleton<PlayerManager> {
     [Range(0, 50)]
     public float speed = 6f;
 
-    [SerializeField] 
+    [SerializeField]
     private GameObject player = null;
     private float rotationRate = 360;
 
     private Animator anim;
     private static Rigidbody rigidBody;
 
-    void Start() {
+    void Start()
+    {
         anim = player.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
-        
+
         Invoke("RandomCry", Random.Range(5, 10));
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         if (autoMove) AutoMove();
         if (!GameManager.Instance.enteredGame || !canMove) return;
         Move();
     }
 
-    public Rigidbody GetRigidbody() {
+    public Rigidbody GetRigidbody()
+    {
         return rigidBody;
     }
 
-    private void Move() {
+    private void Move()
+    {
         float hAxis = Input.GetAxis("Horizontal");
         float vAxis = Input.GetAxis("Vertical");
 
@@ -53,7 +58,8 @@ public class PlayerManager : Singleton<PlayerManager> {
         rigidBody.MoveRotation(rotation);
     }
 
-    private void AutoMove() {
+    private void AutoMove()
+    {
         anim.SetFloat("vertical", 1);
 
         Vector3 movement = Vector3.forward * speed * Time.fixedDeltaTime;
@@ -70,21 +76,24 @@ public class PlayerManager : Singleton<PlayerManager> {
                 CameraManager.Instance.StartTimeline("mainSceneIntroToDefault");
             });
     }
-    
+
     public void RotateMoutainCorridor()
     {
         transform.DORotate(new Vector3(0, 203, 0), 1f);
     }
 
-    public void ResetPosition() {
+    public void ResetPosition()
+    {
         SetPosition(new Vector3(0, 0, 0));
     }
 
-    public Vector3 GetPosition() {
+    public Vector3 GetPosition()
+    {
         return rigidBody.position;
     }
 
-    public void SetPosition(Vector3 position) {
+    public void SetPosition(Vector3 position)
+    {
         if (rigidBody != null)
         {
             rigidBody.MovePosition(position);
@@ -95,7 +104,8 @@ public class PlayerManager : Singleton<PlayerManager> {
         }
     }
 
-    public void SetRotation(Vector3 rotation) {
+    public void SetRotation(Vector3 rotation)
+    {
         if (rigidBody != null)
         {
             rigidBody.MoveRotation(Quaternion.Euler(rotation));
@@ -105,18 +115,20 @@ public class PlayerManager : Singleton<PlayerManager> {
             GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(rotation));
         }
     }
-    
+
     private void RandomCry()
     {
         PlayerAnimManager.Instance.StartBeakAnim();
-        
+
         float randomTime = Random.Range(10, 25);
         Invoke("RandomCry", randomTime);
     }
 
-    private void OnTriggerEnter(Collider collider) {
+    private void OnTriggerEnter(Collider collider)
+    {
         Debug.Log("OnTriggerEnter " + collider.name);
-        switch (collider.name) {
+        switch (collider.name)
+        {
             case "INTERACTION ZONE CREVASSE":
                 collider.transform.parent.GetComponent<InteractionCrevasseManager>().PlayerInInteractionZone();
                 break;
@@ -131,6 +143,9 @@ public class PlayerManager : Singleton<PlayerManager> {
                 break;
             case "AURORE CALL COLLIDER":
                 EnvironmentManager.Instance.AuroreCall();
+                break;
+            case "MOUNTAIN CORRIDOR":
+                MountainSceneManager.Instance.InCorridor();
                 break;
             case "QUOTE 1 COLLIDER":
                 UIManager.Instance.ShowQuote1();
@@ -148,9 +163,11 @@ public class PlayerManager : Singleton<PlayerManager> {
         CameraManager.Instance.StartTimeline(collider.name);
     }
 
-    private void OnTriggerExit(Collider collider) {
+    private void OnTriggerExit(Collider collider)
+    {
         Debug.Log("OnTriggerExit " + collider.name);
-        switch (collider.name) {
+        switch (collider.name)
+        {
             case "INTERACTION ZONE CREVASSE":
                 collider.transform.parent.GetComponent<InteractionCrevasseManager>().PlayerOutInteractionZone();
                 break;
@@ -176,8 +193,9 @@ public class PlayerManager : Singleton<PlayerManager> {
         switch (collider.name)
         {
             case "MOUNTAIN CORRIDOR":
-                MountainSceneManager.Instance.InCorridor();
+                MountainSceneManager.Instance.StayInCorridor();
                 break;
+
         }
     }
 }

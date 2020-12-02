@@ -6,14 +6,18 @@ public class GameManager : Singleton<GameManager>
 {
     public bool DebugMode = false;
     [NonSerialized]
-    public bool enteredGame = false;  
+    public bool enteredGame = false;
     [NonSerialized]
     public bool introShowed = false;
     public event Action onPlayerStart;
-    
+
     public enum SceneType
     {
-        MainScene, CascadeScene, UnderwaterScene, MountainScene, FinalScene 
+        MainScene,
+        CascadeScene,
+        UnderwaterScene,
+        MountainScene,
+        FinalScene
     }
 
     void Start()
@@ -29,7 +33,7 @@ public class GameManager : Singleton<GameManager>
             PlayerManager.Instance.canMove = true;
         }
     }
-    
+
     void OnGUI()
     {
         // if (GUI.Button(new Rect(10, 10, 150, 50), "Idle"))
@@ -46,7 +50,7 @@ public class GameManager : Singleton<GameManager>
         // {
         //     PlayerAnimManager.Instance.StartUnderwaterAnim();
         // }
-        
+
         // if (GUI.Button(new Rect(10, 10, 150, 50), "FadeIn Background Black"))
         // {
         //     UIManager.Instance.FadeBackgroundBlack(1);
@@ -56,10 +60,10 @@ public class GameManager : Singleton<GameManager>
         // {
         //     UIManager.Instance.FadeBackgroundBlack(0);
         // }
-        if (GUI.Button(new Rect(10, 80, 150, 50), "Aurore Call"))
-        {
-            SoundManager.Instance.PlayAuroreCall();
-        }
+        // if (GUI.Button(new Rect(10, 80, 150, 50), "Aurore Call"))
+        // {
+        //     SoundManager.Instance.PlayAuroreCall();
+        // }
     }
 
     private void Update()
@@ -68,7 +72,7 @@ public class GameManager : Singleton<GameManager>
         if (enteredGame || !introShowed) return;
         if (Input.GetKey(KeyCode.Space)) PlayerEnterGame();
     }
-    
+
     private void PlayerEnterGame()
     {
         if (onPlayerStart != null) onPlayerStart();

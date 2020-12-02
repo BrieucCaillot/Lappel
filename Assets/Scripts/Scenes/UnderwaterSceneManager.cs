@@ -16,7 +16,7 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
 
     [SerializeField]
     private float offsetZ = -17f;
-    
+
     private void Start()
     {
         Debug.Log("UNDERWATER SCENE START");
@@ -38,6 +38,7 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
 
                 if (offsetZ >= -5)
                 {
+                    PlayerAnimManager.Instance.StartIdleAnim();
                     StartCoroutine(LoadYourAsyncScene());
                 }
                 else
