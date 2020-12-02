@@ -55,16 +55,14 @@ public class GameManager : Singleton<GameManager>
         {
             PlayerAnimManager.Instance.StartMountainIdleAnim();
         }
-        
-        if (GUI.Button(new Rect(10, 300, 150, 50), "Mountain"))
-        {
-            PlayerAnimManager.Instance.StartCascadeAnim();
-        }
     }
 
     private void Update()
     {
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) UIManager.Instance.HideCommandKeys();
+        if (Input.GetKeyDown(KeyCode.LeftShift)) PlayerAnimManager.Instance.StartSlideIdleAnim();
+        if (Input.GetKeyUp(KeyCode.LeftShift)) PlayerAnimManager.Instance.StartIdleAnim();
+        // Debug.Log(Input.GetKeyDown(KeyCode.LeftShift));
         if (enteredGame || !introShowed) return;
         if (Input.GetKey(KeyCode.Space)) PlayerEnterGame();
     }

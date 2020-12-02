@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class MountainSceneManager : Singleton<MountainSceneManager>
 {
     public float maxTimeInCorridor = 4f;
+    [NonSerialized] 
+    public bool onMountain = false;
     [SerializeField]
     private Transform door = null;
     [SerializeField]
@@ -24,6 +27,22 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
         PlayerManager.Instance.SetPosition(new Vector3(0, 0, 0));
         PlayerManager.Instance.speed = 6;
         EnvironmentManager.Instance.MountainEnvironment();
+    }
+
+    public void OnMountain()
+    {
+        PlayerAnimManager.Instance.StartMountainIdleAnim();
+        // onMountain = !onMountain;
+        // if (onMountain)
+        // {
+        //     Debug.Log("ON MOUNTAIN");
+        //     PlayerAnimManager.Instance.StartMountainIdleAnim();
+        // }
+        // else
+        // {
+        //     Debug.Log("OUT MOUNTAIN");
+        //     PlayerAnimManager.Instance.StartIdleAnim();
+        // }
     }
 
     public void OpenDoor()
