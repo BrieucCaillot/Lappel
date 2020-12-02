@@ -101,7 +101,7 @@ public class UIManager : Singleton<UIManager>
 
     public void FadeBackgroundBlack(float end)
     {
-        backgroundBlack.DOFade(end, MountainSceneManager.Instance.maxTimeInCorridor);
+        backgroundBlack.DOFade(end, 4f);
     }
 
     public void DefaultAnim()

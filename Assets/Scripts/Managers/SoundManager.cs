@@ -127,7 +127,8 @@ public class SoundManager : Singleton<SoundManager>
                 auroreCallSource.clip = null;
                 break;
             case GameManager.SceneType.UnderwaterScene:
-                ambiantMusic.clip = ambiantUnderwaterScene;
+                // ambiantMusic.clip = ambiantUnderwaterScene;
+                ambiantMusic.clip = null;
                 break;
             case GameManager.SceneType.MountainScene:
                 ambiantMusic.clip = ambiantMountainScene;
