@@ -64,10 +64,10 @@ public class GameManager : Singleton<GameManager>
         // {
         //     SoundManager.Instance.PlayAuroreCall();
         // }
-        if (GUI.Button(new Rect(10, 80, 150, 50), "Fish Anim"))
-        {
-            UIManager.Instance.ShowFishTransition();
-        }
+        // if (GUI.Button(new Rect(10, 80, 150, 50), "Fish Anim"))
+        // {
+        //     UIManager.Instance.ShowFishTransition();
+        // }
     }
 
     private void Update()
