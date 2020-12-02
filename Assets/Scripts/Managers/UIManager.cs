@@ -102,9 +102,15 @@ public class UIManager : Singleton<UIManager>
         commandSpace.DOFade(0, duration);
     }
 
-    public void FadeBackgroundBlack(float end)
+    public void FadeInBackgroundBlack()
     {
-        backgroundBlack.DOFade(end, 4f);
+        backgroundBlack.DOFade(1, 3f)
+            .OnComplete(() => ShowQuote3());
+    }
+    
+    public void FadeOutBackgroundBlack()
+    {
+        backgroundBlack.DOFade(0, 3f);
     }
 
     public void DefaultAnim()

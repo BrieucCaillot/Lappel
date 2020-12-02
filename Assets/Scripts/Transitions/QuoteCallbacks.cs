@@ -16,4 +16,10 @@ public class QuoteCallbacks : MonoBehaviour
    {
       SoundManager.Instance.PickAmbiant(GameManager.SceneType.MountainScene);
    }
+
+   public void FadeOutBackgroundBlack()
+   {
+      UIManager.Instance.FadeOutBackgroundBlack();
+      CameraManager.Instance.StartTimeline("mountainToFinal");
+   }
 }

@@ -16,7 +16,6 @@ public class FinalSceneManager : MonoBehaviour
         Debug.Log("FINAL SCENE START");
         PlayerManager.Instance.autoMove = true;
         Debug.Log(PlayerManager.Instance.autoMove);
-        CameraManager.Instance.StartTimeline("mountainToFinal");
         PlayerManager.Instance.canMove = true;
         PlayerAnimManager.Instance.StartIdleAnim();
         PlayerManager.Instance.ResetPosition();

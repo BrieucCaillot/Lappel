@@ -55,7 +55,6 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
 
     public void StayInCorridor()
     {
-
         SoundManager.Instance.MountainSceneCorridorSnapshot();
         if (loadedScene) return;
         stayTime += Time.deltaTime;
@@ -68,20 +67,17 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
 
     public void InCorridor()
     {
-        UIManager.Instance.FadeBackgroundBlack(1);
+        UIManager.Instance.FadeInBackgroundBlack();
     }
 
     public void OutCorridor()
     {
         stayTime = 0.0f;
-        UIManager.Instance.FadeBackgroundBlack(0);
-        SoundManager.Instance.MountainSceneSnapshot();
     }
 
     IEnumerator LoadFinalScene()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Final Scene");
-        print("LOAD FINAL SCENE");
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
