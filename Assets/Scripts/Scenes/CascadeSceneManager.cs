@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class CascadeSceneManager : MonoBehaviour
@@ -70,16 +71,32 @@ public class CascadeSceneManager : MonoBehaviour
             {
                 colliders.SetActive(false);
                 PlayerManager.Instance.canMove = false;
-                var destination = PlayerManager.Instance.transform.position + Vector3.back * 10;
+                var offset = new Vector3(0, 0, -12);
+                var destination1 = PlayerManager.Instance.transform.position + offset;
+                var destination2 = destination1 + new Vector3(0, -15, -5);
                 PlayerAnimManager.Instance.StartCascadeAnim();
+                Debug.Log("Debug coroutine");
+                StartCoroutine(ExampleCoroutine(destination1));
                 PlayerManager.Instance.transform
-                    .DOMove(destination, 1f)
+                    .DOMove(destination1, 1f)
                     .SetDelay(1f)
                     .OnComplete(() =>
                     {
-                        cascadeSplash.transform.DOMove(destination + Vector3.down * 3, 0f).OnComplete(() => cascadeSplashParticles.Play());
-                        UIManager.Instance.ShowCascadeTransition();
+                        Debug.Log("ON COMPLETE");
+                        // cascadeSplash.transform.DOMove(destination + Vector3.down * 3, 0f).OnComplete(() => cascadeSplashParticles.Play());
+                        // UIManager.Instance.ShowCascadeTransition();
+
                     });
+                PlayerManager.Instance.transform
+                    .DOMove(destination2, 1f).SetDelay(1.25f);
             });
+    }
+
+    IEnumerator ExampleCoroutine(Vector3 destination1)
+    {
+        yield return new WaitForSeconds(1.5f);
+        Debug.Log("Coroutine called");
+        cascadeSplash.transform.DOMove(destination1 + Vector3.down * 3, 0f).OnComplete(() => cascadeSplashParticles.Play());
+        UIManager.Instance.ShowCascadeTransition();
     }
 }
