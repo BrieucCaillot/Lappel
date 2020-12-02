@@ -16,6 +16,7 @@ public class UnderwaterSceneManager : Singleton<UnderwaterSceneManager>
 
     [SerializeField]
     private float offsetZ = -17f;
+    
     private void Start()
     {
         Debug.Log("UNDERWATER SCENE START");

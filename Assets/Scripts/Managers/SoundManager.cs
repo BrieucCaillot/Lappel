@@ -21,23 +21,36 @@ public class SoundManager : Singleton<SoundManager>
     private AudioMixerSnapshot finalSceneSnapshot = null;
 
     [Header("Aurore Sounds")]
+    [NonSerialized]
+    public float auroreDuration = 0.0f;
     [SerializeField]
     private AudioSource Aurore = null;
     [SerializeField]
-    private GameObject AuroreCall = null;
-    [NonSerialized]
-    public float auroreDuration = 0.0f;
-    private AudioSource AuroreCallSource = null;
+    private GameObject auroreCall = null;
+    [SerializeField]
+    private AudioSource auroreCallSource = null;
+    [SerializeField] 
+    private AudioClip auroreCallMainScene = null;
+    [SerializeField]
+    private AudioClip auroreCallCascadeScene = null;
+    [SerializeField]
+    private AudioClip auroreCallUnderwaterScene = null;
+    [SerializeField]
+    private AudioClip auroreCallMountainScene = null;
+    [SerializeField]
+    private AudioClip auroreCallFinalScene = null;
     
     [Header("Ambiants Sounds")]
     [SerializeField]
     private AudioSource ambiantMusic = null;
     [SerializeField]
-    private AudioClip ambiant1 = null;
+    private AudioClip ambiantMainScene = null;
     [SerializeField]
-    private AudioClip ambiant2 = null;
+    private AudioClip ambiantUnderwaterScene = null;
     [SerializeField]
-    private AudioClip ambiant3 = null;
+    private AudioClip ambiantMountainScene = null;
+    [SerializeField]
+    private AudioClip ambiantFinalScene = null;
 
     [Header("Winds Sounds")]
     [SerializeField]
@@ -49,8 +62,7 @@ public class SoundManager : Singleton<SoundManager>
 
     void Start()
     {
-        AuroreCallSource = AuroreCall.GetComponent<AudioSource>();
-        // auroreDuration = AuroreCallSource.clip.length;
+        // auroreDuration = auroreCallSource.clip.length;
         auroreDuration = 4f;
     }
 
@@ -94,45 +106,93 @@ public class SoundManager : Singleton<SoundManager>
         Aurore.Play();   
     }
     
+    // AMBIANT
+
+    public void PlayAmbiant()
+    {
+        ambiantMusic.Play();
+    }
+    
+    // PICK AND PLAY AMBIANT SOUND
+    public void PickAmbiant(GameManager.SceneType sceneType)
+    {
+        Debug.Log("PICK AMBIANT CALL");
+        switch (sceneType)
+        {
+            case GameManager.SceneType.MainScene:
+                ambiantMusic.clip = ambiantMainScene;
+                break;
+            case GameManager.SceneType.CascadeScene:
+                wind.clip = null;
+                auroreCallSource.clip = null;
+                break;
+            case GameManager.SceneType.UnderwaterScene:
+                ambiantMusic.clip = ambiantUnderwaterScene;
+                break;
+            case GameManager.SceneType.MountainScene:
+                ambiantMusic.clip = ambiantMountainScene;
+                break;
+            case GameManager.SceneType.FinalScene:
+                ambiantMusic.clip = ambiantFinalScene;
+                break;
+            default:
+                break;
+        }   
+    }
+    
+    // AURORE
+    
     public void PlayAuroreCall()
     {
-        AuroreCallSource.panStereo = 0f;   
-        AuroreCallSource.spatialBlend = Single.MinValue;   
-        AuroreCallSource.Play();
+        auroreCallSource.panStereo = 0f;   
+        auroreCallSource.spatialBlend = Single.MinValue;   
+        auroreCallSource.Play();
         CameraManager.Instance.ShakeCameraAurore(auroreDuration, 1f);
     }
 
     public void PlayAuroreCallMainScene()
     {
-        AuroreCallSource.panStereo = -0.6f;   
-        AuroreCallSource.spatialBlend = Single.MinValue;   
-        AuroreCallSource.Play();
+        auroreCallSource.panStereo = -0.6f;   
+        auroreCallSource.spatialBlend = Single.MinValue;   
+        auroreCallSource.Play();
         CameraManager.Instance.ShakeCameraAurore(auroreDuration, 1f);
     }
 
     public void MoveAuroreCall(Vector3 position)
     {
-        AuroreCall.transform.position = position;
-    }
-
-    public void PlayAmbiant1()
-    {
-        ambiantMusic.clip = ambiant1;
-        ambiantMusic.Play();
+        auroreCall.transform.position = position;
     }
     
-    public void PlayAmbiant2()
+    // PICK AURORE CALL SOUND
+    public void PickAuroreCall(GameManager.SceneType sceneType)
     {
-        ambiantMusic.clip = ambiant2;
-        ambiantMusic.Play();
+        Debug.Log("PICK AURORE CALL");
+        switch (sceneType)
+        {
+            case GameManager.SceneType.MainScene:
+                auroreCallSource.clip = auroreCallMainScene;
+                break;
+            case GameManager.SceneType.CascadeScene:
+                wind.clip = windCascadeScene;
+                auroreCallSource.clip = auroreCallCascadeScene;
+                break;
+            case GameManager.SceneType.UnderwaterScene:
+                auroreCallSource.clip = auroreCallUnderwaterScene;
+                break;
+            case GameManager.SceneType.MountainScene:
+                auroreCallSource.clip = auroreCallMountainScene;
+                break;
+            case GameManager.SceneType.FinalScene:
+                auroreCallSource.clip = auroreCallFinalScene;
+                break;
+            default:
+                break;
+        }   
     }
     
-    public void PlayAmbiant3()
-    {
-        ambiantMusic.clip = ambiant3;
-        ambiantMusic.Play();
-    }
+    // WIND
 
+    // PICK WIND SOUND AND PLAY
     public void PlayWind(GameManager.SceneType sceneType)
     {
         switch (sceneType)

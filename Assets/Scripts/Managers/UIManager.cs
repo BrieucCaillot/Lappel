@@ -28,6 +28,10 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private Animator auroreAnimator = null;
     [SerializeField]
+    private Animator outroAnimator = null;
+    [SerializeField]
+    private Animator creditsAnimator = null;
+    [SerializeField]
     private Animator quote1Animator = null;
     [SerializeField]
     private Animator quote2Animator = null;
@@ -116,6 +120,16 @@ public class UIManager : Singleton<UIManager>
     {
         auroreAnimator.SetTrigger("Aurore Overlay");
         StartCoroutine(HideAuroreOverlay());
+    }
+    
+    public void ShowOutro()
+    {
+        outroAnimator.SetTrigger("Outro Anim");
+    }
+    
+    public void ShowCredits()
+    {
+        creditsAnimator.SetTrigger("Credits Anim");
     }
 
     public void ShowQuote1()

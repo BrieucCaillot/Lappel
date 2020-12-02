@@ -20,7 +20,7 @@ public class FinalSceneManager : MonoBehaviour
         PlayerAnimManager.Instance.StartIdleAnim();
         PlayerManager.Instance.ResetPosition();
         PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
-        EnvironmentManager.Instance.FinalEnvironment();
+        EnvironmentManager.Instance.FinalCaveEnvironment();
         
         interactionFinalManager.onPlayerInteracted += OnInteractFinal;
     }    
@@ -42,7 +42,7 @@ public class FinalSceneManager : MonoBehaviour
                     .OnComplete(() =>
                     {
                         finalSplash.transform.DOMove(destination + Vector3.down * 3, 0f).OnComplete(() => finalSplashParticles.Play());
-                        UIManager.Instance.ShowCascadeTransition();
+                        UIManager.Instance.ShowOutro();
                         colliders.SetActive(true);
                     });
             });

@@ -6,18 +6,18 @@ using UnityEngine.UI;
 
 public class QuoteCallbacks : MonoBehaviour
 {
-   public void PlayAmbiant1()
+   public void PickAmbiantMainScene()
    {
-      SoundManager.Instance.PlayAmbiant1();
+      SoundManager.Instance.PickAmbiant(GameManager.SceneType.MainScene);
    }
 
-   public void PlayAmbiant2()
+   public void PickAmbiantUnderwaterScene()
    {
-      SoundManager.Instance.PlayAmbiant2();
+      SoundManager.Instance.PickAmbiant(GameManager.SceneType.UnderwaterScene);
    }
    
-   public void PlayAmbiant3()
+   public void PickAmbiantMountainScene()
    {
-      SoundManager.Instance.PlayAmbiant3();
+      SoundManager.Instance.PickAmbiant(GameManager.SceneType.MountainScene);
    }
 }
