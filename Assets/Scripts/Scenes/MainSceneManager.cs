@@ -35,6 +35,7 @@ public class MainSceneManager : Singleton<MainSceneManager>
         PlayerManager.Instance.autoMove = false;
         PlayerManager.Instance.canMove = true;
         UIManager.Instance.ShowCommandKeys();
+        UIManager.Instance.ShowCommandShift();
     }
 
     public void NextScene()

@@ -63,10 +63,12 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) UIManager.Instance.HideCommandKeys();
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0 || Input.GetKeyDown(KeyCode.LeftShift)) {
+            UIManager.Instance.HideCommandKeys();
+            UIManager.Instance.HideCommandShift();
+        }
         if (Input.GetKeyDown(KeyCode.LeftShift)) PlayerAnimManager.Instance.StartSlideIdleAnim();
         if (Input.GetKeyUp(KeyCode.LeftShift)) PlayerAnimManager.Instance.StartIdleAnim();
-        // Debug.Log(Input.GetKeyDown(KeyCode.LeftShift));
         if (enteredGame || !introShowed) return;
         if (Input.GetKey(KeyCode.Space)) PlayerEnterGame();
     }

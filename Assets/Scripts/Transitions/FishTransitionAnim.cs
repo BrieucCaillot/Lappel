@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class FishTransitionAnim : MonoBehaviour {
     
-    private AsyncOperation asyncLoad = null;
+    private AsyncOperation asyncLoadMountainScene = null;
     
     private void Start()
     {
@@ -12,18 +12,18 @@ public class FishTransitionAnim : MonoBehaviour {
     }
     
     public void OnMiddleFishAnimation() {
-        asyncLoad.allowSceneActivation = true;
+        asyncLoadMountainScene.allowSceneActivation = true;
     }
     
     IEnumerator LoadMountainScene()
     {
         yield return new WaitForSeconds(3f);
         
-        asyncLoad = SceneManager.LoadSceneAsync("Mountain Scene");
-        asyncLoad.allowSceneActivation = false;
+        asyncLoadMountainScene = SceneManager.LoadSceneAsync("Mountain Scene");
+        asyncLoadMountainScene.allowSceneActivation = false;
 
         // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
+        while (!asyncLoadMountainScene.isDone)
         {
             yield return null;
         }

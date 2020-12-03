@@ -14,6 +14,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private Image commandKeys = null;
     [SerializeField]
+    private Image commandsShift = null;
+    [SerializeField]
     private Image commandSpace = null;
 
     [Header("Overlays")]
@@ -52,6 +54,7 @@ public class UIManager : Singleton<UIManager>
         logo.DOFade(0, 0);
         start.DOFade(0, 0);
         commandKeys.DOFade(0, 0);
+        commandsShift.DOFade(0, 0);
         commandSpace.DOFade(0, 0);
         backgroundBlack.DOFade(0, 0);
         backgroundWhite.DOFade(0, 0);
@@ -89,6 +92,16 @@ public class UIManager : Singleton<UIManager>
     public void HideCommandKeys()
     {
         commandKeys.DOFade(0, duration);
+    }
+    
+    public void ShowCommandShift()
+    {
+        commandsShift.DOFade(1, duration);
+    }
+
+    public void HideCommandShift()
+    {
+        commandsShift.DOFade(0, duration);
     }
 
     public void ShowCommandSpace()

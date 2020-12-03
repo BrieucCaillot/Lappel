@@ -33,6 +33,7 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
 
     public void OnMountain()
     {
+        onMountain = !onMountain;
         if (onMountain)
         {
             Debug.Log("ON MOUNTAIN");
