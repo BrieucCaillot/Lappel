@@ -8,7 +8,7 @@ public class FishTransitionAnim : MonoBehaviour {
     
     private void Start()
     {
-        // StartCoroutine(LoadMountainScene());
+        StartCoroutine(LoadMountainScene());
     }
     
     public void OnMiddleFishAnimation() {
