@@ -34,8 +34,8 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    void OnGUI()
-    {
+    // void OnGUI()
+    // {
         // if (GUI.Button(new Rect(10, 20, 150, 50), "Idle"))
         // {
         //     PlayerAnimManager.Instance.StartIdleAnim();
@@ -55,21 +55,21 @@ public class GameManager : Singleton<GameManager>
         // {
         //     PlayerAnimManager.Instance.StartMountainIdleAnim();
         // }
-        if (GUI.Button(new Rect(10, 20, 150, 50), "Crevasse"))
-        {
-            PlayerAnimManager.Instance.StartCrevasseAnim();
-
-        }
-        if (GUI.Button(new Rect(10, 80, 150, 50), "Cascade"))
-        {
-            PlayerAnimManager.Instance.StartCascadeAnim();
-        }
-        
-        if (GUI.Button(new Rect(10, 180, 150, 50), "Slide"))
-        {
-            PlayerAnimManager.Instance.StartSlideIdleAnim();
-        }
-    }
+        // if (GUI.Button(new Rect(10, 20, 150, 50), "Crevasse"))
+        // {
+        //     PlayerAnimManager.Instance.StartCrevasseAnim();
+        //
+        // }
+        // if (GUI.Button(new Rect(10, 80, 150, 50), "Cascade"))
+        // {
+        //     PlayerAnimManager.Instance.StartCascadeAnim();
+        // }
+        //
+        // if (GUI.Button(new Rect(10, 180, 150, 50), "Slide"))
+        // {
+        //     PlayerAnimManager.Instance.StartSlideIdleAnim();
+        // }
+    // }
 
     private void Update()
     {
