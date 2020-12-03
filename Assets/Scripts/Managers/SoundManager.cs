@@ -19,12 +19,16 @@ public class SoundManager : Singleton<SoundManager>
     private AudioMixerSnapshot finalSceneCaveSnapshot = null;
     [SerializeField]
     private AudioMixerSnapshot finalSceneSnapshot = null;
+    [SerializeField]
+    private AudioMixerSnapshot finalSceneOutroSnapshot = null;
+    [SerializeField]
+    private AudioMixerSnapshot finalSceneCreditsSnapshot = null;
 
     [Header("Aurore Sounds")]
-    [NonSerialized]
-    public float auroreDuration = 0.0f;
     [SerializeField]
     private AudioSource Aurore = null;
+    [NonSerialized]
+    public float auroreDuration = 0.0f;
     [SerializeField]
     private GameObject auroreCall = null;
     [SerializeField]
@@ -44,6 +48,8 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField]
     private AudioSource ambiantMusic = null;
     [SerializeField]
+    private AudioSource ambiantCave = null;
+    [SerializeField]
     private AudioClip ambiantMainScene = null;
     [SerializeField]
     private AudioClip ambiantUnderwaterScene = null;
@@ -59,6 +65,10 @@ public class SoundManager : Singleton<SoundManager>
     private AudioClip windMainScene = null;
     [SerializeField]
     private AudioClip windCascadeScene = null;
+    [SerializeField]
+    private AudioClip windMountainScene = null;
+    [SerializeField]
+    private AudioClip windFinalScene = null;
     
     [Header("Final Scene Sounds")]
     [SerializeField]
@@ -104,6 +114,16 @@ public class SoundManager : Singleton<SoundManager>
     {
         finalSceneSnapshot.TransitionTo(2f);
     }
+    
+    public void FinalSceneOutroSnapshot()
+    {
+        finalSceneOutroSnapshot.TransitionTo(1f);
+    }
+    
+    public void FinalSceneCreditsSnapshot()
+    {
+        finalSceneCreditsSnapshot.TransitionTo(5f);
+    }
 
     public void PlayAurore()
     { 
@@ -122,6 +142,11 @@ public class SoundManager : Singleton<SoundManager>
         ambiantMusic.Play();
     }
     
+    public void PlayAmbiantCave()
+    {
+        ambiantCave.Play();
+    }
+    
     // PICK AND PLAY AMBIANT SOUND
     public void PickAmbiant(GameManager.SceneType sceneType)
     {
@@ -136,8 +161,7 @@ public class SoundManager : Singleton<SoundManager>
                 auroreCallSource.clip = null;
                 break;
             case GameManager.SceneType.UnderwaterScene:
-                // ambiantMusic.clip = ambiantUnderwaterScene;
-                ambiantMusic.clip = null;
+                ambiantMusic.clip = ambiantUnderwaterScene;
                 break;
             case GameManager.SceneType.MountainScene:
                 ambiantMusic.clip = ambiantMountainScene;
@@ -214,10 +238,10 @@ public class SoundManager : Singleton<SoundManager>
                 wind.clip = windCascadeScene;
                 break;
             case GameManager.SceneType.MountainScene:
-                wind.clip = windMainScene;
+                wind.clip = windMountainScene;
                 break;
             case GameManager.SceneType.FinalScene:
-                wind.clip = windMainScene;
+                wind.clip = windFinalScene;
                 break;
             default:
                 break;

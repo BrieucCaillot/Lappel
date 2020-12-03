@@ -8,19 +8,16 @@ public class FishTransitionAnim : MonoBehaviour {
     
     private void Start()
     {
-        StartCoroutine(LoadMountainScene());
+        if (SceneManager.GetActiveScene().name == "Underwater Scene");
     }
     
     public void OnMiddleFishAnimation() {
-        asyncLoadMountainScene.allowSceneActivation = true;
+        StartCoroutine(LoadMountainScene());
     }
     
     IEnumerator LoadMountainScene()
     {
-        yield return new WaitForSeconds(3f);
-        
         asyncLoadMountainScene = SceneManager.LoadSceneAsync("Mountain Scene");
-        asyncLoadMountainScene.allowSceneActivation = false;
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoadMountainScene.isDone)

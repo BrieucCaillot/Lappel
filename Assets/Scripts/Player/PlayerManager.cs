@@ -147,9 +147,6 @@ public class PlayerManager : Singleton<PlayerManager>
             case "MOUNTAIN CORRIDOR":
                 MountainSceneManager.Instance.InCorridor();
                 break;
-            case "STOP WALKING FINAL SCENE":
-                autoMove = false;
-                break;
             case "QUOTE 1 COLLIDER":
                 UIManager.Instance.ShowQuote1();
                 break;

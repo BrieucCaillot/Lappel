@@ -38,7 +38,6 @@ public class FinalSceneManager : MonoBehaviour
                 var destination1 = PlayerManager.Instance.transform.position + offset;
                 var destination2 = destination1 + new Vector3(0, -15, -5);
                 PlayerAnimManager.Instance.StartCascadeAnim();
-                Debug.Log("Debug coroutine");
                 StartCoroutine(DelayTransition(destination1));
                 PlayerManager.Instance.transform
                     .DOMove(destination1, 1f)

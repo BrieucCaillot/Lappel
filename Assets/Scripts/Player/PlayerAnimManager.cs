@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAnimManager : Singleton<PlayerAnimManager>
 {
@@ -19,15 +21,23 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
 
    public void StartIdleAnim()
    {
-      Debug.Log("START IDLE ANIM");
-      StopWingsBubbles();
-      anim.SetFloat("vertical", 0);
-      anim.SetTrigger("StartIdle");
+      if (SceneManager.GetActiveScene().name != "Underwater Scene" ||
+          SceneManager.GetActiveScene().name != "Mountain Scene")
+      {
+         Debug.Log("START IDLE ANIM");
+         StopWingsBubbles();
+         anim.SetFloat("vertical", 0);
+         anim.SetTrigger("StartIdle");
+      }
    }
-   
+
    public void StartSlideIdleAnim()
    {
-      anim.SetTrigger("StartSlideIdle");
+      if (SceneManager.GetActiveScene().name != "Underwater Scene" ||
+          SceneManager.GetActiveScene().name != "Mountain Scene")
+      {
+         anim.SetTrigger("StartSlideIdle");
+      }
    }
    
    public void StartSwimIdleAnim()

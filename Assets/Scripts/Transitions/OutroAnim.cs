@@ -2,9 +2,18 @@
 
 public class OutroAnim : MonoBehaviour
 {
+    public void PlayFinalSceneOutroSnapshot()
+    {
+        SoundManager.Instance.FinalSceneOutroSnapshot();
+    }
+    
+    public void PlayFinalSceneCreditsSnapshot()
+    {
+        SoundManager.Instance.FinalSceneCreditsSnapshot();
+    }
+    
     public void PlayOutroSound()
     {
-        Debug.Log("PlayOutroSound");
         SoundManager.Instance.PlayOutro();
     }
     

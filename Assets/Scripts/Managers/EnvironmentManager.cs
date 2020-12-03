@@ -59,6 +59,8 @@ public class EnvironmentManager : Singleton<EnvironmentManager> {
     
     public void FinalCaveEnvironment() {
         snowParticles.SetActive(false);
+        SoundManager.Instance.PlayAmbiantCave();
+        SoundManager.Instance.PlayWind(GameManager.SceneType.FinalScene);
         SoundManager.Instance.PickAmbiant(GameManager.SceneType.FinalScene);
         SoundManager.Instance.PickAuroreCall(GameManager.SceneType.FinalScene);
         SoundManager.Instance.FinalSceneCaveSnapshot();

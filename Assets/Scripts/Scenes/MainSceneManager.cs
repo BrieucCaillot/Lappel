@@ -42,20 +42,11 @@ public class MainSceneManager : Singleton<MainSceneManager>
     {
         asyncLoadCascadeScene.allowSceneActivation = true;
         glacierTransition.transform.position = new Vector3(170, -8.5f, 37);
-        Debug.Log("NEXT SCENE");
-    }
-    
-    void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 20, 150, 50), "Next Scene"))
-        {
-            NextScene();
-        }
     }
     
     IEnumerator LoadCascadeScene()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.1f);
         
         asyncLoadCascadeScene = SceneManager.LoadSceneAsync("Cascade Scene");
         asyncLoadCascadeScene.allowSceneActivation = false;
