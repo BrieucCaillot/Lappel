@@ -6,10 +6,13 @@ public class MainSceneManager : Singleton<MainSceneManager>
 {
     [SerializeField]
     private Transform glacierTransition = null;
+
+    private AsyncOperation asyncLoadCascadeScene = null;
     
     private void Start()
     {
         EnvironmentManager.Instance.MainSceneEnvironment();
+        StartCoroutine(LoadCascadeScene());
     }
     
     public void Play()
@@ -36,16 +39,28 @@ public class MainSceneManager : Singleton<MainSceneManager>
 
     public void NextScene()
     {
-        StartCoroutine(LoadCascadeScene());
+        asyncLoadCascadeScene.allowSceneActivation = true;
         glacierTransition.transform.position = new Vector3(170, -8.5f, 37);
+        Debug.Log("NEXT SCENE");
+    }
+    
+    void OnGUI()
+    {
+        if (GUI.Button(new Rect(10, 20, 150, 50), "Next Scene"))
+        {
+            NextScene();
+        }
     }
     
     IEnumerator LoadCascadeScene()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Cascade Scene");
+        yield return new WaitForSeconds(3f);
+        
+        asyncLoadCascadeScene = SceneManager.LoadSceneAsync("Cascade Scene");
+        asyncLoadCascadeScene.allowSceneActivation = false;
 
         // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
+        while (!asyncLoadCascadeScene.isDone)
         {
             yield return null;
         }

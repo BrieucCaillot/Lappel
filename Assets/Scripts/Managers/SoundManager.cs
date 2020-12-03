@@ -59,7 +59,11 @@ public class SoundManager : Singleton<SoundManager>
     private AudioClip windMainScene = null;
     [SerializeField]
     private AudioClip windCascadeScene = null;
-
+    
+    [Header("Final Scene Sounds")]
+    [SerializeField]
+    private AudioSource outro = null;
+    
     void Start()
     {
         // auroreDuration = auroreCallSource.clip.length;
@@ -104,6 +108,11 @@ public class SoundManager : Singleton<SoundManager>
     public void PlayAurore()
     { 
         Aurore.Play();   
+    }
+    
+    public void PlayOutro()
+    { 
+        outro.Play();   
     }
     
     // AMBIANT

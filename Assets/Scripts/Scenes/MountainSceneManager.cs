@@ -17,6 +17,7 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
     private ParticleSystem dustParticlesDoor = null;
     private bool loadedScene = false;
     private float stayTime = 0f;
+    private AsyncOperation asyncLoad = null;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
         PlayerManager.Instance.SetPosition(new Vector3(0, 0, 0));
         PlayerManager.Instance.speed = 6;
         EnvironmentManager.Instance.MountainEnvironment();
+        StartCoroutine(LoadFinalScene());
     }
 
     public void OnMountain()
@@ -78,7 +80,7 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
         if (stayTime > maxTimeInCorridor)
         {
             loadedScene = true;
-            StartCoroutine(LoadFinalScene());
+            asyncLoad.allowSceneActivation = true;
         }
     }
 
@@ -94,7 +96,10 @@ public class MountainSceneManager : Singleton<MountainSceneManager>
 
     IEnumerator LoadFinalScene()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Final Scene");
+        yield return new WaitForSeconds(3f);
+        
+        asyncLoad = SceneManager.LoadSceneAsync("Final Scene");
+        asyncLoad.allowSceneActivation = false;
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)

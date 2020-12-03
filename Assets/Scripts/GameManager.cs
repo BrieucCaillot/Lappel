@@ -36,25 +36,29 @@ public class GameManager : Singleton<GameManager>
 
     void OnGUI()
     {
-        if (GUI.Button(new Rect(10, 20, 150, 50), "Idle"))
-        {
-            PlayerAnimManager.Instance.StartIdleAnim();
-        }
+        // if (GUI.Button(new Rect(10, 20, 150, 50), "Idle"))
+        // {
+        //     PlayerAnimManager.Instance.StartIdleAnim();
+        // }
         
-        if (GUI.Button(new Rect(10, 90, 150, 50), "Slide"))
-        {
-            PlayerAnimManager.Instance.StartSlideIdleAnim();
-        }
-        
-        if (GUI.Button(new Rect(10, 150, 150, 50), "Swim"))
-        {
-            PlayerAnimManager.Instance.StartSwimIdleAnim();
-        }
-        
-        if (GUI.Button(new Rect(10, 220, 150, 50), "Mountain"))
-        {
-            PlayerAnimManager.Instance.StartMountainIdleAnim();
-        }
+        // if (GUI.Button(new Rect(10, 90, 150, 50), "Slide"))
+        // {
+        //     PlayerAnimManager.Instance.StartSlideIdleAnim();
+        // }
+        //
+        // if (GUI.Button(new Rect(10, 150, 150, 50), "Swim"))
+        // {
+        //     PlayerAnimManager.Instance.StartSwimIdleAnim();
+        // }
+        //
+        // if (GUI.Button(new Rect(10, 220, 150, 50), "Mountain"))
+        // {
+        //     PlayerAnimManager.Instance.StartMountainIdleAnim();
+        // }
+        // if (GUI.Button(new Rect(10, 220, 150, 50), "Outro"))
+        // {
+        //     SoundManager.Instance.PlayOutro();
+        // }
     }
 
     private void Update()
