@@ -75,27 +75,23 @@ public class CascadeSceneManager : MonoBehaviour
                 var destination1 = PlayerManager.Instance.transform.position + offset;
                 var destination2 = destination1 + new Vector3(0, -15, -5);
                 PlayerAnimManager.Instance.StartCascadeAnim();
-                Debug.Log("Debug coroutine");
-                StartCoroutine(ExampleCoroutine(destination1));
+
+                StartCoroutine(DelayTransition(destination1));
                 PlayerManager.Instance.transform
                     .DOMove(destination1, 1f)
-                    .SetDelay(1f)
-                    .OnComplete(() =>
-                    {
-                        Debug.Log("ON COMPLETE");
-                        // cascadeSplash.transform.DOMove(destination + Vector3.down * 3, 0f).OnComplete(() => cascadeSplashParticles.Play());
-                        // UIManager.Instance.ShowCascadeTransition();
-
-                    });
+                    .SetDelay(1f);
                 PlayerManager.Instance.transform
-                    .DOMove(destination2, 1f).SetDelay(1.25f);
+                    .DOMove(destination2, 1f).SetDelay(1.25f).OnComplete(() =>
+                    {
+                        PlayerManager.Instance.transform.position = new Vector3(0, -140, 0);
+                        PlayerManager.Instance.SetRotation(new Vector3(0, 180, 0));
+                    });
             });
     }
 
-    IEnumerator ExampleCoroutine(Vector3 destination1)
+    IEnumerator DelayTransition(Vector3 destination1)
     {
         yield return new WaitForSeconds(1.5f);
-        Debug.Log("Coroutine called");
         cascadeSplash.transform.DOMove(destination1 + Vector3.down * 3, 0f).OnComplete(() => cascadeSplashParticles.Play());
         UIManager.Instance.ShowCascadeTransition();
     }

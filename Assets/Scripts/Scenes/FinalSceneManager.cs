@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class FinalSceneManager : MonoBehaviour
@@ -14,8 +15,7 @@ public class FinalSceneManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("FINAL SCENE START");
-        PlayerManager.Instance.autoMove = true;
-        Debug.Log(PlayerManager.Instance.autoMove);
+        PlayerManager.Instance.autoMove = false;
         PlayerManager.Instance.canMove = true;
         PlayerAnimManager.Instance.StartIdleAnim();
         PlayerManager.Instance.ResetPosition();
@@ -34,17 +34,26 @@ public class FinalSceneManager : MonoBehaviour
             .OnComplete(() =>
             {
                 colliders.SetActive(false);
-                PlayerAnimManager.Instance.StartCrevasseAnim();
-                var destination = PlayerManager.Instance.transform.position + Vector3.back * 10;
+                var offset = new Vector3(0, 0, -12);
+                var destination1 = PlayerManager.Instance.transform.position + offset;
+                var destination2 = destination1 + new Vector3(0, -15, -5);
+                PlayerAnimManager.Instance.StartCascadeAnim();
+                Debug.Log("Debug coroutine");
+                StartCoroutine(DelayTransition(destination1));
                 PlayerManager.Instance.transform
-                    .DOMove(PlayerManager.Instance.transform.position + Vector3.back * 10, 1f)
-                    .SetDelay(2f)
-                    .OnComplete(() =>
-                    {
-                        finalSplash.transform.DOMove(destination + Vector3.down * 3, 0f).OnComplete(() => finalSplashParticles.Play());
-                        UIManager.Instance.ShowOutro();
-                        colliders.SetActive(true);
-                    });
+                    .DOMove(destination1, 1f)
+                    .SetDelay(1f);
+
+                PlayerManager.Instance.transform
+                    .DOMove(destination2, 1f).SetDelay(1.25f);
             });
+    }
+
+    IEnumerator DelayTransition(Vector3 destination1)
+    {
+        yield return new WaitForSeconds(1.5f);
+        finalSplash.transform.DOMove(destination1 + Vector3.down * 3, 0f).OnComplete(() => finalSplashParticles.Play());
+        UIManager.Instance.ShowOutro();
+        colliders.SetActive(true);
     }
 }
