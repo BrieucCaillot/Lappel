@@ -9,6 +9,8 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    private AudioSource jumpAudioSource = null;
    [SerializeField]
    private AudioSource diveAudioSource = null;
+   [SerializeField]
+   private AudioSource slideAudioSource = null;
    
    [Header("Bubbles Particles")]
    [SerializeField]
@@ -64,16 +66,30 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    {
       anim.SetTrigger("StartCascade");
    }
+   
+   public void OnSlideAnimSound()
+   {
+      slideAudioSource.Play();
+   }
+   
+   public void OnAnimCrevasseSound()
+   {
+      jumpAudioSource.Play();
+   }
 
    public void OnAnimCrevasseStart()
    {
       PlayerManager.Instance.canMove = false;
-      // jumpAudioSource.Play();
    }
-
+  
    public void OnAnimCrevasseEnd()
    {
       PlayerManager.Instance.canMove = true;
+   }
+   
+   public void OnAnimCascadeSound()
+   {
+      diveAudioSource.Play();
    }
    
    public void OnAnimCascadeStart()
@@ -84,8 +100,9 @@ public class PlayerAnimManager : Singleton<PlayerAnimManager>
    public void OnAnimCascadeEnd()
    {
       PlayerManager.Instance.canMove = true;
-      // diveAudioSource.Play();
    }
+   
+   
 
    public void PlayWingsBubbles()
    {

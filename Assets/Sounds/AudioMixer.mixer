@@ -299,6 +299,7 @@ AudioMixerSnapshotController:
     87f70f3c15a5fae44896c052b9a3985d: -80
     0c83568c82f112c43af1827d9a65fd63: -80
     632c9fcc19afc9b4aa2c9ed9d762051e: 0.10800299
+    c8ddce9d3c22c9a4ebc29f0a5fcba979: -50
     7d7fccaf3a8eb4f2cb8023236acef76c: 0
   m_TransitionOverrides: {}
 --- !u!243 &-4144086673057042833
@@ -562,6 +563,7 @@ AudioMixerController:
     name: CascadeScene
   - guids:
     - 8a7bf5f59f30c4748b4b039605551966
+    - 2db1b63e8b45c1a469b1d6411686e5fb
     - 4e878561dec7db944a0ecc6f206c2095
     - 9c1408006650e424b962aa3cd851e246
     - e0471e8d299fbf9419213fa3ba574c89
@@ -586,8 +588,8 @@ AudioMixerController:
     - 3b177f0ce4f2bfc4cb5ee54e0052603e
     - b7a4446af6683d24aa95e812d07bf68a
     name: FinalScene
-  m_CurrentViewIndex: 4
-  m_TargetSnapshot: {fileID: 1301521726764385059}
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: -4250259408613194925}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

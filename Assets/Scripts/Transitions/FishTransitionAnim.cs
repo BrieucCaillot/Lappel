@@ -6,10 +6,10 @@ public class FishTransitionAnim : MonoBehaviour {
     
     private AsyncOperation asyncLoadMountainScene = null;
     
-    private void Start()
-    {
-        if (SceneManager.GetActiveScene().name == "Underwater Scene");
-    }
+    // private void Start()
+    // {
+    //     if (SceneManager.GetActiveScene().name == "Underwater Scene");
+    // }
     
     public void OnMiddleFishAnimation() {
         StartCoroutine(LoadMountainScene());
