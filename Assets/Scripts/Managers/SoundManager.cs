@@ -33,7 +33,7 @@ public class SoundManager : Singleton<SoundManager>
     private GameObject auroreCall = null;
     [SerializeField]
     private AudioSource auroreCallSource = null;
-    [SerializeField] 
+    [SerializeField]
     private AudioClip auroreCallMainScene = null;
     [SerializeField]
     private AudioClip auroreCallCascadeScene = null;
@@ -43,7 +43,7 @@ public class SoundManager : Singleton<SoundManager>
     private AudioClip auroreCallMountainScene = null;
     [SerializeField]
     private AudioClip auroreCallFinalScene = null;
-    
+
     [Header("Ambiants Sounds")]
     [SerializeField]
     private AudioSource ambiantMusic = null;
@@ -69,11 +69,11 @@ public class SoundManager : Singleton<SoundManager>
     private AudioClip windMountainScene = null;
     [SerializeField]
     private AudioClip windFinalScene = null;
-    
+
     [Header("Final Scene Sounds")]
     [SerializeField]
     private AudioSource outro = null;
-    
+
     void Start()
     {
         // auroreDuration = auroreCallSource.clip.length;
@@ -84,69 +84,69 @@ public class SoundManager : Singleton<SoundManager>
     {
         mainSceneIntroSnapshot.TransitionTo(4f);
     }
-    
+
     public void CascadeSceneSnapshot()
     {
         cascadeSceneSnapshot.TransitionTo(4f);
     }
-    
+
     public void UnderwaterSceneSnapshot()
     {
         underwaterSceneSnapshot.TransitionTo(0.3f);
     }
-    
+
     public void MountainSceneSnapshot()
     {
         mountainSceneSnapshot.TransitionTo(2f);
     }
-    
+
     public void MountainSceneCorridorSnapshot()
     {
         mountainSceneCorridorSnapshot.TransitionTo(1f);
     }
-    
+
     public void FinalSceneCaveSnapshot()
     {
         finalSceneCaveSnapshot.TransitionTo(2f);
     }
-    
+
     public void FinalSceneSnapshot()
     {
-        finalSceneSnapshot.TransitionTo(2f);
+        finalSceneSnapshot.TransitionTo(0f);
     }
-    
+
     public void FinalSceneOutroSnapshot()
     {
         finalSceneOutroSnapshot.TransitionTo(1f);
     }
-    
+
     public void FinalSceneCreditsSnapshot()
     {
         finalSceneCreditsSnapshot.TransitionTo(5f);
     }
 
     public void PlayAurore()
-    { 
-        Aurore.Play();   
+    {
+        Aurore.Play();
     }
-    
+
     public void PlayOutro()
-    { 
-        outro.Play();   
+    {
+        outro.Play();
     }
-    
+
     // AMBIANT
 
     public void PlayAmbiant()
     {
         ambiantMusic.Play();
     }
-    
+
     public void PlayAmbiantCave()
     {
         ambiantCave.Play();
     }
-    
+
     // PICK AND PLAY AMBIANT SOUND
     public void PickAmbiant(GameManager.SceneType sceneType)
     {
@@ -171,23 +171,23 @@ public class SoundManager : Singleton<SoundManager>
                 break;
             default:
                 break;
-        }   
+        }
     }
-    
+
     // AURORE
-    
+
     public void PlayAuroreCall()
     {
-        auroreCallSource.panStereo = 0f;   
-        auroreCallSource.spatialBlend = Single.MinValue;   
+        auroreCallSource.panStereo = 0f;
+        auroreCallSource.spatialBlend = Single.MinValue;
         auroreCallSource.Play();
         CameraManager.Instance.ShakeCameraAurore(auroreDuration, 1f);
     }
 
     public void PlayAuroreCallMainScene()
     {
-        auroreCallSource.panStereo = -0.6f;   
-        auroreCallSource.spatialBlend = Single.MinValue;   
+        auroreCallSource.panStereo = -0.6f;
+        auroreCallSource.spatialBlend = Single.MinValue;
         auroreCallSource.Play();
         CameraManager.Instance.ShakeCameraAurore(auroreDuration, 1f);
     }
@@ -196,7 +196,7 @@ public class SoundManager : Singleton<SoundManager>
     {
         auroreCall.transform.position = position;
     }
-    
+
     // PICK AURORE CALL SOUND
     public void PickAuroreCall(GameManager.SceneType sceneType)
     {
@@ -221,9 +221,9 @@ public class SoundManager : Singleton<SoundManager>
                 break;
             default:
                 break;
-        }   
+        }
     }
-    
+
     // WIND
 
     // PICK WIND SOUND AND PLAY
@@ -245,7 +245,7 @@ public class SoundManager : Singleton<SoundManager>
                 break;
             default:
                 break;
-        }   
+        }
         wind.Play();
     }
 }
